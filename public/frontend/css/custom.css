@@ -1,0 +1,9 @@
+/* Estilo para el modal personalizado */
+.custom-modal .modal-dialog {
+    max-width: 1000px; /* Ancho máximo del modal */
+}
+
+.custom-modal .modal-content {
+    width: 100%;
+    height: 500px; /* Altura del modal */
+}
