@@ -280,6 +280,9 @@
                                     <a href="{{ url('aboutus') }}">Nosotros</a>
                                 </li>
                                 <li>
+                                    <a href="http://jisparking.buk.cl/cul_partner_complaint/tickets/new">Canal de Denuncias</a>
+                                </li>
+                                <li>
                                     <a href="{{ url('covid') }}">Covid-19</a>
                                 </li>
                                 <li>
