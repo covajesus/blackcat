@@ -220,11 +220,13 @@
           @php
             $locale = app()->getLocale();
             // Map locales to available widget languages  
-            $widgetLocale = match($locale) {
-                'en' => 'en',
-                'pt' => 'pt', 
-                default => 'es'
-            };
+            if ($locale === 'en') {
+                $widgetLocale = 'en';
+            } elseif ($locale === 'pt') {
+                $widgetLocale = 'pt';
+            } else {
+                $widgetLocale = 'es';
+            }
           @endphp
           <script>
             // Try to load the widget in the current language, fallback to custom form if not available

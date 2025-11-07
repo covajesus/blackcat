@@ -263,4 +263,3 @@ A equipe respondeu aos nossos requisitos com excelente disposição e fizeram da
     'search_availability' => 'Pesquisar Disponibilidade',
     'form_error' => 'Por favor preencha as datas de check-in e check-out',
 ];
-];
