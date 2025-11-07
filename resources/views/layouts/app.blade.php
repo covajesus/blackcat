@@ -192,7 +192,7 @@
         <div class="topbar">
             <div class="container">
             <div class="welcome-mssg">
-                Bienvenidos a Black Cat Hostal
+                {{ __('messages.welcome_message') }}
             </div>
             <div class="top-right-menu">
                 <ul class="top-menu">
@@ -206,14 +206,32 @@
                     <i class="fa fa-envelope-o "></i>reservas@blackcathostal.com</a>
                 </li>
                 <li class="language-menu">
-                    <a href="#" class="active-language"><img src="{{ asset('public/frontend/images/icons/flags/es.png') }}" alt="Image">Español</a>
+                    <a href="#" class="active-language">
+                        <img src="{{ asset('public/frontend/images/icons/flags/' . (app()->getLocale() == 'es' ? 'es' : (app()->getLocale() == 'en' ? 'gb' : 'br')) . '.png') }}" alt="Flag">
+                        {{ __('messages.' . app()->getLocale() == 'es' ? 'spanish' : (app()->getLocale() == 'en' ? 'english' : 'portuguese')) }}
+                    </a>
                     <ul class="languages">
+                        @if(app()->getLocale() != 'es')
                         <li class="language">
-                            <a href="#"><img src="{{ asset('public/frontend/images/icons/flags/gb.png') }}" alt="Image">English</a>
+                            <a href="{{ route('lang.switch', 'es') }}">
+                                <img src="{{ asset('public/frontend/images/icons/flags/es.png') }}" alt="Spanish">{{ __('messages.spanish') }}
+                            </a>
                         </li>
+                        @endif
+                        @if(app()->getLocale() != 'en')
                         <li class="language">
-                            <a href="#"><img src="{{ asset('public/frontend/images/icons/flags/br.png') }}" alt="Image">Portugués</a>
+                            <a href="{{ route('lang.switch', 'en') }}">
+                                <img src="{{ asset('public/frontend/images/icons/flags/gb.png') }}" alt="English">{{ __('messages.english') }}
+                            </a>
                         </li>
+                        @endif
+                        @if(app()->getLocale() != 'pt')
+                        <li class="language">
+                            <a href="{{ route('lang.switch', 'pt') }}">
+                                <img src="{{ asset('public/frontend/images/icons/flags/br.png') }}" alt="Portuguese">{{ __('messages.portuguese') }}
+                            </a>
+                        </li>
+                        @endif
                     </ul>
                 </li>
                 </ul>
@@ -257,32 +275,32 @@
                 @else
                     <li class="menu-item">
                 @endif
-                    <a href="{{ url('/') }}">INICIO</a>
+                    <a href="{{ url('/') }}">{{ __('messages.home') }}</a>
                 </li>
                 @if(request()->is('aboutus') ? 'active' : '')
                     <li class="menu-item active">
                 @else
                     <li class="menu-item">
                 @endif
-                    <a href="{{ url('aboutus') }}">NOSOTROS</a>
+                    <a href="{{ url('aboutus') }}">{{ __('messages.about') }}</a>
                 </li>
                 <li class="menu-item dropdown">
-                    <a href="#">HABITACIONES</a>
+                    <a href="#">{{ __('messages.rooms') }}</a>
                     <ul class="submenu">
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/family') }}">Family</a>
+                            <a href="{{ url('room/detail/family') }}">{{ __('messages.family_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/king-queen') }}">King & Queen Estándar</a>
+                            <a href="{{ url('room/detail/king-queen') }}">{{ __('messages.king_queen_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/superior-king') }}">King Superior Kitchenette</a>
+                            <a href="{{ url('room/detail/superior-king') }}">{{ __('messages.superior_king_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/twin') }}">Twin Kitchenette</a>
+                            <a href="{{ url('room/detail/twin') }}">{{ __('messages.twin_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/reduce') }}">Movilidad Reducida</a>
+                            <a href="{{ url('room/detail/reduce') }}">{{ __('messages.reduced_mobility_room') }}</a>
                         </li>
                     </ul>
                 </li>
@@ -292,19 +310,19 @@
                 @else
                     <li class="menu-item">
                 @endif
-                    <a href="{{ url('covid') }}">COVID-19</a>
+                    <a href="{{ url('covid') }}">{{ __('messages.covid') }}</a>
                 </li>
                 @if(request()->is('contactus') ? 'active' : '')
                     <li class="menu-item active">
                 @else
                     <li class="menu-item">
                 @endif
-                    <a href="{{ url('contactus') }}">CONTÁCTENOS</a>
+                    <a href="{{ url('contactus') }}">{{ __('messages.contact') }}</a>
                 </li>
                 <li class="menu-item menu-btn">
-                    <a href="https://reservas.fnsbooking.com/busqueda.php?accion=N&release=6&datos=111188682----------------&idioma=es&fecha_entrada=&fecha_salida=&orden=&pfe=2326&currency=&oferta_id=&tipo_habitacion_id=&bookingonline=&ocupacion=&ciudad=&entrada=21%2F11%2F2020&salida=28%2F11%2F2020" class="btn">
+                    <a href="https://reservas.fnsbooking.com/busqueda.php?accion=N&release=6&datos=111188682----------------&idioma={{ app()->getLocale() }}&fecha_entrada=&fecha_salida=&orden=&pfe=2326&currency=&oferta_id=&tipo_habitacion_id=&bookingonline=&ocupacion=&ciudad=&entrada=21%2F11%2F2020&salida=28%2F11%2F2020" class="btn">
                         <i class="fa fa-calendar"></i>
-                        RESERVAR
+                        {{ __('messages.reserve') }}
                     </a>
                  </li>
             </ul>
@@ -341,23 +359,23 @@
                         <!-- WIDGET -->
                         <div class="col-md-3">
                             <div class="footer-widget">
-                            <h3>ENLACES</h3>
+                            <h3>{{ __('messages.links') }}</h3>
                             <div class="inner">
                                 <ul class="useful-links">
                                 <li>
-                                    <a href="{{ url('/') }}">Inicio</a>
+                                    <a href="{{ url('/') }}">{{ __('messages.breadcrumb_home') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('aboutus') }}">Nosotros</a>
+                                    <a href="{{ url('aboutus') }}">{{ __('messages.breadcrumb_about') }}</a>
                                 </li>
                                 <li>
-                                    <a href="http://jisparking.buk.cl/cul_partner_complaint/tickets/new">Canal de Denuncias</a>
+                                    <a href="http://jisparking.buk.cl/cul_partner_complaint/tickets/new">{{ __('messages.complaints_channel') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('covid') }}">Covid-19</a>
+                                    <a href="{{ url('covid') }}">{{ __('messages.breadcrumb_covid') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('contactus') }}">Contáctanos</a>
+                                    <a href="{{ url('contactus') }}">{{ __('messages.breadcrumb_contact') }}</a>
                                 </li>
                                 </ul>
                             </div>

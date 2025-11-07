@@ -4,12 +4,12 @@
       <div class="page-title op6">
         <div class="container">
           <div class="inner">
-            <h1>CONTÁCTENOS</h1>
+            <h1>{{ __('messages.contact_us') }}</h1>
             <ol class="breadcrumb">
               <li>
-                <a href="{{ url('/') }}">Inicio</a>
+                <a href="{{ url('/') }}">{{ __('messages.breadcrumb_home') }}</a>
               </li>
-              <li>Contáctenos</li>
+              <li>{{ __('messages.breadcrumb_contact') }}</li>
             </ol>
           </div>
         </div>
@@ -20,39 +20,39 @@
           <div class="row">
             <div class="col-md-8">
               <div class="section-title">
-                <h4 style="color: #454545 !important;">CONTÁCTENOS</h4>
-                <p class="section-subtitle">Hablemos!</p>
+                <h4 style="color: #454545 !important;">{{ __('messages.contact_us') }}</h4>
+                <p class="section-subtitle">{{ __('messages.lets_talk') }}</p>
               </div>
-              <p>Si tiene alguna consulta no dude en comunicarse con nosotros.</p>
+              <p>{{ __('messages.contact_description') }}</p>
               <!-- CONTACT FORM -->
               @if(Session::get('status') == 1)
                 <div class="alert alert-success" role="alert">
-                  ¡Gracias por preferirnos! dentro de un momento te responderemos
+                  {{ __('messages.success_message') }}
                 </div>
               @endif
               <form action="{{ url('message/store') }}" method="post">
                 @csrf
                 <div class="form-group">
-                  <input class="form-control" name="name" placeholder="Nombre" type="text" required>
+                  <input class="form-control" name="name" placeholder="{{ __('messages.name') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="email" placeholder="Correo" type="email" required>
+                  <input class="form-control" name="email" placeholder="{{ __('messages.email') }}" type="email" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="phone" placeholder="Teléfono" type="text" required>
+                  <input class="form-control" name="phone" placeholder="{{ __('messages.phone') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="subject" placeholder="Asunto" type="text" required>
+                  <input class="form-control" name="subject" placeholder="{{ __('messages.subject') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" placeholder="Mensaje" required></textarea>
+                  <textarea class="form-control" name="message" placeholder="{{ __('messages.message') }}" required></textarea>
                 </div>
                 <div class="form-group">
                   <div class="g-recaptcha" data-sitekey="6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu"></div>
                 </div>
                 <div class="form-group">
                 <input class="form-control" name="home" type="hidden" value="0">
-                <input value="Enviar" type="submit" class="special_button" />
+                <input value="{{ __('messages.send') }}" type="submit" class="special_button" />
                 </div>
               </form>
             </div>
