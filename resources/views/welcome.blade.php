@@ -186,20 +186,7 @@
                 $widgetLocale = 'es';
             }
           @endphp
-          <script>
-            // Load widget in the appropriate language with fallback to Spanish
-            (function() {
-                var script = document.createElement('script');
-                script.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js';
-                script.onerror = function() {
-                    // Fallback to Spanish if the language file doesn't exist
-                    var fallbackScript = document.createElement('script');
-                    fallbackScript.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_es.js';
-                    document.head.appendChild(fallbackScript);
-                };
-                document.head.appendChild(script);
-            })();
-          </script>
+          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js"></script>
         <!--Fin Codigo FnsRooms-->
       </div>
       
