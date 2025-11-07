@@ -5,15 +5,15 @@
       <div class="page-title op5">
         <div class="container">
           <div class="inner">
-            <h1>HABITACIÓN TWIN CON KITCHENETTE</h1>
+            <h1>{{ __('messages.twin_room_title') }}</h1>
             <ol class="breadcrumb">
               <li>
-                <a href="{{ url('/') }}">Inicio</a>
+                <a href="{{ url('/') }}">{{ __('messages.breadcrumb_home') }}</a>
               </li>
               <li>
-                <a href="#">Habitaciones</a>
+                <a href="#">{{ __('messages.rooms') }}</a>
               </li>
-              <li>Twin con kitchenette</li>
+              <li>{{ __('messages.twin_room_breadcrumb') }}</li>
             </ol>
           </div>
         </div>

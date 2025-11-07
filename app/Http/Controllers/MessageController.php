@@ -37,22 +37,27 @@ class MessageController extends Controller
     {
         $inputs = request()->all();
 
-        if($inputs['g-recaptcha-response'] != '') {
+        if ($inputs['g-recaptcha-response'] != '') {
             $to_name = 'Reservas Black Cat Hostal';
             $to_email = 'reservas@blackcathostal.com';
-            $data = array('name'=> $request->name, 'phone'=> $request->phone, 'email'=> $request->email, 'body'=> $request->body);
-            Mail::send(['html' => 'email'], $data, function($message) use ($to_name, $to_email) {
+            $data = [
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'body' => $request->body,
+            ];
+            Mail::send(['html' => 'email'], $data, function ($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject('Nuevo mensaje de la web');
-                $message->from('no-reply@blackcathostal.com','Black Cat Hostal');
+                $message->from('no-reply@blackcathostal.com', 'Black Cat Hostal');
             });
 
-            if($request->home == 0) {
+            if ($request->home == 0) {
                 return redirect('contactus')->with('status', 1);
             } else {
                 return redirect('/')->with('status', 1);
             }
         } else {
-            if($request->home == 0) {
+            if ($request->home == 0) {
                 return redirect('contactus')->with('status', 0)->with('error', __('messages.recaptcha_error'));
             } else {
                 return redirect('/')->with('status', 0)->with('error', __('messages.recaptcha_error'));

@@ -30,7 +30,7 @@
                   <div class="item">
                     <figure class="gradient-overlay-hover image-icon">
                       <a href="{{ asset('public/frontend/images/rooms/family/pic1.png') }}">
-                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic1.png') }}" alt="Image">
+                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic1.png') }}" alt="{{ __('messages.family_room_gallery_alt') }}" title="{{ __('messages.family_room_gallery_alt') }}" loading="lazy">
                       </a>
                     </figure>
                   </div>
@@ -38,7 +38,7 @@
                   <div class="item">
                     <figure class="gradient-overlay-hover image-icon">
                       <a href="{{ asset('public/frontend/images/rooms/family/pic2.png') }}">
-                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic2.png') }}" alt="Image">
+                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic2.png') }}" alt="{{ __('messages.family_room_gallery_alt') }}" title="{{ __('messages.family_room_gallery_alt') }}" loading="lazy">
                       </a>
                     </figure>
                   </div>
@@ -46,7 +46,7 @@
                   <div class="item">
                     <figure class="gradient-overlay-hover image-icon">
                       <a href="{{ asset('public/frontend/images/rooms/family/pic3.png') }}">
-                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic3.png') }}" alt="Image">
+                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic3.png') }}" alt="{{ __('messages.family_room_gallery_alt') }}" title="{{ __('messages.family_room_gallery_alt') }}" loading="lazy">
                       </a>
                     </figure>
                   </div>
@@ -54,14 +54,14 @@
                   <div class="item">
                     <figure class="gradient-overlay-hover image-icon">
                       <a href="{{ asset('public/frontend/images/rooms/family/pic5.png') }}">
-                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic5.png') }}" alt="Image">
+                        <img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic5.png') }}" alt="{{ __('messages.family_room_gallery_alt') }}" title="{{ __('messages.family_room_gallery_alt') }}" loading="lazy">
                       </a>
                     </figure>
                   </div>
                 </div>
                 <div id="room-thumbs" class="room-thumbs owl-carousel">
                   <!-- ITEM -->
-                  <div class="item"><img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic1.png') }}" alt="Image"></div>
+                  <div class="item"><img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic1.png') }}" alt="{{ __('messages.family_room_gallery_alt') }}" loading="lazy"></div>
                   <!-- ITEM -->
                   <div class="item"><img class="img-fluid" src="{{ asset('public/frontend/images/rooms/family/pic2.png') }}" alt="Image"></div>
                   <!-- ITEM -->

@@ -59,15 +59,7 @@
         <link rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css') }}">
 
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var
-        f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)
-        [1];
-        })(window,document,'script','dataLayer','GTM-KQN8WXBX');</script>
-        <!-- End Google Tag Manager -->
+        @include('partials.analytics')
 
         <!-- ========== ICON FONTS ========== -->
         <link href="{{ asset('public/frontend/fonts/font-awesome.min.css') }}" rel="stylesheet">
@@ -176,12 +168,7 @@
         </script>
     </head>
     <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KQN8WXBX"
-        height="0" width="0"
-        style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+
         <!-- ========== PRELOADER ========== -->
 
         <!-- ========== MOBILE MENU ========== -->
@@ -208,27 +195,27 @@
                 <li class="language-menu">
                     <a href="#" class="active-language">
                         <img src="{{ asset('public/frontend/images/icons/flags/' . (app()->getLocale() == 'es' ? 'es' : (app()->getLocale() == 'en' ? 'gb' : 'br')) . '.png') }}" alt="Flag">
-                        {{ __('messages.' . app()->getLocale() == 'es' ? 'spanish' : (app()->getLocale() == 'en' ? 'english' : 'portuguese')) }}
+                        {{ __('messages.' . (app()->getLocale() == 'es' ? 'spanish' : (app()->getLocale() == 'en' ? 'english' : 'portuguese'))) }}
                     </a>
                     <ul class="languages">
                         @if(app()->getLocale() != 'es')
                         <li class="language">
                             <a href="{{ route('lang.switch', 'es') }}">
-                                <img src="{{ asset('public/frontend/images/icons/flags/es.png') }}" alt="Spanish">{{ __('messages.spanish') }}
+                                <img src="{{ asset('public/frontend/images/icons/flags/es.png') }}" alt="Bandera de España" title="Cambiar idioma a español">{{ __('messages.spanish') }}
                             </a>
                         </li>
                         @endif
                         @if(app()->getLocale() != 'en')
                         <li class="language">
                             <a href="{{ route('lang.switch', 'en') }}">
-                                <img src="{{ asset('public/frontend/images/icons/flags/gb.png') }}" alt="English">{{ __('messages.english') }}
+                                <img src="{{ asset('public/frontend/images/icons/flags/gb.png') }}" alt="Bandera de Reino Unido" title="Switch language to English">{{ __('messages.english') }}
                             </a>
                         </li>
                         @endif
                         @if(app()->getLocale() != 'pt')
                         <li class="language">
                             <a href="{{ route('lang.switch', 'pt') }}">
-                                <img src="{{ asset('public/frontend/images/icons/flags/br.png') }}" alt="Portuguese">{{ __('messages.portuguese') }}
+                                <img src="{{ asset('public/frontend/images/icons/flags/br.png') }}" alt="Bandera de Brasil" title="Mudar idioma para português">{{ __('messages.portuguese') }}
                             </a>
                         </li>
                         @endif
@@ -305,13 +292,6 @@
                     </ul>
                 </li>
                 
-                @if(request()->is('covid') ? 'active' : '')
-                    <li class="menu-item active">
-                @else
-                    <li class="menu-item">
-                @endif
-                    <a href="{{ url('covid') }}">{{ __('messages.covid') }}</a>
-                </li>
                 @if(request()->is('contactus') ? 'active' : '')
                     <li class="menu-item active">
                 @else
@@ -350,7 +330,7 @@
                         <!-- WIDGET -->
                         <div class="col-md-3">
                             <div class="footer-widget">
-                                <img src="{{ asset('public/frontend/images/icons/sernatur.png') }}" alt="Image">
+                                <img src="{{ asset('public/frontend/images/icons/sernatur.png') }}" alt="SERNATUR Chile - Servicio Nacional de Turismo" title="Certificado por SERNATUR Chile" loading="lazy">
                             </div>
                         </div>
                         <!-- WIDGET -->
@@ -370,9 +350,6 @@
                                 </li>
                                 <li>
                                     <a href="http://jisparking.buk.cl/cul_partner_complaint/tickets/new">{{ __('messages.complaints_channel') }}</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('covid') }}">{{ __('messages.breadcrumb_covid') }}</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('contactus') }}">{{ __('messages.breadcrumb_contact') }}</a>

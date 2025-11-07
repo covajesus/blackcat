@@ -15,15 +15,15 @@ class RoomController extends Controller
     {
         $room = $request->segment(3);
 
-        if($room == "family") {
+        if ($room == 'family') {
             return view('frontend.family');
-        } else if($room == "superior-king") {
+        } elseif ($room == 'superior-king') {
             return view('frontend.superior_king');
-        } else if($room == "twin") {
+        } elseif ($room == 'twin') {
             return view('frontend.twin');
-        } else if($room == "king-queen") {
+        } elseif ($room == 'king-queen') {
             return view('frontend.king-queen');
-        } else if($room == "reduce") {
+        } elseif ($room == 'reduce') {
             return view('frontend.reduce');
         }
     }

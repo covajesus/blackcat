@@ -1,29 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-      <!-- ========== REVOLUTION SLIDER ========== -->
-      <div class="slider">
+    <!-- ========== REVOLUTION SLIDER ========== -->
+    <div class="slider">
         <div id="rev-slider-1" class="rev_slider gradient-slider" style="display:none" data-version="5.4.5">
-          <ul>
-            <li data-transition="crossfade">
-              <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider4.jpg') }}" alt="Image" title="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-              <!-- LAYER NR. 1 -->
-              <h1
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="320"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="['80','50','40','30']"
-                data-lineheight="['60','50','40','30']"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">
-                {{ __('messages.welcome_title') }}</h1>
-              <!-- LAYER NR. 2 -->
-              <div
+            <ul>
+                <li data-transition="crossfade">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ asset('public/frontend/images/slider/slider4.jpg') }}" 
+                         alt="{{ __('messages.slider_hostal_alt') }}" 
+                         title="{{ __('messages.slider_hostal_alt') }}" 
+                         data-bgposition="center center" 
+                         data-bgfit="cover" 
+                         data-bgrepeat="no-repeat" 
+                         data-bgparallax="10" 
+                         class="rev-slidebg" 
+                         data-no-retina="" 
+                         loading="eager">
+                    
+                    <!-- LAYER NR. 1 -->
+                    <h1 class="tp-caption tp-resizeme"
+                        data-x="center"
+                        data-hoffset=""
+                        data-y="320"
+                        data-voffset=""
+                        data-responsive_offset="on"
+                        data-fontsize="['80','50','40','30']"
+                        data-lineheight="['60','50','40','30']"
+                        data-whitespace="nowrap"
+                        data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                        style="z-index: 5; color: #fff; font-weight: 900;">
+                        {{ __('messages.welcome_title') }}
+                    </h1>
+                    
+                    <!-- LAYER NR. 2 -->
+                    <div
                 class="tp-caption tp-resizeme"
                 data-x="center"
                 data-hoffset=""
@@ -64,7 +75,7 @@
             <!-- SLIDE NR. 2 -->
             <li data-transition="crossfade">
               <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}" alt="Image" title="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+              <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}" alt="{{ __('messages.slider_rooms_alt') }}" title="{{ __('messages.slider_rooms_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="" loading="eager">
               <!-- LAYER NR. 1 -->
               <div
                 class="tp-caption tp-resizeme"
@@ -77,7 +88,7 @@
                 data-lineheight="['60','50','40','25']"
                 data-whitespace="nowrap"
                 data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">HOTELERÍA URBANA
+                style="z-index: 5; color: #fff; font-weight: 900;">{{ __('messages.slide2_title') }}
               </div>
               <!-- LAYER NR. 2 -->
               <div
@@ -91,13 +102,13 @@
                 data-lineheight="16"
                 data-whitespace="nowrap"
                 data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 6; color: #fff;">Vanguardia y modernidad
+                style="z-index: 6; color: #fff;">{{ __('messages.slide2_subtitle') }}
               </div>
             </li>
             <!-- SLIDE NR. 2 -->
             <li data-transition="crossfade">
               <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}" alt="Image" title="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+              <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}" alt="{{ __('messages.slider_culture_alt') }}" title="{{ __('messages.slider_culture_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="" loading="eager">
               <!-- LAYER NR. 1 -->
               <div
                 class="tp-caption tp-resizeme"
@@ -110,7 +121,7 @@
                 data-lineheight="['60','50','40','25']"
                 data-whitespace="nowrap"
                 data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">INSPIRADO EN LA CULTURA
+                style="z-index: 5; color: #fff; font-weight: 900;">{{ __('messages.slide3_title') }}
               </div>
               <!-- LAYER NR. 2 -->
               <div
@@ -124,12 +135,12 @@
                 data-lineheight="16"
                 data-whitespace="nowrap"
                 data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 6; color: #fff;">Barrio Brasil - Santiago de Chile
+                style="z-index: 6; color: #fff;">{{ __('messages.slide3_subtitle') }}
               </div>
               <!-- SLIDE NR. 2 -->
             <li data-transition="crossfade">
               <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" alt="Image" title="Image" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+              <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" alt="{{ __('messages.slider_hostal_alt') }}" title="{{ __('messages.slider_hostal_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="" loading="eager">
               <!-- LAYER NR. 1 -->
               <div
                 class="tp-caption tp-resizeme"
@@ -175,10 +186,10 @@
             <div class="col-lg-12">
                 <div class="section-title">
                   <h4 class="text-uppercase" style="color: #454545 !important;">Black Cat Hostal</h4>
-                  <p class="section-subtitle">Alta calidad en el servicio.</p>
+                  <p class="section-subtitle">{{ __('messages.high_quality_service') }}</p>
                 </div>
                 <div class="info-branding" style="text-align: justify;">
-                  <p>Creamos un nuevo concepto en la Hostelería Boutique, insertándonos en un entorno urbano, cultural y patrimonial. Con la perfecta mezcla de tradición e historia nos ubicamos en el Barrio Brasil, que es parte del casco antiguo de Santiago y que sin duda te envolverá al igual que nuestros espacios y servicios.<br><br>Sumérgete en las hermosas construcciones del siglo XIX que ofrece este emblemático sector de Santiago, junto a su diversidad cultural, importancia patrimonial y riqueza arquitectónica. Descubre este circuito imperdible para conocer la historia de Chile, lugares cercanos como el Museo de la Memoria, Barrio Concha y Toro y un sinfín de atracciones.</p>
+                  <p>{!! __('messages.about_description') !!}</p>
                   
                 </div>
             </div>
@@ -189,16 +200,16 @@
       <section class="special-rooms">
         <div class="container">
           <div class="section-title">
-            <h4 style="color: #fff !important;">NUESTRAS HABITACIONES</h4>
-            <p class="section-subtitle" style="color: #fff !important;">Nuestras Habitaciones Favoritas</p>
+            <h4 style="color: #fff !important;">{{ __('messages.our_rooms_title') }}</h4>
+            <p class="section-subtitle" style="color: #fff !important;">{{ __('messages.favorite_rooms') }}</p>
           </div>
           <div class="row">
             <!-- ITEM -->
             <div class="col-md-4">
               <div class="room-grid-item">
                 <figure class="gradient-overlay-hover link-icon">
-                  <a href="{{ url('room/detail/family') }}">
-                    <img src="{{ asset('public/frontend/images/rooms/family/pic1.png') }}" class="img-fluid" alt="Image">
+                  <a href="{{ url('room/detail/family') }}" title="{{ __('messages.view_family_room') }}" aria-label="{{ __('messages.view_family_room') }}">
+                    <img src="{{ asset('public/frontend/images/rooms/family/pic1.png') }}" class="img-fluid" alt="{{ __('messages.family_room_image_alt') }}" title="{{ __('messages.family_room_image_alt') }}" loading="lazy">
                   </a>
                   <div class="room-services">
                     <i class="fa fa-bath" aria-hidden="true" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="" data-original-title="Agua Caliente"></i>
@@ -209,9 +220,9 @@
                 </figure>
                 <div class="room-info">
                   <h2 class="room-title">
-                    <a href="room.html">Family</a>
+                    <a href="{{ url('room/detail/family') }}" title="{{ __('messages.view_family_room') }}">{{ __('messages.family_room') }}</a>
                   </h2>
-                  <p>Disfruta nuestra habitación familiar</p>
+                  <p>{{ __('messages.family_room_desc') }}</p>
                 </div>
               </div>
             </div>
@@ -219,8 +230,8 @@
             <div class="col-md-4">
               <div class="room-grid-item">
                 <figure class="gradient-overlay-hover link-icon">
-                  <a href="{{ url('room/detail/king-queen') }}">
-                    <img src="{{ asset('public/frontend/images/rooms/queen/pic1.png') }}" class="img-fluid" alt="Image">
+                  <a href="{{ url('room/detail/king-queen') }}" title="{{ __('messages.view_king_queen_room') }}" aria-label="{{ __('messages.view_king_queen_room') }}">
+                    <img src="{{ asset('public/frontend/images/rooms/queen/pic1.png') }}" class="img-fluid" alt="{{ __('messages.king_queen_room_image_alt') }}" title="{{ __('messages.king_queen_room_image_alt') }}" loading="lazy">
                   </a>
                   <div class="room-services">
                     <i class="fa fa-coffee" aria-hidden="true" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="" data-original-title="Frigobar"></i>
@@ -232,9 +243,9 @@
                 </figure>
                 <div class="room-info">
                   <h2 class="room-title">
-                    <a href="room.html">King & Queen Estandar</a>
+                    <a href="{{ url('room/detail/king-queen') }}" title="{{ __('messages.view_king_queen_room') }}">{{ __('messages.king_queen_room') }}</a>
                   </h2>
-                  <p>Disfruta nuestra habitación king & queen estandar</p>
+                  <p>{{ __('messages.king_queen_room_desc') }}</p>
                 </div>
               </div>
             </div>
@@ -242,8 +253,8 @@
             <div class="col-md-4">
               <div class="room-grid-item">
                 <figure class="gradient-overlay-hover link-icon">
-                  <a href="{{ url('room/detail/twin') }}">
-                    <img src="{{ asset('public/frontend/images/rooms/twin/pic1.png') }}" class="img-fluid" alt="Image">
+                  <a href="{{ url('room/detail/twin') }}" title="{{ __('messages.view_twin_room') }}" aria-label="{{ __('messages.view_twin_room') }}">
+                    <img src="{{ asset('public/frontend/images/rooms/twin/pic1.png') }}" class="img-fluid" alt="{{ __('messages.twin_room_image_alt') }}" title="{{ __('messages.twin_room_image_alt') }}" loading="lazy">
                   </a>
                   <div class="room-services">
                     <i class="fa fa-coffee" aria-hidden="true" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="" data-original-title="Frigobar"></i>
@@ -255,9 +266,9 @@
                 </figure>
                 <div class="room-info">
                   <h2 class="room-title">
-                    <a href="room.html">Twin Kitchenette</a>
+                    <a href="{{ url('room/detail/twin') }}" title="{{ __('messages.view_twin_room') }}">{{ __('messages.twin_room') }}</a>
                   </h2>
-                  <p>Disfruta nuestra habitación twin kitchenette</p>
+                  <p>{{ __('messages.twin_room_desc') }}</p>
                 </div>
               </div>
             </div>
@@ -268,44 +279,44 @@
       <section class="services">
         <div class="container">
           <div class="section-title">
-            <h4 style="color: #454545 !important;">NUESTROS SERVICIOS</h4>
-            <p class="section-subtitle">Revisa alguno de los servicios que ofrecemos</p>
+            <h4 style="color: #454545 !important;">{{ __('messages.our_services') }}</h4>
+            <p class="section-subtitle">{{ __('messages.services_subtitle') }}</p>
           </div>
           <div class="row">
             <div class="col-lg-7 col-12">
               <div data-slider-id="services" class="services-owl owl-carousel">
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place1.jpg') }}" class="img-fluid" alt="Image">
+                  <img src="{{ url('public/frontend/images/places/place1.jpg') }}" class="img-fluid" alt="{{ __('messages.service_1_alt') }}" title="{{ __('messages.service_1_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>Comedor</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place2.jpg') }}" class="img-fluid" alt="Image">
+                  <img src="{{ url('public/frontend/images/places/place2.jpg') }}" class="img-fluid" alt="{{ __('messages.service_2_alt') }}" title="{{ __('messages.service_2_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>Patio de Reuniones</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place3.jpg') }}" class="img-fluid" alt="Image">
+                  <img src="{{ url('public/frontend/images/places/place3.jpg') }}" class="img-fluid" alt="{{ __('messages.service_3_alt') }}" title="{{ __('messages.service_3_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>Eventos</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place4.jpg') }}" class="img-fluid" alt="Image">
+                  <img src="{{ url('public/frontend/images/places/place4.jpg') }}" class="img-fluid" alt="{{ __('messages.service_4_alt') }}" title="{{ __('messages.service_4_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>Paseos</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place5.jpg') }}" class="img-fluid" alt="Image">
+                  <img src="{{ url('public/frontend/images/places/place5.jpg') }}" class="img-fluid" alt="{{ __('messages.service_5_alt') }}" title="{{ __('messages.service_5_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>Verano</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place6.jpg') }}" class="img-fluid" alt="Image">
+                  <img src="{{ url('public/frontend/images/places/place6.jpg') }}" class="img-fluid" alt="{{ __('messages.service_6_alt') }}" title="{{ __('messages.service_6_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>Coffee & Bar</h4>
                   </figcaption>
@@ -319,9 +330,9 @@
                     <i class="fa-solid fa-utensils"></i>
                   </span>
                   <div class="media-body">
-                    <h5>Comedor</h5>
+                    <h5>{{ __('messages.breakfast_included') }}</h5>
                     <p>
-                      Disfruta un desayuno continental servido a la habitación de 08:00 a 11:30 am.
+                      {{ __('messages.breakfast_service') }}
                     </p>
                   </div>
                 </div>
@@ -339,8 +350,8 @@
                     <i class="fa-regular fa-calendar-days"></i>
                   </span>
                   <div class="media-body">
-                    <h5>Eventos</h5>
-                    <p>Reserva un espacio exclusivo solo para ti y acompañado de nuestro mejor servicio.</p>
+                    <h5>{{ __('messages.events') }}</h5>
+                    <p>{{ __('messages.events_description') }}</p>
                   </div>
                 </div>
                 <div class="owl-thumb-item">
@@ -348,8 +359,8 @@
                     <i class="fa-solid fa-bicycle"></i>
                   </span>
                   <div class="media-body">
-                    <h5>Paseos</h5>
-                    <p>Arriendo de bicicletas para recorrer la ciudad.</p>
+                    <h5>{{ __('messages.tours') }}</h5>
+                    <p>{{ __('messages.tours_description') }}</p>
                   </div>
                 </div>
                 <div class="owl-thumb-item">
@@ -386,10 +397,10 @@
             <!-- ITEM -->
             <div class="gallery-item">
               <figure class="gradient-overlay image-icon">
-                <a href="{{ asset('public/frontend/images/gallery/pic1.ppg') }}">
-                  <img src="{{ asset('public/frontend/images/gallery/pic1.png') }}" alt="Image">
+                <a href="{{ asset('public/frontend/images/gallery/pic1.ppg') }}" title="{{ __('messages.gallery_hostal_alt') }}">
+                  <img src="{{ asset('public/frontend/images/gallery/pic1.png') }}" alt="{{ __('messages.gallery_hostal_alt') }}" title="{{ __('messages.gallery_hostal_alt') }}" loading="lazy">
                 </a>
-                <figcaption>Desayunos</figcaption>
+                <figcaption>{{ __('messages.breakfasts') }}</figcaption>
               </figure>
             </div>
             <!-- ITEM -->
@@ -569,7 +580,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
                   </div>
                 </div>
                 <p>
-                Muy linda experiencia, es un lugar muy bonito muy buena ubicación, la habitación es muy cómoda acogedora y bien equipadas, la atención del staff fue muy buena con muy buena disposición y el desayuno estuvo muy rico y variado, cereales, frutas, yugurt, cecinas, mermeladas, etc.
+                {{ __('messages.testimonial_text') }}
                 </p>
               </div>
             </div>
@@ -600,8 +611,8 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
           <div class="row">
             <div class="col-md-5">
               <div class="section-title">
-                <h4 style="color: #454545 !important;">Contáctanos</h4>
-                <p class="section-subtitle">Contáctanos</p></p>
+                <h4 style="color: #454545 !important;">{{ __('messages.contact_info') }}</h4>
+                <p class="section-subtitle">{{ __('messages.contact_info') }}</p>
               </div>
               <ul class="contact-details">
                 <li>
@@ -623,33 +634,39 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
             <div class="col-md-7">
               @if(Session::get('status') == 1)
                 <div class="alert alert-success" role="alert">
-                  ¡Gracias por preferirnos! dentro de un momento te responderemos
+                  {{ __('messages.form_success') }}
+                </div>
+              @endif
+              @if(Session::get('status') == 0 || Session::has('error'))
+                <div class="alert alert-danger" role="alert">
+                  {{ Session::get('error', __('messages.form_error')) }}
                 </div>
               @endif
               <form action="{{ url('message/store') }}" method="post">
                 @csrf
                 <div class="form-group">
-                  <input class="form-control" name="name" placeholder="Nombre" type="text">
+                  <input class="form-control" name="name" placeholder="{{ __('messages.form_name') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="email" type="email" placeholder="Correo">
+                  <input class="form-control" name="email" type="email" placeholder="{{ __('messages.form_email') }}" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="phone" type="text" placeholder="Teléfono">
+                  <input class="form-control" name="phone" type="text" placeholder="{{ __('messages.form_phone') }}" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="subject" type="text" placeholder="Asunto">
+                  <input class="form-control" name="subject" type="text" placeholder="{{ __('messages.form_subject') }}" required>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" placeholder="Mensaje"></textarea>
+                  <textarea class="form-control" name="message" placeholder="{{ __('messages.form_message') }}" required></textarea>
                 </div>
                 <div class="form-group">
                   <div class="g-recaptcha" data-sitekey="6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu"></div>
+                  <small class="form-text text-muted">{{ __('messages.form_required') }}</small>
                 </div>
                 
                 <button class="btn" type="submit">
                   <input class="form-control" name="home" type="hidden" value="1">
-                  <i class="fa fa-location-arrow"></i>Enviar</button>
+                  <i class="fa fa-location-arrow"></i>{{ __('messages.form_submit') }}</button>
               </form>
             </div>
           </div>

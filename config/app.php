@@ -228,4 +228,18 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Analytics Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for Google Analytics, Google Tag Manager and Facebook Pixel
+    | Set these values in your .env file for proper tracking setup.
+    |
+    */
+
+    'gtm_id' => env('GOOGLE_TAG_MANAGER_ID', 'GTM-KQN8WXBX'),
+    'ga4_id' => env('GOOGLE_ANALYTICS_4_ID', 'G-RM4T6B4XS7'),
+    'facebook_pixel_id' => env('FACEBOOK_PIXEL_ID', '1872747216193432'),
+
 ];

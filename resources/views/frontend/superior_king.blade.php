@@ -5,15 +5,15 @@
       <div class="page-title op5">
         <div class="container">
           <div class="inner">
-            <h1>HABITACIÓN KING SUPERIOR</h1>
+            <h1>{{ __('messages.superior_king_room_title') }}</h1>
             <ol class="breadcrumb">
               <li>
-                <a href="{{ url('/') }}">Inicio</a>
+                <a href="{{ url('/') }}">{{ __('messages.breadcrumb_home') }}</a>
               </li>
               <li>
-                <a href="#">Habitaciones</a>
+                <a href="#">{{ __('messages.rooms') }}</a>
               </li>
-              <li>King Superior</li>
+              <li>{{ __('messages.superior_king_breadcrumb') }}</li>
             </ol>
           </div>
         </div>

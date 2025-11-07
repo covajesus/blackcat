@@ -1,0 +1,51 @@
+{
+  "tabWidth": 4,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "printWidth": 120,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "embeddedLanguageFormatting": "auto",
+  "plugins": ["@prettier/plugin-php", "prettier-plugin-blade"],
+  "overrides": [
+    {
+      "files": "*.blade.php",
+      "options": {
+        "parser": "blade",
+        "tabWidth": 4,
+        "printWidth": 120,
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": "*.php",
+      "options": {
+        "parser": "php",
+        "tabWidth": 4,
+        "printWidth": 120,
+        "braceStyle": "psr-2"
+      }
+    },
+    {
+      "files": ["*.js", "*.vue"],
+      "options": {
+        "tabWidth": 4,
+        "printWidth": 100
+      }
+    },
+    {
+      "files": "*.css",
+      "options": {
+        "tabWidth": 4,
+        "printWidth": 100
+      }
+    }
+  ]
+}

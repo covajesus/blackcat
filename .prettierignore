@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+public/mix-manifest.json
+public/js/
+public/css/
+public/fonts/
+public/frontend/
+
+# Cache and logs
+storage/
+bootstrap/cache/
+.env
+.env.example
+
+# Vendor files
+resources/lang/
+database/migrations/
+database/seeds/
+composer.json
+composer.lock
+package-lock.json
+webpack.mix.js
+
+# Configuration files
+config/
+bootstrap/
+artisan
+
+# Generated files
+*.log
+*.tmp
+*.cache
+
+# Images and assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.woff
+*.woff2
+*.ttf
+*.eot
+
+# Documentation
+*.md
+README.md
+ANALYTICS_CONFIG.md

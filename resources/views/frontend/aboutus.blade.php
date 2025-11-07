@@ -5,12 +5,12 @@
       <div class="page-title op6">
         <div class="container">
           <div class="inner">
-            <h1>NOSOTROS BLACK CAT HOSTAL</h1>
+            <h1>{{ __('messages.about_us_title') }}</h1>
             <ol class="breadcrumb">
               <li>
-                <a href="{{ url('/') }}">Inicio</a>
+                <a href="{{ url('/') }}">{{ __('messages.breadcrumb_home') }}</a>
               </li>
-              <li>Nosotros Black Cat Hostal</li>
+              <li>{{ __('messages.about_us_breadcrumb') }}</li>
             </ol>
           </div>
         </div>
@@ -22,12 +22,12 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="section-title">
-                  <h4 class="text-uppercase" style="color: #454545 !important;">Black Cat Hostal</h4>
-                  <p class="section-subtitle">Hostal Boutique</p>
+                  <h4 class="text-uppercase" style="color: #454545 !important;">{{ __('messages.black_cat_title') }}</h4>
+                  <p class="section-subtitle">{{ __('messages.boutique_hostal') }}</p>
                 </div>
                 <div class="info-branding">
-                  <p style="text-align: justify;">Black Cat Hostal Boutique es el aliado perfecto para iniciar un viaje inolvidable por Chile y América Latina. En su interior cuenta con 29 habitaciones y 4 categorías de espacios amplios, cálidos y sofisticados, que rescatan la personalidad, colores y urbanismo del barrio.</p>
-<br>Creamos un nuevo concepto en la Hostelería Boutique, insertándonos en un entorno urbano, cultural y patrimonial. Con la perfecta mezcla de tradición e historia nos ubicamos en el Barrio Brasil, que es parte del casco antiguo de Santiago y que sin duda te envolverá al igual que nuestros espacios y servicios.<br><br>Sumérgete en las hermosas construcciones del siglo XIX que ofrece este emblemático sector de Santiago, junto a su diversidad cultural, importancia patrimonial y riqueza arquitectónica. Descubre este circuito imperdible para conocer la historia de Chile, lugares cercanos como el Museo de la Memoria, Barrio Concha y Toro y un sinfín de atracciones.
+                  <p style="text-align: justify;">{{ __('messages.about_description_full') }}</p>
+<br>{!! __('messages.about_description') !!}
 
 
 

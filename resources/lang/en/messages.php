@@ -6,7 +6,6 @@ return [
     'about' => 'ABOUT US',
     'rooms' => 'ROOMS',
     'contact' => 'CONTACT US',
-    'covid' => 'COVID-19',
     'reserve' => 'BOOK NOW',
 
     // Room types
@@ -40,9 +39,8 @@ return [
 
     // Breadcrumb
     'breadcrumb_home' => 'Home',
-    'breadcrumb_about' => 'About Us',
-    'breadcrumb_contact' => 'Contact Us',
-    'breadcrumb_covid' => 'COVID-19',
+    'breadcrumb_about' => 'About Us', 
+    'breadcrumb_contact' => 'Contact',
 
     // Languages
     'spanish' => 'Español',
@@ -52,6 +50,14 @@ return [
     // Home page
     'welcome_title' => 'SIMPLY',
     'welcome_subtitle' => 'Live a unique experience',
+
+    // Slider slides
+    'slide1_title' => 'SIMPLY',
+    'slide1_subtitle' => 'Live a unique experience',
+    'slide2_title' => 'URBAN HOSPITALITY',
+    'slide2_subtitle' => 'Avant-garde and modernity',
+    'slide3_title' => 'INSPIRED BY CULTURE',
+    'slide3_subtitle' => 'Barrio Brasil - Santiago de Chile',
     'book_now' => 'Book Now',
     'check_availability' => 'Check Availability',
     'our_rooms' => 'Our Rooms',
@@ -82,7 +88,73 @@ return [
     'form_required' => 'Required field',
     
     // reCAPTCHA validation
-    'recaptcha_error' => 'Please complete the reCAPTCHA verification',
+        'contact_success' => 'Your message has been sent successfully. We will contact you soon.',
+    'contact_error' => 'There was an error sending your message. Please try again.',
+    'recaptcha_error' => 'Please verify that you are not a robot.',
+    
+    // Testimonial
+    'testimonial_text' => 'Very nice experience, it is a very beautiful place with very good location, the room is very comfortable, cozy and well equipped, the staff attention was very good with very good disposition and the breakfast was very tasty and varied, cereals, fruits, yogurt, cold cuts, jams, etc.',
+    
+    // About section
+    'high_quality_service' => 'High quality service.',
+    'about_description' => 'We create a new concept in Boutique Hospitality, inserting ourselves in an urban, cultural and heritage environment. With the perfect mix of tradition and history we are located in the Brasil neighborhood, which is part of the old quarter of Santiago and will undoubtedly envelop you as well as our spaces and services.<br><br>Immerse yourself in the beautiful 19th century constructions that this emblematic sector of Santiago offers, along with its cultural diversity, heritage importance and architectural richness. Discover this unmissable circuit to learn about the history of Chile, nearby places like the Museum of Memory, Concha y Toro neighborhood and endless attractions.',
+    
+    // Services section
+    'our_services' => 'OUR SERVICES',
+    'services_subtitle' => 'Check out some of the services we offer',
+    'breakfasts' => 'Breakfasts',
+    
+    // Rooms section
+    'our_rooms_title' => 'OUR ROOMS',
+    'favorite_rooms' => 'Our Favorite Rooms',
+    
+    // Room detail pages
+    'twin_room_title' => 'TWIN ROOM WITH KITCHENETTE',
+    'twin_room_breadcrumb' => 'Twin with kitchenette',
+    'king_queen_room_title' => 'KING & QUEEN ROOM',
+    'king_queen_breadcrumb' => 'King & Queen',
+    'superior_king_room_title' => 'SUPERIOR KING ROOM',
+    'superior_king_breadcrumb' => 'Superior King',
+    'reduce_room_title' => 'REDUCED ROOM',
+    'reduce_room_breadcrumb' => 'Reduced Room',
+    
+    // SEO Alt Text for images
+    'slider_hostal_alt' => 'Black Cat Hostal - Boutique hostel facade in Barrio Brasil Santiago',
+    'slider_rooms_alt' => 'Modern rooms at Black Cat Hostal Santiago',
+    'slider_culture_alt' => 'Heritage architecture of Barrio Brasil Santiago Chile',
+    'family_room_image_alt' => 'Family room at Black Cat Hostal with comfortable beds',
+    'king_queen_room_image_alt' => 'King & Queen standard room with private bathroom',
+    'twin_room_image_alt' => 'Twin room with equipped kitchenette',
+    'breakfast_service_alt' => 'Continental breakfast served at Black Cat Hostal',
+    'gallery_hostal_alt' => 'Photo gallery of Black Cat Hostal Santiago',
+    
+    // Title for links
+    'view_family_room' => 'View family room details',
+    'view_king_queen_room' => 'View King & Queen room details',
+    'view_twin_room' => 'View Twin room details',
+    
+    // Services - Alt text
+    'service_1_alt' => 'Exclusive events service at Black Cat Hostal',
+    'service_2_alt' => 'Bicycle rental to explore Santiago',
+    'service_3_alt' => 'Additional services at Black Cat Hostal',
+    'service_4_alt' => 'Amenities and facilities of the hostel',
+    'service_5_alt' => 'Common areas at Black Cat Hostal',
+    'service_6_alt' => 'Quality services at the hostel',
+    
+    // About Us page
+    'about_us_title' => 'ABOUT BLACK CAT HOSTAL',
+    'about_us_breadcrumb' => 'About Black Cat Hostal',
+    'black_cat_title' => 'Black Cat Hostal',
+    'boutique_hostal' => 'Boutique Hostel',
+    'about_description_full' => 'Black Cat Boutique Hostal is the perfect ally to start an unforgettable journey through Chile and Latin America. Inside it has 29 rooms and 4 categories of spacious, warm and sophisticated spaces that rescue the personality, colors and urbanism of the neighborhood.',
+    
+    // Room images alt text
+    'family_room_gallery_alt' => 'Family room photo gallery - Black Cat Hostal',
+    'king_queen_gallery_alt' => 'King & Queen room photo gallery - Black Cat Hostal',
+    'twin_room_gallery_alt' => 'Twin room with kitchenette photo gallery - Black Cat Hostal',
+    'superior_king_gallery_alt' => 'Superior King room photo gallery - Black Cat Hostal',
+    'reduce_room_gallery_alt' => 'Accessible room photo gallery - Black Cat Hostal',
+];
     'form_success' => 'Thank you for contacting us! We will respond soon.',
     'form_error' => 'There was an error sending the message. Please try again.',
 
@@ -104,7 +176,18 @@ return [
     'footer_phone' => '+56 9 49105984',
     'footer_website' => 'www.blackcathostal.com',
 
-    // COVID
-    'covid_measures' => 'COVID-19 Safety Measures',
-    'covid_info' => 'Your safety is our priority',
+    // Additional services
+    'events' => 'Events',
+    'events_description' => 'Book an exclusive space just for you, accompanied by our best service.',
+    'tours' => 'Tours',
+    'tours_description' => 'Bicycle rental to explore the city.',
+
+    // Room descriptions
+    'family_room_desc' => 'Enjoy our family room',
+    'king_queen_room_desc' => 'Enjoy our king & queen standard room',
+    'twin_room_desc' => 'Enjoy our twin kitchenette room',
+    'breakfast_service' => 'Enjoy a continental breakfast served to your room from 08:00 to 11:30 am.',
+
+    // Testimonials
+    'testimonial_text' => 'Very nice experience, it is a very beautiful place with very good location, the room is very comfortable, cozy and well equipped, the staff attention was very good with very good disposition and the breakfast was very delicious and varied, cereals, fruits, yogurt, cold cuts, jams, etc.',
 ];

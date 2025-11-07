@@ -242,13 +242,6 @@
                     </ul>
                 </li>
                 
-                @if(request()->is('covid') ? 'active' : '')
-                    <li class="menu-item active">
-                @else
-                    <li class="menu-item">
-                @endif
-                    <a href="{{ url('covid') }}">COVID-19</a>
-                </li>
                 @if(request()->is('contactus') ? 'active' : '')
                     <li class="menu-item active">
                 @else
@@ -304,9 +297,6 @@
                                 </li>
                                 <li>
                                     <a href="{{ url('aboutus') }}">Nosotros</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('covid') }}">Covid-19</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('contactus') }}">Contáctanos</a>
