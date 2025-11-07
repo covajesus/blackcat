@@ -26,13 +26,19 @@
               <p>{{ __('messages.contact_description') }}</p>
               <!-- CONTACT FORM -->
               @if(Session::get('status') == 1)
-                <div class="alert alert-success" role="alert">
-                  {{ __('messages.form_success') }}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ __('messages.contact_success') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
-              @if(Session::get('status') == 0 || Session::has('error'))
-                <div class="alert alert-danger" role="alert">
-                  {{ Session::get('error', __('messages.form_error')) }}
+              @if(Session::get('status') == 0 && Session::has('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  {{ Session::get('error') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
               <form action="{{ url('message/store') }}" method="post">
@@ -41,13 +47,13 @@
                   <input class="form-control" name="name" placeholder="{{ __('messages.form_name') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="email" placeholder="{{ __('messages.form_email') }}" type="email" required>
+                  <input class="form-control" name="email" type="email" placeholder="{{ __('messages.form_email') }}" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="phone" placeholder="{{ __('messages.form_phone') }}" type="text" required>
+                  <input class="form-control" name="phone" type="text" placeholder="{{ __('messages.form_phone') }}" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="subject" placeholder="{{ __('messages.form_subject') }}" type="text" required>
+                  <input class="form-control" name="subject" type="text" placeholder="{{ __('messages.form_subject') }}" required>
                 </div>
                 <div class="form-group">
                   <textarea class="form-control" name="message" placeholder="{{ __('messages.form_message') }}" required></textarea>
@@ -56,10 +62,11 @@
                   <div class="g-recaptcha" id="recaptcha-contact"></div>
                   <small class="form-text text-muted">{{ __('messages.form_required') }}</small>
                 </div>
-                <div class="form-group">
-                <input class="form-control" name="home" type="hidden" value="0">
-                <input value="{{ __('messages.form_submit') }}" type="submit" class="special_button" />
-                </div>
+                
+                <button class="btn" type="submit">
+                  <input class="form-control" name="home" type="hidden" value="0">
+                  <i class="fa fa-location-arrow"></i>{{ __('messages.form_submit') }}
+                </button>
               </form>
             </div>
             <div class="col-md-4">
