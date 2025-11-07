@@ -66,7 +66,7 @@
         <link href="{{ asset('public/frontend/fonts/flaticon.css') }}" rel="stylesheet">
         <!-- ========== GOOGLE FONTS ========== -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700%7CRoboto:100,300,400,400i,500,700" rel="stylesheet">
-        <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <style>
             @media (max-width: 767px) {
                 .modal-dialog-centered {
@@ -513,21 +513,28 @@
                     }
                 });
             }, 5000);
+            
+            // Verificar que reCAPTCHA se cargue correctamente
+            if (typeof grecaptcha !== 'undefined') {
+                console.log('reCAPTCHA cargado correctamente');
+            } else {
+                console.error('reCAPTCHA no se pudo cargar');
+            }
         });
         
-        function onSubmitContactForm(token) {
-            console.log('reCAPTCHA Enterprise token received:', token);
-        }
+        // Callbacks para reCAPTCHA estándar
+        var onloadCallback = function() {
+            console.log('reCAPTCHA onload callback ejecutado');
+        };
         
-        function onErrorCallback() {
-            console.error('reCAPTCHA Enterprise error');
-            alert('{{ __('messages.recaptcha_error') }}');
-        }
+        var verifyCallback = function(response) {
+            console.log('reCAPTCHA verificado:', response);
+        };
         
-        function onExpiredCallback() {
-            console.warn('reCAPTCHA Enterprise expired');
-            alert('El reCAPTCHA ha expirado. Por favor, actualice la página.');
-        }
+        var expiredCallback = function() {
+            console.warn('reCAPTCHA expiró');
+            alert('El reCAPTCHA ha expirado. Por favor, complételo nuevamente.');
+        };
     </script>
 
 </body>

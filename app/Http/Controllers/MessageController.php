@@ -59,53 +59,35 @@ class MessageController extends Controller
                 }
             }
 
-            // Verificar reCAPTCHA Enterprise con Google
+            // Verificar reCAPTCHA estándar con Google
             $recaptchaSecret = '6LepQOoZAAAAADnJrNlAm0Db5gT1HE_PHa7YzEUP'; // Clave secreta
             
-            // Determinar la acción esperada basada en el formulario
-            $expectedAction = ($request->home == 0) ? 'CONTACT_PAGE_FORM' : 'CONTACT_FORM';
+            // Realizar verificación con método GET simple
+            $verifyURL = "https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}";
             
-            // Datos para la verificación
-            $postData = [
-                'secret' => $recaptchaSecret,
-                'response' => $recaptchaResponse
-            ];
-            
-            // Configurar contexto para la petición POST
-            $context = stream_context_create([
-                'http' => [
-                    'method' => 'POST',
-                    'header' => 'Content-Type: application/x-www-form-urlencoded',
-                    'content' => http_build_query($postData)
-                ]
-            ]);
-            
-            // Realizar verificación
-            $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+            // Obtener respuesta de Google
+            $response = file_get_contents($verifyURL);
             $responseKeys = json_decode($response, true);
 
             // Log para debugging del reCAPTCHA
-            \Log::info('reCAPTCHA Enterprise Response', $responseKeys);
+            \Log::info('reCAPTCHA Standard Response', $responseKeys);
 
             // Verificar el resultado
             if (!isset($responseKeys['success']) || $responseKeys['success'] !== true) {
                 $errorMessage = __('messages.recaptcha_error');
                 
-                // Log para debugging
-                \Log::warning('reCAPTCHA Enterprise failed', ['response' => $responseKeys]);
+                // Log para debugging con más detalle
+                \Log::warning('reCAPTCHA failed', [
+                    'response' => $responseKeys,
+                    'token' => $recaptchaResponse,
+                    'errors' => $responseKeys['error-codes'] ?? []
+                ]);
                 
                 if ($request->home == 0) {
                     return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
                 } else {
                     return redirect('/')->with('status', 0)->with('error', $errorMessage);
                 }
-            }
-            
-            // Verificar score (opcional - reCAPTCHA v3 proporciona un score de 0.0 a 1.0)
-            if (isset($responseKeys['score']) && $responseKeys['score'] < 0.5) {
-                \Log::warning('reCAPTCHA score too low', ['score' => $responseKeys['score']]);
-                // Opcionalmente puedes rechazar si el score es muy bajo
-                // Por ahora lo permitiremos pero con log
             }
 
             // reCAPTCHA validado correctamente, enviar email
