@@ -175,7 +175,31 @@
         <!--Inicio Codigo FnsRooms-->
           <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;"></div>
           <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
-          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_es.js"></script>
+          @php
+            $locale = app()->getLocale();
+            // Map locales to widget languages
+            if ($locale === 'en') {
+                $widgetLocale = 'en';
+            } elseif ($locale === 'pt') {
+                $widgetLocale = 'pt';
+            } else {
+                $widgetLocale = 'es';
+            }
+          @endphp
+          <script>
+            // Load widget in the appropriate language with fallback to Spanish
+            (function() {
+                var script = document.createElement('script');
+                script.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js';
+                script.onerror = function() {
+                    // Fallback to Spanish if the language file doesn't exist
+                    var fallbackScript = document.createElement('script');
+                    fallbackScript.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_es.js';
+                    document.head.appendChild(fallbackScript);
+                };
+                document.head.appendChild(script);
+            })();
+          </script>
         <!--Fin Codigo FnsRooms-->
       </div>
       
