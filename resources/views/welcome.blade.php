@@ -175,7 +175,7 @@
         <!--Inicio Codigo FnsRooms Multiidioma-->
           <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;">
             <!-- Formulario de respaldo personalizado -->
-            <div id="custom_booking_form" style="display: none; background: rgba(255,255,255,0.95); padding: 20px; border-radius: 8px; max-width: 600px; margin: 0 auto;">
+            <div id="custom_booking_form" style="display: none; background: rgba(255,255,255,0.9); padding: 15px; border-radius: 5px; max-width: 100%; margin: 0 auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
               <div class="row">
                 <div class="col-md-3">
                   <div class="form-group">
@@ -217,6 +217,51 @@
             </div>
           </div>
           <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
+          
+          <!-- Estilos específicos para el widget FNS -->
+          <style>
+            #form_reservas {
+              position: relative;
+              z-index: 10;
+            }
+            
+            #form_reservas table {
+              width: 100% !important;
+              margin: 0 auto !important;
+              background: rgba(255,255,255,0.95) !important;
+              border-radius: 5px !important;
+              overflow: hidden !important;
+              box-shadow: 0 2px 15px rgba(0,0,0,0.2) !important;
+            }
+            
+            #form_reservas td {
+              padding: 8px !important;
+              vertical-align: middle !important;
+            }
+            
+            #form_reservas input, #form_reservas select {
+              width: 100% !important;
+              padding: 8px !important;
+              border: 1px solid #ddd !important;
+              border-radius: 3px !important;
+              font-size: 14px !important;
+            }
+            
+            #form_reservas input[type="submit"], #form_reservas button {
+              background: #FF8000 !important;
+              color: white !important;
+              border: none !important;
+              padding: 10px 15px !important;
+              border-radius: 3px !important;
+              cursor: pointer !important;
+              font-weight: bold !important;
+            }
+            
+            #form_reservas input[type="submit"]:hover, #form_reservas button:hover {
+              background: #e6720a !important;
+            }
+          </style>
+          
           @php
             // Always use Spanish for the widget as other languages don't work properly
             $widgetLocale = 'es';
@@ -226,6 +271,11 @@
             (function() {
                 var script = document.createElement('script');
                 script.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_es.js';
+                script.onload = function() {
+                    console.log('FNS Widget loaded successfully');
+                    // Hide custom form if widget loads
+                    document.getElementById('custom_booking_form').style.display = 'none';
+                };
                 script.onerror = function() {
                     // Show custom form if widget fails to load
                     console.log('External widget not available, showing custom form');
@@ -233,13 +283,20 @@
                 };
                 document.head.appendChild(script);
                 
-                // Timeout fallback in case the widget loads but doesn't render
+                // Extended timeout to give widget more time to render with styles
                 setTimeout(function() {
-                    if (document.getElementById('form_reservas').innerHTML.trim() === '' || 
-                        document.getElementById('form_reservas').children.length <= 1) {
+                    var widgetContainer = document.getElementById('form_reservas');
+                    var hasWidgetContent = widgetContainer.querySelector('table') || 
+                                         widgetContainer.querySelector('form') || 
+                                         widgetContainer.querySelector('.fnswidget') ||
+                                         (widgetContainer.children.length > 1 && 
+                                          widgetContainer.innerHTML.indexOf('FNS') > -1);
+                    
+                    if (!hasWidgetContent) {
+                        console.log('Widget did not render properly, showing fallback form');
                         document.getElementById('custom_booking_form').style.display = 'block';
                     }
-                }, 3000);
+                }, 5000);
             })();
             
             // Function for custom booking form
