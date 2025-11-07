@@ -153,7 +153,7 @@
                 data-lineheight="['60','50','40','25']"
                 data-whitespace="nowrap"
                 data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">EL MEJOR LUGAR DE SANTIAGO
+                style="z-index: 5; color: #fff; font-weight: 900;">{{ __('messages.slide4_title') }}
               </div>
               <!-- LAYER NR. 2 -->
               <div
@@ -167,7 +167,7 @@
                 data-lineheight="16"
                 data-whitespace="nowrap"
                 data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 6; color: #fff;">Ven y visitanos
+                style="z-index: 6; color: #fff;">{{ __('messages.slide4_subtitle') }}
               </div>
             </li>
           </ul>
@@ -288,37 +288,37 @@
                 <figure class="gradient-overlay">
                   <img src="{{ url('public/frontend/images/places/place1.jpg') }}" class="img-fluid" alt="{{ __('messages.service_1_alt') }}" title="{{ __('messages.service_1_alt') }}" loading="lazy">
                   <figcaption>
-                    <h4>Comedor</h4>
+                    <h4>{{ __('messages.service_dining_room') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
                   <img src="{{ url('public/frontend/images/places/place2.jpg') }}" class="img-fluid" alt="{{ __('messages.service_2_alt') }}" title="{{ __('messages.service_2_alt') }}" loading="lazy">
                   <figcaption>
-                    <h4>Patio de Reuniones</h4>
+                    <h4>{{ __('messages.service_meeting_patio') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
                   <img src="{{ url('public/frontend/images/places/place3.jpg') }}" class="img-fluid" alt="{{ __('messages.service_3_alt') }}" title="{{ __('messages.service_3_alt') }}" loading="lazy">
                   <figcaption>
-                    <h4>Eventos</h4>
+                    <h4>{{ __('messages.service_events') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
                   <img src="{{ url('public/frontend/images/places/place4.jpg') }}" class="img-fluid" alt="{{ __('messages.service_4_alt') }}" title="{{ __('messages.service_4_alt') }}" loading="lazy">
                   <figcaption>
-                    <h4>Paseos</h4>
+                    <h4>{{ __('messages.service_tours') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
                   <img src="{{ url('public/frontend/images/places/place5.jpg') }}" class="img-fluid" alt="{{ __('messages.service_5_alt') }}" title="{{ __('messages.service_5_alt') }}" loading="lazy">
                   <figcaption>
-                    <h4>Verano</h4>
+                    <h4>{{ __('messages.service_summer') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
                   <img src="{{ url('public/frontend/images/places/place6.jpg') }}" class="img-fluid" alt="{{ __('messages.service_6_alt') }}" title="{{ __('messages.service_6_alt') }}" loading="lazy">
                   <figcaption>
-                    <h4>Coffee & Bar</h4>
+                    <h4>{{ __('messages.service_coffee_bar') }}</h4>
                   </figcaption>
                 </figure>
               </div>
@@ -341,8 +341,8 @@
                     <i class="fa-solid fa-comments"></i>
                   </span>
                   <div class="media-body">
-                    <h5>Patio de Reuniones</h5>
-                    <p>Conoce las áreas comunes para el relajo, ambientado por muralistas chilenos.</p>
+                    <h5>{{ __('messages.service_meeting_patio') }}</h5>
+                    <p>{{ __('messages.service_meeting_patio_desc') }}</p>
                   </div>
                 </div>
                 <div class="owl-thumb-item">
@@ -368,8 +368,8 @@
                     <i class="fa-solid fa-umbrella-beach"></i>
                   </span>
                   <div class="media-body">
-                    <h5>Verano</h5>
-                    <p>Disfruta un espacio de piscina y relajo.</p>
+                    <h5>{{ __('messages.service_summer') }}</h5>
+                    <p>{{ __('messages.service_summer_desc') }}</p>
                   </div>
                 </div>
                 <div class="owl-thumb-item">
@@ -377,8 +377,8 @@
                     <i class="fa-solid fa-mug-saucer"></i>
                   </span>
                   <div class="media-body">
-                    <h5>Coffee & Bar</h5>
-                    <p>Momentos únicos con productos exclusivos.</p>
+                    <h5>{{ __('messages.service_coffee_bar') }}</h5>
+                    <p>{{ __('messages.service_coffee_bar_desc') }}</p>
                   </div>
                 </div>
               </div>
@@ -390,8 +390,8 @@
       <section class="special-gallery">
         <div class="container">
           <div class="section-title">
-            <h4 style="color: #fff !important;">NUESTRA GALERÍA</h4>
-            <p class="section-subtitle">Revisa las imágenes de nuestra galería</p>
+            <h4 style="color: #fff !important;">{{ __('messages.our_gallery_title') }}</h4>
+            <p class="section-subtitle">{{ __('messages.gallery_subtitle') }}</p>
           </div>
           <div class="gallery-owl owl-carousel image-gallery">
             <!-- ITEM -->
@@ -407,45 +407,45 @@
             <div class="gallery-item">
               <figure class="gradient-overlay image-icon">
                 <a href="{{ asset('public/frontend/images/gallery/pic2.png') }}">
-                  <img src="{{ asset('public/frontend/images/gallery/pic2.png') }}" alt="Image">
+                  <img src="{{ asset('public/frontend/images/gallery/pic2.png') }}" alt="{{ __('messages.gallery_spaces') }}">
                 </a>
-                <figcaption>Espacios</figcaption>
+                <figcaption>{{ __('messages.gallery_spaces') }}</figcaption>
               </figure>
             </div>
             <!-- ITEM -->
             <div class="gallery-item">
               <figure class="gradient-overlay image-icon">
                 <a href="{{ asset('public/frontend/images/gallery/pic3.png') }}">
-                  <img src="{{ asset('public/frontend/images/gallery/pic3.png') }}" alt="Image">
+                  <img src="{{ asset('public/frontend/images/gallery/pic3.png') }}" alt="{{ __('messages.gallery_security') }}">
                 </a>
-                <figcaption>Seguridad</figcaption>
+                <figcaption>{{ __('messages.gallery_security') }}</figcaption>
               </figure>
             </div>
             <!-- ITEM -->
             <div class="gallery-item">
               <figure class="gradient-overlay image-icon">
                 <a href="{{ asset('public/frontend/images/gallery/pic8.png') }}">
-                  <img src="{{ asset('public/frontend/images/gallery/pic8.png') }}" alt="Image">
+                  <img src="{{ asset('public/frontend/images/gallery/pic8.png') }}" alt="{{ __('messages.gallery_terraces') }}">
                 </a>
-                <figcaption>Terrazas</figcaption>
+                <figcaption>{{ __('messages.gallery_terraces') }}</figcaption>
               </figure>
             </div>
             <!-- ITEM -->
             <div class="gallery-item">
               <figure class="gradient-overlay image-icon">
                 <a href="{{ asset('public/frontend/images/gallery/pic5.jpg') }}">
-                  <img src="{{ asset('public/frontend/images/gallery/pic5.jpg') }}" alt="Image">
+                  <img src="{{ asset('public/frontend/images/gallery/pic5.jpg') }}" alt="{{ __('messages.gallery_unique_design') }}">
                 </a>
-                <figcaption>Diseño Único</figcaption>
+                <figcaption>{{ __('messages.gallery_unique_design') }}</figcaption>
               </figure>
             </div>
             <!-- ITEM -->
             <div class="gallery-item">
               <figure class="gradient-overlay image-icon">
                 <a href="{{ asset('public/frontend/images/gallery/pic6.jpg') }}">
-                  <img src="{{ asset('public/frontend/images/gallery/pic6.jpg') }}" alt="Image">
+                  <img src="{{ asset('public/frontend/images/gallery/pic6.jpg') }}" alt="{{ __('messages.gallery_furniture') }}">
                 </a>
-                <figcaption>Mobiliario</figcaption>
+                <figcaption>{{ __('messages.gallery_furniture') }}</figcaption>
               </figure>
             </div>
            
@@ -456,8 +456,8 @@
       <section class="testimonials gray">
         <div class="container">
           <div class="section-title">
-            <h4 style="color: #454545 !important;">COMENTARIOS</h4>
-            <p class="section-subtitle">Que dicen nuestros huéspedes</p>
+            <h4 style="color: #454545 !important;">{{ __('messages.testimonials_title') }}</h4>
+            <p class="section-subtitle">{{ __('messages.testimonials_subtitle') }}</p>
           </div>
           <div class="owl-carousel testimonials-owl">
             <!-- ITEM -->
@@ -593,7 +593,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
         <div class="inner gradient-overlay">
           <div class="container">
             <div class="section-title">
-              <h4 style="color: #fff !important;">Conócenos por dentro</h4>
+              <h4 style="color: #fff !important;">{{ __('messages.video_title') }}</h4>
             </div>
             <div class="video-popup">
               <a class="popup-vimeo" href="https://www.youtube.com/watch?v=DprHw2n-8QU?autoplay=1">
@@ -675,7 +675,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
       <!-- ========== INSTAGRAM ========== -->
       <section class="instgram">
         <div class="section-title aligncenter">
-          <p class="section-subtitle" style="color: #FF8000 !important; font-size:20px !important;">Hola! revisa nuestras fotos en Instagram
+          <p class="section-subtitle" style="color: #FF8000 !important; font-size:20px !important;">{{ __('messages.instagram_text') }}
             <a href="https://www.instagram.com/blackcathostal/" target="_blank">@blackcathostal</a>
           </p>
         </div>

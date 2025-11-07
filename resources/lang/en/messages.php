@@ -189,5 +189,46 @@ return [
     'breakfast_service' => 'Enjoy a continental breakfast served to your room from 08:00 to 11:30 am.',
 
     // Testimonials
-    'testimonial_text' => 'Very nice experience, it is a very beautiful place with very good location, the room is very comfortable, cozy and well equipped, the staff attention was very good with very good disposition and the breakfast was very delicious and varied, cereals, fruits, yogurt, cold cuts, jams, etc.',
+    'testimonial_text' => 'Very beautiful experience, it is a very nice place with very good location, the room is very comfortable, cozy and well equipped, the staff attention was very good with very good disposition and the breakfast was very tasty and varied, cereals, fruits, yogurt, cold cuts, jams, etc.',
+
+    // Slide 4
+    'slide4_title' => 'THE BEST PLACE IN SANTIAGO',
+    'slide4_subtitle' => 'Come and visit us',
+    
+    // Services
+    'service_dining_room' => 'Dining Room',
+    'service_meeting_patio' => 'Meeting Patio',
+    'service_events' => 'Events',
+    'service_tours' => 'Tours',
+    'service_summer' => 'Summer',
+    'service_coffee_bar' => 'Coffee & Bar',
+    'service_meeting_patio_desc' => 'Discover the common areas for relaxation, set by Chilean muralists.',
+    'service_summer_desc' => 'Enjoy a pool and relaxation space.',
+    'service_coffee_bar_desc' => 'Unique moments with exclusive products.',
+    
+    // Gallery
+    'our_gallery_title' => 'OUR GALLERY',
+    'gallery_subtitle' => 'Check out our gallery images',
+    'gallery_spaces' => 'Spaces',
+    'gallery_security' => 'Security',
+    'gallery_terraces' => 'Terraces',
+    'gallery_unique_design' => 'Unique Design',
+    'gallery_furniture' => 'Furniture',
+    
+    // Testimonials
+    'testimonials_title' => 'TESTIMONIALS',
+    'testimonials_subtitle' => 'What our guests say',
+    
+    // Video
+    'video_title' => 'Get to know us from the inside',
+    
+    // Instagram
+    'instagram_text' => 'Hello! check our photos on Instagram',
+    
+    // About Us Page
+    'characteristics' => 'Characteristics',
+    'rooms_count' => 'Rooms',
+    'dining_rooms_count' => 'Dining Rooms',
+    'staff_count' => 'Staff',
+    'common_areas_count' => 'Common Areas',
 ];

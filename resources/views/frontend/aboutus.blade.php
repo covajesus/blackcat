@@ -35,14 +35,14 @@
                 </div>
               </div>
             </div>
-            <h4 class="text-uppercase mt40 mb20">Caracteristicas</h4>
+            <h4 class="text-uppercase mt40 mb20">{{ __('messages.characteristics') }}</h4>
             <div class="row">
               <!-- ITEM -->
               <div class="col-md-3 col-6">
                 <div class="countup-box box-shadow-005">
                   <i class="flaticon-hotel"></i>
                   <span class="number" data-count="29"></span>
-                  <div class="text">Habitaciones</div>
+                  <div class="text">{{ __('messages.rooms_count') }}</div>
                 </div>
               </div>
               <!-- ITEM -->
@@ -50,7 +50,7 @@
                 <div class="countup-box box-shadow-005">
                   <i class="flaticon-tray"></i>
                   <span class="number" data-count="2"></span>
-                  <div class="text">Comedores</div>
+                  <div class="text">{{ __('messages.dining_rooms_count') }}</div>
                 </div>
               </div>
               <!-- ITEM -->
@@ -58,7 +58,7 @@
                 <div class="countup-box box-shadow-005">
                   <i class="flaticon-bell-boy"></i>
                   <span class="number" data-count="10"></span>
-                  <div class="text">Staffs</div>
+                  <div class="text">{{ __('messages.staff_count') }}</div>
                 </div>
               </div>
               <!-- ITEM -->
@@ -66,7 +66,7 @@
                 <div class="countup-box box-shadow-005">
                   <i class="flaticon-playground"></i>
                   <span class="number" data-count="3"></span>
-                  <div class="text">Espacios comunes</div>
+                  <div class="text">{{ __('messages.common_areas_count') }}</div>
                 </div>
               </div>
             </div>

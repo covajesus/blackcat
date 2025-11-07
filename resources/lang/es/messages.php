@@ -123,7 +123,50 @@ return [
     'breakfast_service' => 'Disfruta un desayuno continental servido a la habitación de 08:00 a 11:30 am.',
 
     // Testimonial
-    'testimonial_text' => 'Muy linda experiencia, es un lugar muy bonito muy buena ubicación, la habitación es muy cómoda acogedora y bien equipadas, la atención del staff fue muy buena con muy buena disposición y el desayuno estuvo muy rico y variado, cereales, frutas, yugurt, cecinas, mermeladas, etc.',
+        // Depoimentos
+    'testimonial_text' => 'Experiencia muy linda, es un lugar muy bonito con muy buena ubicación, la habitación es muy cómoda, acogedora y bien equipada, la atención del personal fue muy buena con muy buena disposición y el desayuno estaba muy rico y variado, cereales, frutas, yogurt, fiambres, mermeladas, etc.',
+
+    // Slide 4
+    'slide4_title' => 'EL MEJOR LUGAR DE SANTIAGO',
+    'slide4_subtitle' => 'Ven y visitanos',
+    
+    // Servicios
+    'service_dining_room' => 'Comedor',
+    'service_meeting_patio' => 'Patio de Reuniones',
+    'service_events' => 'Eventos',
+    'service_tours' => 'Paseos',
+    'service_summer' => 'Verano',
+    'service_coffee_bar' => 'Coffee & Bar',
+    'service_meeting_patio_desc' => 'Conoce las áreas comunes para el relajo, ambientado por muralistas chilenos.',
+    'service_summer_desc' => 'Disfruta un espacio de piscina y relajo.',
+    'service_coffee_bar_desc' => 'Momentos únicos con productos exclusivos.',
+    
+    // Galería
+    'our_gallery_title' => 'NUESTRA GALERÍA',
+    'gallery_subtitle' => 'Revisa las imágenes de nuestra galería',
+    'gallery_spaces' => 'Espacios',
+    'gallery_security' => 'Seguridad',
+    'gallery_terraces' => 'Terrazas',
+    'gallery_unique_design' => 'Diseño Único',
+    'gallery_furniture' => 'Mobiliario',
+    
+    // Testimonios
+    'testimonials_title' => 'COMENTARIOS',
+    'testimonials_subtitle' => 'Que dicen nuestros huéspedes',
+    
+    // Video
+    'video_title' => 'Conócenos por dentro',
+    
+    // Instagram
+    'instagram_text' => 'Hola! revisa nuestras fotos en Instagram',
+    
+    // About Us Page
+    'characteristics' => 'Caracteristicas',
+    'rooms_count' => 'Habitaciones',
+    'dining_rooms_count' => 'Comedores',
+    'staff_count' => 'Staffs',
+    'common_areas_count' => 'Espacios comunes',
+];
     
     // About section
     'high_quality_service' => 'Alta calidad en el servicio.',

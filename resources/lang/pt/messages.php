@@ -188,4 +188,45 @@ return [
 
     // Depoimentos
     'testimonial_text' => 'Experiência muito linda, é um lugar muito bonito com muito boa localização, o quarto é muito confortável, aconchegante e bem equipado, o atendimento da equipe foi muito bom com muito boa disposição e o café da manhã estava muito gostoso e variado, cereais, frutas, iogurte, frios, geleias, etc.',
+
+    // Slide 4
+    'slide4_title' => 'O MELHOR LUGAR DE SANTIAGO',
+    'slide4_subtitle' => 'Venha nos visitar',
+    
+    // Serviços
+    'service_dining_room' => 'Refeitório',
+    'service_meeting_patio' => 'Pátio de Reuniões',
+    'service_events' => 'Eventos',
+    'service_tours' => 'Passeios',
+    'service_summer' => 'Verão',
+    'service_coffee_bar' => 'Coffee & Bar',
+    'service_meeting_patio_desc' => 'Conheça as áreas comuns para relaxamento, ambientadas por muralistas chilenos.',
+    'service_summer_desc' => 'Desfrute de um espaço de piscina e relaxamento.',
+    'service_coffee_bar_desc' => 'Momentos únicos com produtos exclusivos.',
+    
+    // Galeria
+    'our_gallery_title' => 'NOSSA GALERIA',
+    'gallery_subtitle' => 'Confira as imagens da nossa galeria',
+    'gallery_spaces' => 'Espaços',
+    'gallery_security' => 'Segurança',
+    'gallery_terraces' => 'Terraços',
+    'gallery_unique_design' => 'Design Único',
+    'gallery_furniture' => 'Mobiliário',
+    
+    // Depoimentos
+    'testimonials_title' => 'COMENTÁRIOS',
+    'testimonials_subtitle' => 'O que dizem nossos hóspedes',
+    
+    // Vídeo
+    'video_title' => 'Conheça-nos por dentro',
+    
+    // Instagram
+    'instagram_text' => 'Olá! confira nossas fotos no Instagram',
+    
+    // Página Sobre Nós
+    'characteristics' => 'Características',
+    'rooms_count' => 'Quartos',
+    'dining_rooms_count' => 'Refeitórios',
+    'staff_count' => 'Equipe',
+    'common_areas_count' => 'Áreas Comuns',
 ];
