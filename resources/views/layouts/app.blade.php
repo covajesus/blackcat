@@ -66,7 +66,7 @@
         <link href="{{ asset('public/frontend/fonts/flaticon.css') }}" rel="stylesheet">
         <!-- ========== GOOGLE FONTS ========== -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700%7CRoboto:100,300,400,400i,500,700" rel="stylesheet">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
         <style>
             @media (max-width: 767px) {
                 .modal-dialog-centered {
@@ -497,6 +497,67 @@
         })();
     </script>
     <!-- End Sojern Tag -->
+
+    <!-- reCAPTCHA Enterprise Handler -->
+    <script>
+        // Función global para manejar formularios con reCAPTCHA
+        function handleFormSubmit(event) {
+            const form = event.target;
+            const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+            
+            // Prevenir envío múltiple
+            if (submitBtn.disabled) {
+                event.preventDefault();
+                return false;
+            }
+            
+            // Mostrar estado de carga
+            if (submitBtn.querySelector('.btn-text') && submitBtn.querySelector('.btn-loading')) {
+                submitBtn.querySelector('.btn-text').style.display = 'none';
+                submitBtn.querySelector('.btn-loading').style.display = 'inline';
+                submitBtn.disabled = true;
+            }
+            
+            // Verificar que el reCAPTCHA se haya completado
+            const recaptchaResponse = form.querySelector('[name="g-recaptcha-response"]');
+            if (!recaptchaResponse || !recaptchaResponse.value) {
+                event.preventDefault();
+                alert('{{ __('messages.recaptcha_error') }}');
+                
+                // Restaurar botón
+                if (submitBtn.querySelector('.btn-text') && submitBtn.querySelector('.btn-loading')) {
+                    submitBtn.querySelector('.btn-text').style.display = 'inline';
+                    submitBtn.querySelector('.btn-loading').style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Agregar event listeners cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForms = document.querySelectorAll('form[action*="message/store"]');
+            contactForms.forEach(function(form) {
+                form.addEventListener('submit', handleFormSubmit);
+            });
+        });
+        
+        function onSubmitContactForm(token) {
+            console.log('reCAPTCHA Enterprise token received:', token);
+        }
+        
+        function onErrorCallback() {
+            console.error('reCAPTCHA Enterprise error');
+            alert('{{ __('messages.recaptcha_error') }}');
+        }
+        
+        function onExpiredCallback() {
+            console.warn('reCAPTCHA Enterprise expired');
+            alert('El reCAPTCHA ha expirado. Por favor, actualice la página.');
+        }
+    </script>
 
 </body>
 </html>

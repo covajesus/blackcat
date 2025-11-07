@@ -53,7 +53,7 @@
                   <textarea class="form-control" name="message" placeholder="{{ __('messages.form_message') }}" required></textarea>
                 </div>
                 <div class="form-group">
-                  <div class="g-recaptcha" data-sitekey="6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu"></div>
+                  <div class="g-recaptcha" data-sitekey="6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu" data-action="CONTACT_PAGE_FORM"></div>
                   <small class="form-text text-muted">{{ __('messages.form_required') }}</small>
                 </div>
                 <div class="form-group">

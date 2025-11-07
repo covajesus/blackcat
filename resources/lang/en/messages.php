@@ -264,4 +264,9 @@ The staff responded to our requirements with excellent disposition and made the 
     'rooms' => 'Rooms',
     'search_availability' => 'Search Availability',
     'form_error' => 'Please fill in check-in and check-out dates',
+    
+    // Contact form messages
+    'contact_success' => 'Thank you for contacting us. We will respond shortly.',
+    'contact_error' => 'There was an error sending the message. Please try again.',
+    'form_sending' => 'Sending...',
 ];

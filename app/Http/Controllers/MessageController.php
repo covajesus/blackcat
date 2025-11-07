@@ -36,12 +36,7 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         try {
-            // Log para debugging
-            \Log::info('Form submission started', $request->all());
-            
-            $inputs = request()->all();
-
-            // Validar campos requeridos (sin reCAPTCHA por ahora para debugging)
+            // Validar campos requeridos
             $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
@@ -50,62 +45,133 @@ class MessageController extends Controller
                 'message' => 'required|string'
             ]);
 
-            \Log::info('Validation passed');
+            // Para debugging - verificar si reCAPTCHA está presente
+            $recaptchaResponse = $request->input('g-recaptcha-response');
+            
+            // Si no hay reCAPTCHA response, mostrar error específico
+            if (empty($recaptchaResponse)) {
+                $errorMessage = __('messages.recaptcha_error');
+                
+                if ($request->home == 0) {
+                    return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
+                } else {
+                    return redirect('/')->with('status', 0)->with('error', $errorMessage);
+                }
+            }
 
-            // Verificar reCAPTCHA
-            if (isset($inputs['g-recaptcha-response']) && !empty($inputs['g-recaptcha-response'])) {
-                \Log::info('reCAPTCHA verified');
+            // Verificar reCAPTCHA Enterprise con Google
+            $recaptchaSecret = '6LepQOoZAAAAADnJrNlAm0Db5gT1HE_PHa7YzEUP'; // Clave secreta
+            
+            // Determinar la acción esperada basada en el formulario
+            $expectedAction = ($request->home == 0) ? 'CONTACT_PAGE_FORM' : 'CONTACT_FORM';
+            
+            // Datos para la verificación
+            $postData = [
+                'secret' => $recaptchaSecret,
+                'response' => $recaptchaResponse
+            ];
+            
+            // Configurar contexto para la petición POST
+            $context = stream_context_create([
+                'http' => [
+                    'method' => 'POST',
+                    'header' => 'Content-Type: application/x-www-form-urlencoded',
+                    'content' => http_build_query($postData)
+                ]
+            ]);
+            
+            // Realizar verificación
+            $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+            $responseKeys = json_decode($response, true);
+
+            // Log para debugging del reCAPTCHA
+            \Log::info('reCAPTCHA Enterprise Response', $responseKeys);
+
+            // Verificar el resultado
+            if (!isset($responseKeys['success']) || $responseKeys['success'] !== true) {
+                $errorMessage = __('messages.recaptcha_error');
                 
-                $to_name = 'Reservas Black Cat Hostal';
-                $to_email = 'reservas@blackcathostal.com';
-                $data = [
-                    'name' => $request->name,
-                    'phone' => $request->phone,
-                    'email' => $request->email,
-                    'subject' => $request->subject,
-                    'body' => $request->message,
-                ];
+                // Log para debugging
+                \Log::warning('reCAPTCHA Enterprise failed', ['response' => $responseKeys]);
                 
-                \Log::info('About to send email', $data);
-                
-                Mail::send(['html' => 'email'], $data, function ($message) use ($to_name, $to_email, $request) {
-                    $message->to($to_email, $to_name)->subject('Nuevo mensaje de la web: ' . $request->subject);
-                    $message->from('no-reply@blackcathostal.com', 'Black Cat Hostal');
-                    $message->replyTo($request->email, $request->name);
+                if ($request->home == 0) {
+                    return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
+                } else {
+                    return redirect('/')->with('status', 0)->with('error', $errorMessage);
+                }
+            }
+            
+            // Verificar score (opcional - reCAPTCHA v3 proporciona un score de 0.0 a 1.0)
+            if (isset($responseKeys['score']) && $responseKeys['score'] < 0.5) {
+                \Log::warning('reCAPTCHA score too low', ['score' => $responseKeys['score']]);
+                // Opcionalmente puedes rechazar si el score es muy bajo
+                // Por ahora lo permitiremos pero con log
+            }
+
+            // reCAPTCHA validado correctamente, enviar email
+            $data = [
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'body' => $request->message,
+            ];
+
+            // Intentar enviar el email
+            try {
+                Mail::send('email', $data, function ($message) use ($request) {
+                    $message->to('reservas@blackcathostal.com', 'Reservas Black Cat Hostal')
+                           ->subject('Nuevo mensaje de la web: ' . $request->subject)
+                           ->from('no-reply@blackcathostal.com', 'Black Cat Hostal')
+                           ->replyTo($request->email, $request->name);
                 });
 
-                \Log::info('Email sent successfully');
-
+                // Éxito
+                $successMessage = __('messages.contact_success');
+                
                 if ($request->home == 0) {
-                    return redirect('contactus')->with('status', 1);
+                    return redirect('contactus')->with('status', 1)->with('success', $successMessage);
                 } else {
-                    return redirect('/')->with('status', 1);
+                    return redirect('/')->with('status', 1)->with('success', $successMessage);
                 }
-            } else {
-                \Log::warning('reCAPTCHA failed or missing');
+                
+            } catch (\Exception $emailError) {
+                // Error al enviar email
+                \Log::error('Error sending email: ' . $emailError->getMessage());
+                
+                $errorMessage = __('messages.contact_error');
+                
                 if ($request->home == 0) {
-                    return redirect('contactus')->with('status', 0)->with('error', __('messages.recaptcha_error'));
+                    return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
                 } else {
-                    return redirect('/')->with('status', 0)->with('error', __('messages.recaptcha_error'));
+                    return redirect('/')->with('status', 0)->with('error', $errorMessage);
                 }
             }
+
         } catch (\Illuminate\Validation\ValidationException $e) {
             // Error de validación
-            \Log::error('Validation error: ' . json_encode($e->errors()));
+            $errors = [];
+            foreach ($e->errors() as $field => $messages) {
+                $errors = array_merge($errors, $messages);
+            }
+            
+            $errorMessage = 'Por favor revise los campos: ' . implode(', ', $errors);
             
             if ($request->home == 0) {
-                return redirect('contactus')->with('status', 0)->with('error', 'Por favor revise todos los campos del formulario.');
+                return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
             } else {
-                return redirect('/')->with('status', 0)->with('error', 'Por favor revise todos los campos del formulario.');
+                return redirect('/')->with('status', 0)->with('error', $errorMessage);
             }
         } catch (\Exception $e) {
-            // Log del error para debugging
-            \Log::error('Error sending email: ' . $e->getMessage() . ' - Line: ' . $e->getLine() . ' - File: ' . $e->getFile());
+            // Error general
+            \Log::error('General error in contact form: ' . $e->getMessage());
+            
+            $errorMessage = __('messages.form_error');
             
             if ($request->home == 0) {
-                return redirect('contactus')->with('status', 0)->with('error', __('messages.form_error'));
+                return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
             } else {
-                return redirect('/')->with('status', 0)->with('error', __('messages.form_error'));
+                return redirect('/')->with('status', 0)->with('error', $errorMessage);
             }
         }
     }

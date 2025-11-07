@@ -201,6 +201,11 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     'search_availability' => 'Buscar Disponibilidad',
     'form_error' => 'Por favor complete las fechas de entrada y salida',
     
+    // Contact form messages
+    'contact_success' => 'Gracias por contactarnos. Responderemos a la brevedad.',
+    'contact_error' => 'Hubo un error al enviar el mensaje. Por favor intente nuevamente.',
+    'form_sending' => 'Enviando...',
+    
     // About section
     'high_quality_service' => 'Alta calidad en el servicio.',
     'about_description' => 'Creamos un nuevo concepto en la Hostelería Boutique, insertándonos en un entorno urbano, cultural y patrimonial. Con la perfecta mezcla de tradición e historia nos ubicamos en el Barrio Brasil, que es parte del casco antiguo de Santiago y que sin duda te envolverá al igual que nuestros espacios y servicios.<br><br>Sumérgete en las hermosas construcciones del siglo XIX que ofrece este emblemático sector de Santiago, junto a su diversidad cultural, importancia patrimonial y riqueza arquitectónica. Descubre este circuito imperdible para conocer la historia de Chile, lugares cercanos como el Museo de la Memoria, Barrio Concha y Toro y un sinfín de atracciones.',

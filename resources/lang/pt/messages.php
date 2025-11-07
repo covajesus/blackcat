@@ -262,4 +262,9 @@ A equipe respondeu aos nossos requisitos com excelente disposição e fizeram da
     'rooms' => 'Quartos',
     'search_availability' => 'Pesquisar Disponibilidade',
     'form_error' => 'Por favor preencha as datas de check-in e check-out',
+    
+    // Contact form messages
+    'contact_success' => 'Obrigado por entrar em contato. Responderemos em breve.',
+    'contact_error' => 'Houve um erro ao enviar a mensagem. Tente novamente.',
+    'form_sending' => 'Enviando...',
 ];

@@ -663,13 +663,18 @@
                   <textarea class="form-control" name="message" placeholder="{{ __('messages.form_message') }}" required></textarea>
                 </div>
                 <div class="form-group">
-                  <div class="g-recaptcha" data-sitekey="6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu"></div>
+                  <div class="g-recaptcha" data-sitekey="6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu" data-action="CONTACT_FORM"></div>
                   <small class="form-text text-muted">{{ __('messages.form_required') }}</small>
                 </div>
                 
-                <button class="btn" type="submit">
+                <button class="btn" type="submit" id="contact-submit-btn">
                   <input class="form-control" name="home" type="hidden" value="1">
-                  <i class="fa fa-location-arrow"></i>{{ __('messages.form_submit') }}</button>
+                  <i class="fa fa-location-arrow"></i>
+                  <span class="btn-text">{{ __('messages.form_submit') }}</span>
+                  <span class="btn-loading" style="display: none;">
+                    <i class="fa fa-spinner fa-spin"></i> {{ __('messages.form_sending') }}
+                  </span>
+                </button>
               </form>
             </div>
           </div>
