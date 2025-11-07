@@ -66,7 +66,52 @@
         <link href="{{ asset('public/frontend/fonts/flaticon.css') }}" rel="stylesheet">
         <!-- ========== GOOGLE FONTS ========== -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700%7CRoboto:100,300,400,400i,500,700" rel="stylesheet">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script>
+            // Cargar reCAPTCHA de manera más segura
+            function loadRecaptcha() {
+                if (typeof grecaptcha === 'undefined') {
+                    var script = document.createElement('script');
+                    script.src = 'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
+                    script.async = true;
+                    script.defer = true;
+                    script.onerror = function() {
+                        console.error('Error cargando reCAPTCHA desde Google');
+                    };
+                    document.head.appendChild(script);
+                } else {
+                    onRecaptchaLoad();
+                }
+            }
+            
+            function onRecaptchaLoad() {
+                console.log('✅ reCAPTCHA API cargada correctamente');
+                
+                // Renderizar widgets manualmente
+                const recaptchaElements = document.querySelectorAll('.g-recaptcha');
+                recaptchaElements.forEach(function(element, index) {
+                    if (!element.hasAttribute('data-rendered')) {
+                        try {
+                            grecaptcha.render(element, {
+                                'sitekey': '6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu',
+                                'callback': verifyCallback,
+                                'expired-callback': expiredCallback
+                            });
+                            element.setAttribute('data-rendered', 'true');
+                            console.log('✅ Widget reCAPTCHA', index + 1, 'renderizado');
+                        } catch (e) {
+                            console.error('Error renderizando widget reCAPTCHA', index + 1, ':', e);
+                        }
+                    }
+                });
+            }
+            
+            // Cargar cuando el DOM esté listo
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadRecaptcha);
+            } else {
+                loadRecaptcha();
+            }
+        </script>
         <style>
             @media (max-width: 767px) {
                 .modal-dialog-centered {
@@ -447,7 +492,7 @@
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.navigation.min.js') }}r"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
@@ -514,12 +559,7 @@
                 });
             }, 5000);
             
-            // Verificar que reCAPTCHA se cargue correctamente
-            if (typeof grecaptcha !== 'undefined') {
-                console.log('reCAPTCHA cargado correctamente');
-            } else {
-                console.error('reCAPTCHA no se pudo cargar');
-            }
+            // El reCAPTCHA se carga ahora de manera asíncrona con el nuevo método
         });
         
         // Callbacks para reCAPTCHA estándar con debugging
@@ -528,17 +568,28 @@
         };
         
         var verifyCallback = function(response) {
-            console.log('reCAPTCHA verificado correctamente:', response.substring(0, 50) + '...');
+            console.log('✅ reCAPTCHA COMPLETADO EXITOSAMENTE!');
+            console.log('🔑 Token generado:', response.substring(0, 50) + '...');
+            console.log('📏 Longitud del token:', response.length);
             
             // Verificar que el token se esté agregando al formulario
             const forms = document.querySelectorAll('form[action*="message/store"]');
-            forms.forEach(function(form) {
+            console.log('📋 Formularios encontrados:', forms.length);
+            
+            forms.forEach(function(form, index) {
                 const hiddenInput = form.querySelector('textarea[name="g-recaptcha-response"]');
                 if (hiddenInput) {
-                    console.log('Token reCAPTCHA encontrado en formulario:', hiddenInput.value.substring(0, 50) + '...');
+                    console.log(`✅ Formulario ${index + 1}: Token encontrado -`, hiddenInput.value.substring(0, 50) + '...');
                 } else {
-                    console.error('NO se encontró el campo g-recaptcha-response en el formulario');
+                    console.error(`❌ Formulario ${index + 1}: NO se encontró el campo g-recaptcha-response`);
                 }
+            });
+            
+            // Cambiar el color del botón para indicar que reCAPTCHA está listo
+            const submitButtons = document.querySelectorAll('form[action*="message/store"] button[type="submit"], form[action*="message/store"] input[type="submit"]');
+            submitButtons.forEach(function(btn) {
+                btn.style.backgroundColor = '#28a745'; // Verde para indicar listo
+                btn.style.borderColor = '#28a745';
             });
         };
         
@@ -550,17 +601,30 @@
         // Debugging adicional para verificar el estado del formulario antes del envío
         document.addEventListener('DOMContentLoaded', function() {
             const forms = document.querySelectorAll('form[action*="message/store"]');
-            forms.forEach(function(form) {
+            console.log('🔍 Inicializando debugging para', forms.length, 'formularios de contacto');
+            
+            forms.forEach(function(form, index) {
                 form.addEventListener('submit', function(e) {
+                    console.log('🚀 ENVIANDO FORMULARIO', index + 1);
+                    
                     const recaptchaResponse = form.querySelector('textarea[name="g-recaptcha-response"]');
-                    console.log('Enviando formulario...');
-                    console.log('reCAPTCHA response al enviar:', recaptchaResponse ? recaptchaResponse.value.substring(0, 50) + '...' : 'NO ENCONTRADO');
+                    const recaptchaValue = recaptchaResponse ? recaptchaResponse.value : null;
+                    
+                    console.log('🔐 Estado reCAPTCHA:', {
+                        'Campo encontrado': !!recaptchaResponse,
+                        'Tiene valor': !!recaptchaValue,
+                        'Longitud': recaptchaValue ? recaptchaValue.length : 0,
+                        'Primeros 50 chars': recaptchaValue ? recaptchaValue.substring(0, 50) + '...' : 'N/A'
+                    });
                     
                     if (!recaptchaResponse || !recaptchaResponse.value) {
-                        alert('Por favor complete la verificación reCAPTCHA antes de enviar.');
+                        console.error('❌ reCAPTCHA no completado - deteniendo envío');
+                        alert('Por favor complete la verificación reCAPTCHA antes de enviar el formulario.');
                         e.preventDefault();
                         return false;
                     }
+                    
+                    console.log('✅ reCAPTCHA válido - permitiendo envío del formulario');
                 });
             });
         });
