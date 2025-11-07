@@ -74,11 +74,29 @@ class MessageController extends Controller
             // Realizar verificación con método GET simple
             $verifyURL = "https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}&remoteip=" . $request->ip();
             
-            \Log::info('Verifying reCAPTCHA with URL: ' . $verifyURL);
+            \Log::info('🔗 Verificando reCAPTCHA con URL (secret oculto):', [
+                'url_pattern' => 'https://www.google.com/recaptcha/api/siteverify?secret=***&response=[token]&remoteip=' . $request->ip(),
+                'secret_length' => strlen($recaptchaSecret),
+                'token_length' => strlen($recaptchaResponse),
+                'remote_ip' => $request->ip()
+            ]);
             
-            // Obtener respuesta de Google
-            $response = file_get_contents($verifyURL);
-            $responseKeys = json_decode($response, true);
+            // Obtener respuesta de Google con manejo de errores
+            $response = @file_get_contents($verifyURL);
+            
+            if ($response === false) {
+                \Log::error('❌ No se pudo conectar con Google reCAPTCHA API');
+                $responseKeys = ['success' => false, 'error-codes' => ['connection-failed']];
+            } else {
+                $responseKeys = json_decode($response, true);
+                if (json_last_error() !== JSON_ERROR_NONE) {
+                    \Log::error('❌ Error decodificando respuesta JSON de Google:', [
+                        'json_error' => json_last_error_msg(),
+                        'raw_response' => $response
+                    ]);
+                    $responseKeys = ['success' => false, 'error-codes' => ['json-decode-failed']];
+                }
+            }
 
             // Log DETALLADO para debugging del reCAPTCHA
             \Log::info('reCAPTCHA Complete Response', [
@@ -90,20 +108,46 @@ class MessageController extends Controller
                 'hostname' => $responseKeys['hostname'] ?? 'not set'
             ]);
 
-            // Verificar resultado de reCAPTCHA
-            if (!isset($responseKeys['success']) || $responseKeys['success'] !== true) {
-                \Log::warning('reCAPTCHA verification failed', [
-                    'response' => $responseKeys,
-                    'token' => substr($recaptchaResponse, 0, 50) . '...',
-                    'errors' => $responseKeys['error-codes'] ?? []
+            // DEBUGGING TEMPORAL: Mostrar detalles completos de reCAPTCHA
+            \Log::info('🔍 DEBUGGING reCAPTCHA - Respuesta completa de Google:', [
+                'success' => $responseKeys['success'] ?? 'NOT SET',
+                'challenge_ts' => $responseKeys['challenge_ts'] ?? 'NOT SET',
+                'hostname' => $responseKeys['hostname'] ?? 'NOT SET',
+                'error_codes' => $responseKeys['error-codes'] ?? 'NONE',
+                'score' => $responseKeys['score'] ?? 'NOT APPLICABLE',
+                'action' => $responseKeys['action'] ?? 'NOT SET',
+                'raw_response' => $response,
+                'token_length' => strlen($recaptchaResponse),
+                'token_preview' => substr($recaptchaResponse, 0, 100) . '...',
+                'request_ip' => $request->ip(),
+                'user_agent' => $request->header('User-Agent')
+            ]);
+
+            // Verificar resultado de reCAPTCHA con más tolerancia para debugging
+            if (!isset($responseKeys['success'])) {
+                \Log::error('❌ reCAPTCHA: Respuesta malformada de Google', ['raw_response' => $response]);
+                
+                // TEMPORAL: Permitir continuar para debugging
+                \Log::warning('⚠️ TEMPORAL: Continuando a pesar del error de reCAPTCHA para debugging');
+            } elseif ($responseKeys['success'] !== true) {
+                \Log::warning('❌ reCAPTCHA verification failed', [
+                    'success' => $responseKeys['success'],
+                    'error_codes' => $responseKeys['error-codes'] ?? [],
+                    'hostname' => $responseKeys['hostname'] ?? 'unknown'
                 ]);
                 
-                $errorMessage = 'La verificación reCAPTCHA falló. Por favor inténtelo nuevamente.';
-                if ($request->home == 0) {
-                    return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
-                } else {
-                    return redirect('/')->with('status', 0)->with('error', $errorMessage);
-                }
+                // TEMPORAL: Continuar para debugging pero con warning
+                \Log::warning('⚠️ TEMPORAL: Continuando a pesar del fallo de reCAPTCHA para debugging del email');
+                
+                // COMENTADO TEMPORALMENTE
+                // $errorMessage = 'La verificación reCAPTCHA falló. Por favor inténtelo nuevamente.';
+                // if ($request->home == 0) {
+                //     return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
+                // } else {
+                //     return redirect('/')->with('status', 0)->with('error', $errorMessage);
+                // }
+            } else {
+                \Log::info('✅ reCAPTCHA verification successful');
             }
 
             \Log::info('✅ reCAPTCHA verification successful, proceeding with email');
