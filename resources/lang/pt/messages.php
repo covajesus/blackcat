@@ -152,7 +152,7 @@ return [
     'twin_room_gallery_alt' => 'Galeria de fotos quarto Twin com cozinha - Black Cat Hostal',
     'superior_king_gallery_alt' => 'Galeria de fotos quarto Superior King - Black Cat Hostal',
     'reduce_room_gallery_alt' => 'Galeria de fotos quarto acessível - Black Cat Hostal',
-];
+    
     'form_success' => 'Obrigado por entrar em contato! Responderemos em breve.',
     'form_error' => 'Houve um erro ao enviar a mensagem. Tente novamente.',
 
