@@ -323,16 +323,16 @@
                             <a href="{{ url('room/detail/family') }}">{{ __('messages.family_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/king-queen') }}">{{ __('messages.king_queen_room') }}</a>
+                            <a href="{{ url('room/detail/king-queen') }}">{{ __('messages.matrimonial_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/superior-king') }}">{{ __('messages.superior_king_room') }}</a>
+                            <a href="{{ url('room/detail/superior-king') }}">{{ __('messages.king_standard_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/twin') }}">{{ __('messages.twin_room') }}</a>
+                            <a href="{{ url('room/detail/reduce') }}">{{ __('messages.king_superior_room') }}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/reduce') }}">{{ __('messages.reduced_mobility_room') }}</a>
+                            <a href="{{ url('room/detail/mobility') }}">{{ __('messages.reduced_mobility_room') }}</a>
                         </li>
                     </ul>
                 </li>

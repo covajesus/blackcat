@@ -10,9 +10,9 @@ return [
 
     // Tipos de quarto
     'family_room' => 'Quarto Família',
-    'king_queen_room' => 'King & Queen Padrão',
-    'superior_king_room' => 'King Superior Kitchenette',
-    'twin_room' => 'Twin Kitchenette',
+    'matrimonial_room' => 'Quarto Matrimonial',
+    'king_standard_room' => 'King Standard',
+    'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Mobilidade Reduzida',
 
     // Página de contato

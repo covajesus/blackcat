@@ -9,10 +9,10 @@ return [
     'reserve' => 'RESERVAR',
 
     // Tipos de habitación
-    'family_room' => 'Family',
-    'king_queen_room' => 'King & Queen Estándar',
-    'superior_king_room' => 'King Superior Kitchenette',
-    'twin_room' => 'Twin Kitchenette',
+    'family_room' => 'Familiar',
+    'matrimonial_room' => 'Matrimonial', 
+    'king_standard_room' => 'Estándar King',
+    'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Movilidad Reducida',
 
     // Página de contacto

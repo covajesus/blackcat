@@ -10,9 +10,9 @@ return [
 
     // Room types
     'family_room' => 'Family Room',
-    'king_queen_room' => 'King & Queen Standard',
-    'superior_king_room' => 'Superior King Kitchenette',
-    'twin_room' => 'Twin Kitchenette',
+    'matrimonial_room' => 'Double Room', 
+    'king_standard_room' => 'King Standard',
+    'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Reduced Mobility',
 
     // Contact page
