@@ -199,7 +199,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     'children' => 'Niños',
     'rooms' => 'Habitaciones',
     'search_availability' => 'Buscar Disponibilidad',
-    'form_error' => 'Por favor complete las fechas de entrada y salida',
+    'booking_form_error' => 'Por favor complete las fechas de entrada y salida',
     
     // Contact form messages
     'contact_success' => 'Gracias por contactarnos. Responderemos a la brevedad.',

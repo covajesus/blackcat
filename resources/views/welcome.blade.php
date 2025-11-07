@@ -636,13 +636,19 @@
             </div>
             <div class="col-md-7">
               @if(Session::get('status') == 1)
-                <div class="alert alert-success" role="alert">
-                  {{ __('messages.form_success') }}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ __('messages.contact_success') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
-              @if(Session::get('status') == 0 || Session::has('error'))
-                <div class="alert alert-danger" role="alert">
-                  {{ Session::get('error', __('messages.form_error')) }}
+              @if(Session::get('status') == 0 && Session::has('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  {{ Session::get('error') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
               <form action="{{ url('message/store') }}" method="post">
@@ -667,13 +673,9 @@
                   <small class="form-text text-muted">{{ __('messages.form_required') }}</small>
                 </div>
                 
-                <button class="btn" type="submit" id="contact-submit-btn">
+                <button class="btn" type="submit">
                   <input class="form-control" name="home" type="hidden" value="1">
-                  <i class="fa fa-location-arrow"></i>
-                  <span class="btn-text">{{ __('messages.form_submit') }}</span>
-                  <span class="btn-loading" style="display: none;">
-                    <i class="fa fa-spinner fa-spin"></i> {{ __('messages.form_sending') }}
-                  </span>
+                  <i class="fa fa-location-arrow"></i>{{ __('messages.form_submit') }}
                 </button>
               </form>
             </div>

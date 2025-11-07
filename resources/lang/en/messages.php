@@ -263,7 +263,7 @@ The staff responded to our requirements with excellent disposition and made the 
     'children' => 'Children', 
     'rooms' => 'Rooms',
     'search_availability' => 'Search Availability',
-    'form_error' => 'Please fill in check-in and check-out dates',
+    'booking_form_error' => 'Please fill in check-in and check-out dates',
     
     // Contact form messages
     'contact_success' => 'Thank you for contacting us. We will respond shortly.',
