@@ -90,22 +90,23 @@ class MessageController extends Controller
                 'hostname' => $responseKeys['hostname'] ?? 'not set'
             ]);
 
-            // TEMPORAL: SALTAR VERIFICACION PARA DEBUGGING
+            // Verificar resultado de reCAPTCHA
             if (!isset($responseKeys['success']) || $responseKeys['success'] !== true) {
-                \Log::warning('reCAPTCHA verification failed, but proceeding for debugging', [
+                \Log::warning('reCAPTCHA verification failed', [
                     'response' => $responseKeys,
                     'token' => substr($recaptchaResponse, 0, 50) . '...',
                     'errors' => $responseKeys['error-codes'] ?? []
                 ]);
                 
-                // COMENTADO TEMPORALMENTE PARA DEBUGGING
-                // $errorMessage = 'La verificación reCAPTCHA falló. Por favor inténtelo nuevamente.';
-                // if ($request->home == 0) {
-                //     return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
-                // } else {
-                //     return redirect('/')->with('status', 0)->with('error', $errorMessage);
-                // }
+                $errorMessage = 'La verificación reCAPTCHA falló. Por favor inténtelo nuevamente.';
+                if ($request->home == 0) {
+                    return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
+                } else {
+                    return redirect('/')->with('status', 0)->with('error', $errorMessage);
+                }
             }
+
+            \Log::info('✅ reCAPTCHA verification successful, proceeding with email');
 
             // reCAPTCHA validado correctamente, enviar email
             $data = [
@@ -116,14 +117,43 @@ class MessageController extends Controller
                 'body' => $request->message,
             ];
 
+            // Configurar Gmail SMTP dinámicamente con SSL
+            config([
+                'mail.driver' => 'smtp',
+                'mail.host' => 'smtp.gmail.com',
+                'mail.port' => 465,
+                'mail.username' => 'no-reply@blackcathostal.com',
+                'mail.password' => 'oibc brhg ndsv dpvx',
+                'mail.encryption' => 'ssl',
+                'mail.from.address' => 'no-reply@blackcathostal.com',
+                'mail.from.name' => 'Black Cat Hostal'
+            ]);
+
+            \Log::info('📧 Configuración Gmail SMTP SSL aplicada:', [
+                'driver' => 'smtp',
+                'host' => 'smtp.gmail.com',
+                'port' => 465,
+                'username' => 'no-reply@blackcathostal.com',
+                'encryption' => 'ssl',
+                'from_address' => 'no-reply@blackcathostal.com',
+                'from_name' => 'Black Cat Hostal'
+            ]);
+
             // Intentar enviar el email
+            \Log::info('🚀 Iniciando envío de email con datos:', $data);
+            
             try {
+                // Limpiar configuración de mail en caché
+                app('mailer')->getSwiftMailer()->getTransport()->stop();
+                
                 Mail::send('email', $data, function ($message) use ($request) {
                     $message->to('reservas@blackcathostal.com', 'Reservas Black Cat Hostal')
                            ->subject('Nuevo mensaje de la web: ' . $request->subject)
                            ->from('no-reply@blackcathostal.com', 'Black Cat Hostal')
                            ->replyTo($request->email, $request->name);
                 });
+
+                \Log::info('✅ Email enviado exitosamente');
 
                 // Éxito
                 $successMessage = __('messages.contact_success');
@@ -134,9 +164,33 @@ class MessageController extends Controller
                     return redirect('/')->with('status', 1)->with('success', $successMessage);
                 }
                 
+            } catch (\Swift_TransportException $transportError) {
+                // Error específico de transporte SMTP
+                \Log::error('❌ Error de transporte SMTP:', [
+                    'error' => $transportError->getMessage(),
+                    'code' => $transportError->getCode(),
+                    'file' => $transportError->getFile(),
+                    'line' => $transportError->getLine()
+                ]);
+                
+                $errorMessage = 'Error de configuración del servidor de email. Por favor contacte al administrador.';
+                
+                if ($request->home == 0) {
+                    return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
+                } else {
+                    return redirect('/')->with('status', 0)->with('error', $errorMessage);
+                }
+                
             } catch (\Exception $emailError) {
-                // Error al enviar email
-                \Log::error('Error sending email: ' . $emailError->getMessage());
+                // Error general al enviar email
+                \Log::error('❌ Error general enviando email:', [
+                    'error' => $emailError->getMessage(),
+                    'type' => get_class($emailError),
+                    'code' => $emailError->getCode(),
+                    'file' => $emailError->getFile(),
+                    'line' => $emailError->getLine(),
+                    'trace' => $emailError->getTraceAsString()
+                ]);
                 
                 $errorMessage = __('messages.contact_error');
                 
