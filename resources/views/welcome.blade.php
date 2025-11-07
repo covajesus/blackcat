@@ -172,10 +172,104 @@
             </li>
           </ul>
         </div>
-        <!--Inicio Codigo FnsRooms Español-->
-          <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;"></div>
-          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script><!-- Si la web ya carga jQuery no hace falta poner esta línea -->
-          <script src="https://admin.fnsbooking.com/motores/js/2326/fe_es.js"></script>
+        <!--Inicio Codigo FnsRooms Multiidioma-->
+          <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;">
+            <!-- Formulario de respaldo personalizado -->
+            <div id="custom_booking_form" style="display: none; background: rgba(255,255,255,0.95); padding: 20px; border-radius: 8px; max-width: 600px; margin: 0 auto;">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="checkin" style="color: #333; font-weight: bold;">{{ __('messages.check_in_date') }}</label>
+                    <input type="date" id="checkin" class="form-control" style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="checkout" style="color: #333; font-weight: bold;">{{ __('messages.check_out_date') }}</label>
+                    <input type="date" id="checkout" class="form-control" style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label for="adults" style="color: #333; font-weight: bold;">{{ __('messages.adults') }}</label>
+                    <select id="adults" class="form-control" style="border: 1px solid #ddd;">
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label for="promo" style="color: #333; font-weight: bold;">{{ __('messages.promo_code') }}</label>
+                    <input type="text" id="promo" class="form-control" placeholder="{{ __('messages.promo_code') }}" style="border: 1px solid #ddd;">
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group" style="margin-top: 25px;">
+                    <button type="button" class="btn btn-primary btn-block" onclick="searchAvailability()" style="background: #FF8000; border: none; padding: 10px;">
+                      {{ __('messages.consult') }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
+          @php
+            $locale = app()->getLocale();
+            // Map locales to available widget languages  
+            $widgetLocale = match($locale) {
+                'en' => 'en',
+                'pt' => 'pt', 
+                default => 'es'
+            };
+          @endphp
+          <script>
+            // Try to load the widget in the current language, fallback to custom form if not available
+            (function() {
+                var script = document.createElement('script');
+                script.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js';
+                script.onerror = function() {
+                    // Show custom form if widget fails to load
+                    console.log('External widget not available, showing custom form');
+                    document.getElementById('custom_booking_form').style.display = 'block';
+                };
+                document.head.appendChild(script);
+                
+                // Timeout fallback in case the widget loads but doesn't render
+                setTimeout(function() {
+                    if (document.getElementById('form_reservas').innerHTML.trim() === '' || 
+                        document.getElementById('form_reservas').children.length <= 1) {
+                        document.getElementById('custom_booking_form').style.display = 'block';
+                    }
+                }, 3000);
+            })();
+            
+            // Function for custom booking form
+            function searchAvailability() {
+                var checkin = document.getElementById('checkin').value;
+                var checkout = document.getElementById('checkout').value;
+                var adults = document.getElementById('adults').value;
+                var promo = document.getElementById('promo').value;
+                
+                if (!checkin || !checkout) {
+                    alert('{{ __('messages.form_error') }}');
+                    return;
+                }
+                
+                var bookingUrl = 'https://reservas.fnsbooking.com/busqueda.php?accion=N&release=6&datos=111188682----------------&idioma={{ $locale }}&fecha_entrada=' + 
+                    checkin + '&fecha_salida=' + checkout + '&orden=&pfe=2326&currency=&oferta_id=&tipo_habitacion_id=&bookingonline=&ocupacion=' + adults + '&ciudad=&entrada=' + 
+                    checkin.replace(/-/g, '%2F') + '&salida=' + checkout.replace(/-/g, '%2F');
+                    
+                if (promo) {
+                    bookingUrl += '&codigo_promocion=' + encodeURIComponent(promo);
+                }
+                
+                window.open(bookingUrl, '_blank');
+            }
+          </script>
         <!--Fin Codigo FnsRooms-->
       </div>
       
@@ -476,8 +570,7 @@
                   <i class="fa fa-star voted" aria-hidden="true"></i>
                   <i class="fa fa-star voted" aria-hidden="true"></i>
                 </div>
-                <p>Excelente Ubicación , Instalaciones de 1 er Nivel , Comodo ambiente Familiar y la atención de las personas prestan sus Servicio de Muy Buena Calidad .
-Muy conforme con la Visita y Atención de Lujo.Volvere a visitarlos en mi proximo viaje sin duda.</p>
+                <p>{{ __('messages.testimonial_francisco') }}</p>
               </div>
             </div>
             <!-- ITEM -->
@@ -496,8 +589,7 @@ Muy conforme con la Visita y Atención de Lujo.Volvere a visitarlos en mi proxim
                     <i class="fa fa-star voted" aria-hidden="true"></i>
                   </div>
                 </div>
-                <p>Todo se cumplió de manera óptima: las instalaciones son de primer nivel en comodidad, limpieza y ambiente, y los asistentes se sintieron muy bien durante su estadía, pudiendo disfrutar también del sector.
-El staff respondió a nuestros requerimientos con excelente disposición e hicieron de la estadía del grupo una muy buena experiencia.</p>
+                <p>{{ __('messages.testimonial_magdalena') }}</p>
               </div>
             </div>
             <!-- ITEM -->
@@ -516,9 +608,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
                     <i class="fa fa-star voted" aria-hidden="true"></i>
                   </div>
                 </div>
-                <p>
-                Fuimos para San Valentín con mi pareja y nuestro bebé, y la experiencia fue maravillosa. Todo el equipo de Black Cat fueron muy simpáticos y atentos con nosotros... Incluso jugaron con nuestro hijo. Y el lugar es bellísimo, con buena ubicación y mucho estilo. Muy recomendable!
-                </p>
+                <p>{{ __('messages.testimonial_daryl') }}</p>
               </div>
             </div>
             <!-- ITEM -->
@@ -537,9 +627,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
                     <i class="fa fa-star voted" aria-hidden="true"></i>
                   </div>
                 </div>
-                <p>
-                100% recomendado, cómodo, seguro y una excelente atención. Los costos de las habitaciones son costosos pero lo valen son nuevas y están en excelente estado. Ambiente familiar o para ir con amigos a tomar cervezas y comer buena rica tabla de empanadas 
-                </p>
+                <p>{{ __('messages.testimonial_nitzay') }}</p>
               </div>
             </div>
             <!-- ITEM -->
@@ -558,9 +646,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
                     <i class="fa fa-star voted" aria-hidden="true"></i>
                   </div>
                 </div>
-                <p>
-                Excelente hostal estuve varios Dias me encanto la calidez de su personal la limpieza y orden del hostal muy bonito y recomendable localizacion muy Buena te hacen sentir Como en casa regresare en Julio 2020.
-                </p>
+                <p>{{ __('messages.testimonial_hugo') }}</p>
               </div>
             </div>
             <!-- ITEM -->

@@ -6,7 +6,7 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
         <!-- ========== SEO ========== -->
         <title>Black Cat Hostal - Hostal Boutique</title>
-        <meta content="¿Buscas hotel en Santiago? Hotel Black Cat Chile - combina comidad, ubicación, y relación precio-calidad. Disfruta desayuno incluido, Wifi, estacionamiento y piscina ¡Reserva ahora y ahorra!" name="description">
+        <meta content="{{ __('messages.meta_description') }}" name="description">
         <meta content="hotel, hostal, hostal black cat chile, hostal black cat santiago, alojamiento en chile, hostal en chile, hospedaje económico en chile, hostal con buena ubicación, hostal céntrico en chile, hostal con desayuno incluido, mejor hostal en chile, hostal en santiago centro, alojamiento en barrio bellavista, alojamiento en barrio brasil, alojamiento en providencia, hospedaje cerca del metro santiago, hostal cerca del centro histórico de santiago, hostal cerca de terminal de buses santiago, alojamiento cerca de atractivos turísticos, hostal cerca del aeropuerto de santiago, hostal en chile para mochileros, hostal para viajeros en chile, alojamiento económico en chile, hostal con mejor relación precio-calidad, hostal limpio y cómodo, habitaciones compartidas y privadas, hostal con wifi gratis, hostal con ambiente familiar, hospedaje con atención personalizada, hostal con espacios comunes, alojamiento para turistas internacionales, ambiente acogedor y seguro, turismo responsable en chile, vive la experiencia black cat, conoce chile desde nuestro hostal, comunidad de viajeros, reserva online hostal black cat, alojamiento turístico chile 2025, turismo económico en chile, mejores hostales en chile, hostales recomendados por viajeros, dónde alojarse en santiago, guía de hospedaje en chile, hostales con buena reputación" name="keywords">
         <meta content="Black Cat Hostal" name="author">
         
@@ -19,7 +19,7 @@
         <!-- ========== OPEN GRAPH ========== -->
         <meta property="og:type" content="website">
         <meta property="og:title" content="Black Cat Hostal - Hostal Boutique en Santiago Chile">
-        <meta property="og:description" content="Hostal boutique en Barrio Brasil, Santiago. WiFi gratis, desayuno incluido, ubicación céntrica. Reserva ahora y vive la experiencia Black Cat.">
+        <meta property="og:description" content="{{ __('messages.meta_og_description') }}">
         <meta property="og:image" content="{{ asset('public/frontend/images/logo_header.png') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:site_name" content="Black Cat Hostal">
@@ -28,7 +28,7 @@
         <!-- ========== TWITTER CARDS ========== -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Black Cat Hostal - Santiago Chile">
-        <meta name="twitter:description" content="Hostal boutique en Santiago. WiFi gratis, desayuno incluido, ubicación céntrica. ¡Reserva ahora!">
+        <meta name="twitter:description" content="{{ __('messages.meta_twitter_description') }}">
         <meta name="twitter:image" content="{{ asset('public/frontend/images/logo_header.png') }}">
         
         <!-- ========== GEO TAGS ========== -->
@@ -390,7 +390,7 @@
                 <div class="container">
                     <div class="row">
                     <div class="col-md-6">
-                        <div class="copyrights">&copy; 2023 Black Cat Hostal. Todos los derechos reservados.</div>
+                        <div class="copyrights">&copy; 2023 Black Cat Hostal. {{ __('messages.all_rights_reserved') }}</div>
                     </div>
                     <div class="col-md-6">
                         <div class="social-media">

@@ -231,4 +231,37 @@ return [
     'dining_rooms_count' => 'Dining Rooms',
     'staff_count' => 'Staff',
     'common_areas_count' => 'Common Areas',
+    
+    // Recaptcha error
+    'recaptcha_error' => 'Please complete the reCAPTCHA verification.',
+    
+    // Testimonials
+    'testimonial_francisco' => 'Excellent Location, First Level Facilities, Comfortable Family Environment and the attention of the people who provide their Service of Very Good Quality.
+Very satisfied with the Visit and Luxury Attention. I will definitely visit them again on my next trip.',
+    'testimonial_magdalena' => 'Everything was fulfilled optimally: the facilities are first level in comfort, cleanliness and environment, and the assistants felt very good during their stay, being able to also enjoy the area.
+The staff responded to our requirements with excellent disposition and made the group\'s stay a very good experience.',
+    'testimonial_daryl' => 'We went for Valentine\'s Day with my partner and our baby, and the experience was wonderful. All the Black Cat team were very friendly and attentive to us... They even played with our son. And the place is beautiful, with good location and a lot of style. Highly recommended!',
+    'testimonial_nitzay' => '100% recommended, comfortable, safe and excellent attention. The room costs are expensive but they are worth it, they are new and in excellent condition. Family atmosphere or to go with friends to drink beers and eat good empanada platters',
+    'testimonial_hugo' => 'Excellent hostel I stayed several days I loved the warmth of its staff the cleanliness and order of the hostel very nice and recommendable very good location they make you feel at home I will return in July 2020.',
+    
+    // Buttons and elements
+    'book_button' => 'BOOK NOW',
+    'all_rights_reserved' => 'All rights reserved.',
+    
+    // Meta descriptions
+    'meta_description' => 'Looking for hotel in Santiago? Hotel Black Cat Chile - combines comfort, location, and price-quality ratio. Enjoy included breakfast, WiFi, parking and pool. Book now and save!',
+    'meta_og_description' => 'Boutique hostel in Barrio Brasil, Santiago. Free WiFi, breakfast included, central location. Book now and live the Black Cat experience.',
+    'meta_twitter_description' => 'Boutique hostel in Santiago. Free WiFi, breakfast included, central location. Book now!',
+    
+    // Booking form
+    'check_in_date' => 'Check-in Date',
+    'check_out_date' => 'Check-out Date',
+    'promo_code' => 'Promo Code',
+    'consult' => 'Search',
+    'book_now_action' => 'Book Now',
+    'adults' => 'Adults',
+    'children' => 'Children', 
+    'rooms' => 'Rooms',
+    'search_availability' => 'Search Availability',
+    'form_error' => 'Please fill in check-in and check-out dates',
 ];

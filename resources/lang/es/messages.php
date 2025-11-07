@@ -167,6 +167,41 @@ return [
     'staff_count' => 'Staffs',
     'common_areas_count' => 'Espacios comunes',
     
+    // Recaptcha error
+        // Erro do Recaptcha
+    'recaptcha_error' => 'Por favor completa la verificación reCAPTCHA.',
+    
+    // Testimonios
+    'testimonial_francisco' => 'Excelente Ubicación , Instalaciones de 1 er Nivel , Comodo ambiente Familiar y la atención de las personas prestan sus Servicio de Muy Buena Calidad .
+Muy conforme con la Visita y Atención de Lujo.Volvere a visitarlos en mi proximo viaje sin duda.',
+    'testimonial_magdalena' => 'Todo se cumplió de manera óptima: las instalaciones son de primer nivel en comodidad, limpieza y ambiente, y los asistentes se sintieron muy bien durante su estadía, pudiendo disfrutar también del sector.
+El staff respondió a nuestros requerimientos con excelente disposición e hicieron de la estadía del grupo una muy buena experiencia.',
+    'testimonial_daryl' => 'Fuimos para San Valentín con mi pareja y nuestro bebé, y la experiencia fue maravillosa. Todo el equipo de Black Cat fueron muy simpáticos y atentos con nosotros... Incluso jugaron con nuestro hijo. Y el lugar es bellísimo, con buena ubicación y mucho estilo. Muy recomendable!',
+    'testimonial_nitzay' => '100% recomendado, cómodo, seguro y una excelente atención. Los costos de las habitaciones son costosos pero lo valen son nuevas y están en excelente estado. Ambiente familiar o para ir con amigos a tomar cervezas y comer buena rica tabla de empanadas',
+    'testimonial_hugo' => 'Excelente hostal estuve varios Dias me encanto la calidez de su personal la limpieza y orden del hostal muy bonito y recomendable localizacion muy Buena te hacen sentir Como en casa regresare en Julio 2020.',
+    
+    // Botones y elementos
+    'book_button' => 'RESERVAR',
+    'all_rights_reserved' => 'Todos los derechos reservados.',
+    
+    // Meta descriptions
+    'meta_description' => '¿Buscas hotel en Santiago? Hotel Black Cat Chile - combina comidad, ubicación, y relación precio-calidad. Disfruta desayuno incluido, Wifi, estacionamiento y piscina ¡Reserva ahora y ahorra!',
+    'meta_og_description' => 'Hostal boutique en Barrio Brasil, Santiago. WiFi gratis, desayuno incluido, ubicación céntrica. Reserva ahora y vive la experiencia Black Cat.',
+    'meta_twitter_description' => 'Hostal boutique en Santiago. WiFi gratis, desayuno incluido, ubicación céntrica. ¡Reserva ahora!',
+    
+    // Formulario de reservas
+    'check_in_date' => 'Fecha de Entrada',
+    'check_out_date' => 'Fecha de Salida', 
+    'promo_code' => 'Código de Promoción',
+    'consult' => 'Consultar',
+    'book_now_action' => 'Reserva Ahora',
+    'adults' => 'Adultos',
+    'children' => 'Niños',
+    'rooms' => 'Habitaciones',
+        'search_availability' => 'Buscar Disponibilidad',
+    'form_error' => 'Por favor complete las fechas de entrada y salida',
+];
+    
     // About section
     'high_quality_service' => 'Alta calidad en el servicio.',
     'about_description' => 'Creamos un nuevo concepto en la Hostelería Boutique, insertándonos en un entorno urbano, cultural y patrimonial. Con la perfecta mezcla de tradición e historia nos ubicamos en el Barrio Brasil, que es parte del casco antiguo de Santiago y que sin duda te envolverá al igual que nuestros espacios y servicios.<br><br>Sumérgete en las hermosas construcciones del siglo XIX que ofrece este emblemático sector de Santiago, junto a su diversidad cultural, importancia patrimonial y riqueza arquitectónica. Descubre este circuito imperdible para conocer la historia de Chile, lugares cercanos como el Museo de la Memoria, Barrio Concha y Toro y un sinfín de atracciones.',
