@@ -154,7 +154,7 @@ return [
     'twin_room_gallery_alt' => 'Twin room with kitchenette photo gallery - Black Cat Hostal',
     'superior_king_gallery_alt' => 'Superior King room photo gallery - Black Cat Hostal',
     'reduce_room_gallery_alt' => 'Accessible room photo gallery - Black Cat Hostal',
-];
+    
     'form_success' => 'Thank you for contacting us! We will respond soon.',
     'form_error' => 'There was an error sending the message. Please try again.',
 

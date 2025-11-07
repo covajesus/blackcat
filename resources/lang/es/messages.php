@@ -166,7 +166,6 @@ return [
     'dining_rooms_count' => 'Comedores',
     'staff_count' => 'Staffs',
     'common_areas_count' => 'Espacios comunes',
-];
     
     // About section
     'high_quality_service' => 'Alta calidad en el servicio.',
