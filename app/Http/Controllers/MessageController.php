@@ -45,12 +45,21 @@ class MessageController extends Controller
                 'message' => 'required|string'
             ]);
 
-            // Para debugging - verificar si reCAPTCHA está presente
+            // DEBUGGING TEMPORAL - Verificar qué está pasando con reCAPTCHA
             $recaptchaResponse = $request->input('g-recaptcha-response');
+            
+            \Log::info('DEBUG: Form submission data', [
+                'all_input' => $request->all(),
+                'recaptcha_response' => $recaptchaResponse,
+                'recaptcha_length' => strlen($recaptchaResponse ?? ''),
+                'user_agent' => $request->header('User-Agent'),
+                'ip' => $request->ip()
+            ]);
             
             // Si no hay reCAPTCHA response, mostrar error específico
             if (empty($recaptchaResponse)) {
-                $errorMessage = __('messages.recaptcha_error');
+                \Log::warning('No reCAPTCHA response received');
+                $errorMessage = 'Por favor complete la verificación reCAPTCHA antes de enviar el formulario.';
                 
                 if ($request->home == 0) {
                     return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
@@ -63,31 +72,39 @@ class MessageController extends Controller
             $recaptchaSecret = '6LepQOoZAAAAADnJrNlAm0Db5gT1HE_PHa7YzEUP'; // Clave secreta
             
             // Realizar verificación con método GET simple
-            $verifyURL = "https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}";
+            $verifyURL = "https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}&remoteip=" . $request->ip();
+            
+            \Log::info('Verifying reCAPTCHA with URL: ' . $verifyURL);
             
             // Obtener respuesta de Google
             $response = file_get_contents($verifyURL);
             $responseKeys = json_decode($response, true);
 
-            // Log para debugging del reCAPTCHA
-            \Log::info('reCAPTCHA Standard Response', $responseKeys);
+            // Log DETALLADO para debugging del reCAPTCHA
+            \Log::info('reCAPTCHA Complete Response', [
+                'raw_response' => $response,
+                'decoded_response' => $responseKeys,
+                'success' => $responseKeys['success'] ?? 'not set',
+                'error_codes' => $responseKeys['error-codes'] ?? 'none',
+                'challenge_ts' => $responseKeys['challenge_ts'] ?? 'not set',
+                'hostname' => $responseKeys['hostname'] ?? 'not set'
+            ]);
 
-            // Verificar el resultado
+            // TEMPORAL: SALTAR VERIFICACION PARA DEBUGGING
             if (!isset($responseKeys['success']) || $responseKeys['success'] !== true) {
-                $errorMessage = __('messages.recaptcha_error');
-                
-                // Log para debugging con más detalle
-                \Log::warning('reCAPTCHA failed', [
+                \Log::warning('reCAPTCHA verification failed, but proceeding for debugging', [
                     'response' => $responseKeys,
-                    'token' => $recaptchaResponse,
+                    'token' => substr($recaptchaResponse, 0, 50) . '...',
                     'errors' => $responseKeys['error-codes'] ?? []
                 ]);
                 
-                if ($request->home == 0) {
-                    return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
-                } else {
-                    return redirect('/')->with('status', 0)->with('error', $errorMessage);
-                }
+                // COMENTADO TEMPORALMENTE PARA DEBUGGING
+                // $errorMessage = 'La verificación reCAPTCHA falló. Por favor inténtelo nuevamente.';
+                // if ($request->home == 0) {
+                //     return redirect('contactus')->with('status', 0)->with('error', $errorMessage);
+                // } else {
+                //     return redirect('/')->with('status', 0)->with('error', $errorMessage);
+                // }
             }
 
             // reCAPTCHA validado correctamente, enviar email

@@ -522,19 +522,48 @@
             }
         });
         
-        // Callbacks para reCAPTCHA estándar
+        // Callbacks para reCAPTCHA estándar con debugging
         var onloadCallback = function() {
             console.log('reCAPTCHA onload callback ejecutado');
         };
         
         var verifyCallback = function(response) {
-            console.log('reCAPTCHA verificado:', response);
+            console.log('reCAPTCHA verificado correctamente:', response.substring(0, 50) + '...');
+            
+            // Verificar que el token se esté agregando al formulario
+            const forms = document.querySelectorAll('form[action*="message/store"]');
+            forms.forEach(function(form) {
+                const hiddenInput = form.querySelector('textarea[name="g-recaptcha-response"]');
+                if (hiddenInput) {
+                    console.log('Token reCAPTCHA encontrado en formulario:', hiddenInput.value.substring(0, 50) + '...');
+                } else {
+                    console.error('NO se encontró el campo g-recaptcha-response en el formulario');
+                }
+            });
         };
         
         var expiredCallback = function() {
             console.warn('reCAPTCHA expiró');
             alert('El reCAPTCHA ha expirado. Por favor, complételo nuevamente.');
         };
+        
+        // Debugging adicional para verificar el estado del formulario antes del envío
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form[action*="message/store"]');
+            forms.forEach(function(form) {
+                form.addEventListener('submit', function(e) {
+                    const recaptchaResponse = form.querySelector('textarea[name="g-recaptcha-response"]');
+                    console.log('Enviando formulario...');
+                    console.log('reCAPTCHA response al enviar:', recaptchaResponse ? recaptchaResponse.value.substring(0, 50) + '...' : 'NO ENCONTRADO');
+                    
+                    if (!recaptchaResponse || !recaptchaResponse.value) {
+                        alert('Por favor complete la verificación reCAPTCHA antes de enviar.');
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
