@@ -6,9 +6,43 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
         <!-- ========== SEO ========== -->
         <title>Black Cat Hostal - Hostal Boutique</title>
-        <meta content="Hostal Boutique Black Cat exclusiva hotelería, ubicado en el corazón de Santiago en el patrimonial Barrio Brasil, siendo un punto cultural para iniciar tu viaje." name="description">
-        <meta content="" name="keywords">
+        <meta content="¿Buscas hotel en Santiago? Hotel Black Cat Chile - combina comidad, ubicación, y relación precio-calidad. Disfruta desayuno incluido, Wifi, estacionamiento y piscina ¡Reserva ahora y ahorra!" name="description">
+        <meta content="hostal black cat chile, hostal black cat santiago, alojamiento en chile, hostal en chile, hospedaje económico en chile, hostal con buena ubicación, hostal céntrico en chile, hostal con desayuno incluido, mejor hostal en chile, hostal en santiago centro, alojamiento en barrio bellavista, alojamiento en barrio brasil, alojamiento en providencia, hospedaje cerca del metro santiago, hostal cerca del centro histórico de santiago, hostal cerca de terminal de buses santiago, alojamiento cerca de atractivos turísticos, hostal cerca del aeropuerto de santiago, hostal en chile para mochileros, hostal para viajeros en chile, alojamiento económico en chile, hostal con mejor relación precio-calidad, hostal limpio y cómodo, habitaciones compartidas y privadas, hostal con wifi gratis, hostal con ambiente familiar, hospedaje con atención personalizada, hostal con espacios comunes, alojamiento para turistas internacionales, ambiente acogedor y seguro, turismo responsable en chile, vive la experiencia black cat, conoce chile desde nuestro hostal, comunidad de viajeros, reserva online hostal black cat, alojamiento turístico chile 2025, turismo económico en chile, mejores hostales en chile, hostales recomendados por viajeros, dónde alojarse en santiago, guía de hospedaje en chile, hostales con buena reputación" name="keywords">
         <meta content="Black Cat Hostal" name="author">
+        
+        <!-- ========== ROBOTS & CANONICAL ========== -->
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+        <meta name="googlebot" content="index, follow">
+        <meta name="bingbot" content="index, follow">
+        <link rel="canonical" href="{{ url()->current() }}">
+        
+        <!-- ========== OPEN GRAPH ========== -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Black Cat Hostal - Hostal Boutique en Santiago Chile">
+        <meta property="og:description" content="Hostal boutique en Barrio Brasil, Santiago. WiFi gratis, desayuno incluido, ubicación céntrica. Reserva ahora y vive la experiencia Black Cat.">
+        <meta property="og:image" content="{{ asset('public/frontend/images/logo_header.png') }}">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:site_name" content="Black Cat Hostal">
+        <meta property="og:locale" content="es_CL">
+        
+        <!-- ========== TWITTER CARDS ========== -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Black Cat Hostal - Santiago Chile">
+        <meta name="twitter:description" content="Hostal boutique en Santiago. WiFi gratis, desayuno incluido, ubicación céntrica. ¡Reserva ahora!">
+        <meta name="twitter:image" content="{{ asset('public/frontend/images/logo_header.png') }}">
+        
+        <!-- ========== GEO TAGS ========== -->
+        <meta name="geo.region" content="CL-RM">
+        <meta name="geo.position" content="-33.4489,-70.6693">
+        <meta name="ICBM" content="-33.4489,-70.6693">
+        <meta name="geo.placename" content="Santiago, Chile">
+        
+        <!-- ========== ADDITIONAL META TAGS ========== -->
+        <meta name="application-name" content="Black Cat Hostal">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="format-detection" content="telephone=no">
+        
         <!-- ========== FAVICON ========== -->
         <link rel="icon" href="{{ asset('public/frontend/images/favicon.ico') }}">
         <!-- ========== STYLESHEETS ========== -->
@@ -96,13 +130,50 @@
         </noscript>
         <!-- End Facebook Pixel Code -->
 
-        <!-- ASKSUITE CODE START --> 
-        <script id="script-infochat" src='https://cdn.asksuite.com/infochat.js?dataConfig=https://control.asksuite.com/api/companies/hostal-boutique-black-cat-santiago'></script> 
-        <!-- ASKSUITE CODE END -->
-
-        <!-- Start Asksuite Pixel -->
-        <script src="https://pixel.asksuite.com/asktag.js"></script>
-        <!-- End Asksuite Pixel -->
+        <!-- ========== STRUCTURED DATA ========== -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LodgingBusiness",
+          "name": "Black Cat Hostal",
+          "alternateName": "Hostal Boutique Black Cat",
+          "image": "{{ asset('public/frontend/images/logo_header.png') }}",
+          "description": "Hostal Boutique Black Cat exclusiva hotelería, ubicado en el corazón de Santiago en el patrimonial Barrio Brasil, siendo un punto cultural para iniciar tu viaje.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Compañía de Jesús 1921",
+            "addressLocality": "Santiago",
+            "addressRegion": "Región Metropolitana",
+            "postalCode": "8330678",
+            "addressCountry": "CL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -33.4489,
+            "longitude": -70.6693
+          },
+          "telephone": "+56949105984",
+          "email": "reservas@blackcathostal.com",
+          "url": "https://www.blackcathostal.com",
+          "priceRange": "$$",
+          "starRating": {
+            "@type": "Rating",
+            "ratingValue": "4.5"
+          },
+          "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Breakfast", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Kitchen facilities", "value": true}
+          ],
+          "sameAs": [
+            "https://www.facebook.com/blackcathostalboutique",
+            "https://www.instagram.com/blackcathostal",
+            "https://www.linkedin.com/company/blackcathostal/"
+          ]
+        }
+        </script>
     </head>
     <body>
         <!-- Google Tag Manager (noscript) -->
