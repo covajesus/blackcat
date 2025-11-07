@@ -27,32 +27,38 @@
               <!-- CONTACT FORM -->
               @if(Session::get('status') == 1)
                 <div class="alert alert-success" role="alert">
-                  {{ __('messages.success_message') }}
+                  {{ __('messages.form_success') }}
+                </div>
+              @endif
+              @if(Session::get('status') == 0 || Session::has('error'))
+                <div class="alert alert-danger" role="alert">
+                  {{ Session::get('error', __('messages.form_error')) }}
                 </div>
               @endif
               <form action="{{ url('message/store') }}" method="post">
                 @csrf
                 <div class="form-group">
-                  <input class="form-control" name="name" placeholder="{{ __('messages.name') }}" type="text" required>
+                  <input class="form-control" name="name" placeholder="{{ __('messages.form_name') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="email" placeholder="{{ __('messages.email') }}" type="email" required>
+                  <input class="form-control" name="email" placeholder="{{ __('messages.form_email') }}" type="email" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="phone" placeholder="{{ __('messages.phone') }}" type="text" required>
+                  <input class="form-control" name="phone" placeholder="{{ __('messages.form_phone') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="subject" placeholder="{{ __('messages.subject') }}" type="text" required>
+                  <input class="form-control" name="subject" placeholder="{{ __('messages.form_subject') }}" type="text" required>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" placeholder="{{ __('messages.message') }}" required></textarea>
+                  <textarea class="form-control" name="message" placeholder="{{ __('messages.form_message') }}" required></textarea>
                 </div>
                 <div class="form-group">
                   <div class="g-recaptcha" data-sitekey="6LepQOoZAAAAAIIoxD45a2oigSsRlKArTyIlENGu"></div>
+                  <small class="form-text text-muted">{{ __('messages.form_required') }}</small>
                 </div>
                 <div class="form-group">
                 <input class="form-control" name="home" type="hidden" value="0">
-                <input value="{{ __('messages.send') }}" type="submit" class="special_button" />
+                <input value="{{ __('messages.form_submit') }}" type="submit" class="special_button" />
                 </div>
               </form>
             </div>

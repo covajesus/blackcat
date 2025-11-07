@@ -53,9 +53,9 @@ class MessageController extends Controller
             }
         } else {
             if($request->home == 0) {
-                return redirect('contactus')->with('status', 0);
+                return redirect('contactus')->with('status', 0)->with('error', __('messages.recaptcha_error'));
             } else {
-                return redirect('/')->with('status', 0);
+                return redirect('/')->with('status', 0)->with('error', __('messages.recaptcha_error'));
             }
         }
     }
