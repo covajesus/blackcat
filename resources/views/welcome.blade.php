@@ -218,21 +218,14 @@
           </div>
           <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
           @php
-            $locale = app()->getLocale();
-            // Map locales to available widget languages  
-            if ($locale === 'en') {
-                $widgetLocale = 'en';
-            } elseif ($locale === 'pt') {
-                $widgetLocale = 'pt';
-            } else {
-                $widgetLocale = 'es';
-            }
+            // Always use Spanish for the widget as other languages don't work properly
+            $widgetLocale = 'es';
           @endphp
           <script>
-            // Try to load the widget in the current language, fallback to custom form if not available
+            // Load the widget always in Spanish as other languages don't work properly
             (function() {
                 var script = document.createElement('script');
-                script.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js';
+                script.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_es.js';
                 script.onerror = function() {
                     // Show custom form if widget fails to load
                     console.log('External widget not available, showing custom form');
@@ -261,7 +254,7 @@
                     return;
                 }
                 
-                var bookingUrl = 'https://reservas.fnsbooking.com/busqueda.php?accion=N&release=6&datos=111188682----------------&idioma={{ $locale }}&fecha_entrada=' + 
+                var bookingUrl = 'https://reservas.fnsbooking.com/busqueda.php?accion=N&release=6&datos=111188682----------------&idioma=es&fecha_entrada=' + 
                     checkin + '&fecha_salida=' + checkout + '&orden=&pfe=2326&currency=&oferta_id=&tipo_habitacion_id=&bookingonline=&ocupacion=' + adults + '&ciudad=&entrada=' + 
                     checkin.replace(/-/g, '%2F') + '&salida=' + checkout.replace(/-/g, '%2F');
                     

@@ -198,9 +198,8 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     'adults' => 'Adultos',
     'children' => 'Niños',
     'rooms' => 'Habitaciones',
-        'search_availability' => 'Buscar Disponibilidad',
+    'search_availability' => 'Buscar Disponibilidad',
     'form_error' => 'Por favor complete las fechas de entrada y salida',
-];
     
     // About section
     'high_quality_service' => 'Alta calidad en el servicio.',
