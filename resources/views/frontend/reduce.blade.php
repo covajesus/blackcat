@@ -22,7 +22,7 @@
       <main class="room">
         <div class="container">
           <div class="row">
-            <div class="col-lg-9 col-12">
+            <div class="col-lg-12 col-12">
               <!-- ROOM SLIDER -->
               <div class="room-slider">
                 <div id="room-main-image" class="owl-carousel image-gallery">
@@ -121,23 +121,6 @@
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-            <!-- SIDEBAR -->
-            <div class="col-lg-3 col-12">
-              <div class="sidebar">
-                <!-- WIDGET -->
-                <aside class="widget widget-help">
-                  <h4 class="widget-title">CONTÁCTANOS</h4>
-                  <div class="phone">
-                    <a href="tel:+56 9 49105984">
-                       +56 9 49105984
-                    </a>
-                  </div>
-                  <div class="email" style="font-size: 12px !important;">
-                    <a href="mailto:reservas@blackcathostal.com">reservas@blackcathostal.com</a>
-                  </div>
-                </aside>
               </div>
             </div>
           </div>
