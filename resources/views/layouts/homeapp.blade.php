@@ -228,13 +228,10 @@
                             <a href="{{ url('room/detail/family') }}">Family</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/king-queen') }}">King & Queen Estándar</a>
+                            <a href="{{ url('room/detail/king-queen') }}">Matrimonial Estándar</a>
                         </li>
                         <li class="menu-item">
-                            <a href="{{ url('room/detail/superior-king') }}">King Superior Kitchenette</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{{ url('room/detail/twin') }}">Twin Kitchenette</a>
+                            <a href="{{ url('room/detail/superior-king') }}">King Superior</a>
                         </li>
                         <li class="menu-item">
                             <a href="{{ url('room/detail/reduce') }}">Movilidad Reducida</a>
