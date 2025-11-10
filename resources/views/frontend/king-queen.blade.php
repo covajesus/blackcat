@@ -107,7 +107,7 @@
                       <li>
                         <i class="fa fa-check"></i>Amenities Biodegradables</li>
                       <li>
-                        <i class="fa fa-check"></i>Cama de 2 plazas</li>
+                        <i class="fa fa-check"></i>Cama de Matrimonial</li>
                       <li>
                         <i class="fa fa-check"></i>Estacionamiento</li>
                     </ul>
