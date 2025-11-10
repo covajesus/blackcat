@@ -109,8 +109,8 @@ return [
     // Room detail pages
     'twin_room_title' => 'QUARTO TWIN COM COZINHA COMPACTA',
     'twin_room_breadcrumb' => 'Twin com cozinha compacta',
-    'king_queen_room_title' => 'QUARTO KING & QUEEN',
-    'king_queen_breadcrumb' => 'King & Queen',
+    'king_queen_room_title' => 'QUARTO MATRIMONIAL',
+    'king_queen_breadcrumb' => 'Matrimonial',
     'superior_king_room_title' => 'QUARTO SUPERIOR KING',
     'superior_king_breadcrumb' => 'Superior King',
     'reduce_room_title' => 'QUARTO COMPACTO',
@@ -121,14 +121,14 @@ return [
     'slider_rooms_alt' => 'Quartos modernos do Black Cat Hostal Santiago',
     'slider_culture_alt' => 'Arquitetura patrimonial do Bairro Brasil Santiago Chile',
     'family_room_image_alt' => 'Quarto familiar do Black Cat Hostal com camas confortáveis',
-    'king_queen_room_image_alt' => 'Quarto King & Queen padrão com banheiro privativo',
+    'king_queen_room_image_alt' => 'Quarto matrimonial padrão com banheiro privativo',
     'twin_room_image_alt' => 'Quarto twin com cozinha compacta equipada',
     'breakfast_service_alt' => 'Café da manhã continental servido no Black Cat Hostal',
     'gallery_hostal_alt' => 'Galeria de fotos do Black Cat Hostal Santiago',
     
     // Title para links
     'view_family_room' => 'Ver detalhes do quarto familiar',
-    'view_king_queen_room' => 'Ver detalhes do quarto King & Queen',
+    'view_king_queen_room' => 'Ver detalhes do quarto matrimonial',
     'view_twin_room' => 'Ver detalhes do quarto Twin',
     
     // Serviços - Alt text
@@ -148,7 +148,7 @@ return [
     
     // Room images alt text
     'family_room_gallery_alt' => 'Galeria de fotos do quarto familiar - Black Cat Hostal',
-    'king_queen_gallery_alt' => 'Galeria de fotos quarto King & Queen - Black Cat Hostal',
+    'king_queen_gallery_alt' => 'Galeria de fotos quarto matrimonial - Black Cat Hostal',
     'twin_room_gallery_alt' => 'Galeria de fotos quarto Twin com cozinha - Black Cat Hostal',
     'superior_king_gallery_alt' => 'Galeria de fotos quarto Superior King - Black Cat Hostal',
     'reduce_room_gallery_alt' => 'Galeria de fotos quarto acessível - Black Cat Hostal',
@@ -182,7 +182,7 @@ return [
 
     // Descrições dos quartos
     'family_room_desc' => 'Desfrute do nosso quarto familiar',
-    'king_queen_room_desc' => 'Desfrute do nosso quarto king & queen padrão',
+    'king_queen_room_desc' => 'Desfrute do nosso quarto matrimonial padrão',
     'twin_room_desc' => 'Desfrute do nosso quarto twin kitchenette',
     'breakfast_service' => 'Desfrute de um café da manhã continental servido no seu quarto das 08:00 às 11:30.',
 

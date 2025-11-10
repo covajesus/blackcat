@@ -13,7 +13,18 @@ class RoomController extends Controller
      */
     public function index(Request $request)
     {
-        $room = $request->segment(3);
+        // Detectar si hay prefijo de idioma en la URL
+        $segments = $request->segments();
+        $room = null;
+        
+        // Si la URL es /es/room/detail/family o /en/room/detail/family
+        if (count($segments) >= 4 && in_array($segments[0], ['es', 'en', 'pt'])) {
+            $room = $segments[3]; // room está en la posición 3
+        } 
+        // Si la URL es /room/detail/family (sin prefijo)
+        elseif (count($segments) >= 3) {
+            $room = $segments[2]; // room está en la posición 2
+        }
 
         if ($room == 'family') {
             return view('frontend.family');
@@ -23,9 +34,12 @@ class RoomController extends Controller
             return view('frontend.twin');
         } elseif ($room == 'king-queen') {
             return view('frontend.king-queen');
-        } elseif ($room == 'reduce') {
+        } elseif ($room == 'reduce' || $room == 'mobility') {
             return view('frontend.reduce');
         }
+        
+        // Si no se encuentra la habitación, redirigir al inicio
+        return redirect()->route('home');
     }
 
     /**

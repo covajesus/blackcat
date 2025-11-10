@@ -111,8 +111,8 @@ return [
     // Room detail pages
     'twin_room_title' => 'TWIN ROOM WITH KITCHENETTE',
     'twin_room_breadcrumb' => 'Twin with kitchenette',
-    'king_queen_room_title' => 'KING & QUEEN ROOM',
-    'king_queen_breadcrumb' => 'King & Queen',
+    'king_queen_room_title' => 'MATRIMONIAL ROOM',
+    'king_queen_breadcrumb' => 'Matrimonial',
     'superior_king_room_title' => 'SUPERIOR KING ROOM',
     'superior_king_breadcrumb' => 'Superior King',
     'reduce_room_title' => 'REDUCED ROOM',
@@ -123,14 +123,14 @@ return [
     'slider_rooms_alt' => 'Modern rooms at Black Cat Hostal Santiago',
     'slider_culture_alt' => 'Heritage architecture of Barrio Brasil Santiago Chile',
     'family_room_image_alt' => 'Family room at Black Cat Hostal with comfortable beds',
-    'king_queen_room_image_alt' => 'King & Queen standard room with private bathroom',
+    'king_queen_room_image_alt' => 'Matrimonial standard room with private bathroom',
     'twin_room_image_alt' => 'Twin room with equipped kitchenette',
     'breakfast_service_alt' => 'Continental breakfast served at Black Cat Hostal',
     'gallery_hostal_alt' => 'Photo gallery of Black Cat Hostal Santiago',
     
     // Title for links
     'view_family_room' => 'View family room details',
-    'view_king_queen_room' => 'View King & Queen room details',
+    'view_king_queen_room' => 'View matrimonial room details',
     'view_twin_room' => 'View Twin room details',
     
     // Services - Alt text
@@ -150,7 +150,7 @@ return [
     
     // Room images alt text
     'family_room_gallery_alt' => 'Family room photo gallery - Black Cat Hostal',
-    'king_queen_gallery_alt' => 'King & Queen room photo gallery - Black Cat Hostal',
+    'king_queen_gallery_alt' => 'Matrimonial room photo gallery - Black Cat Hostal',
     'twin_room_gallery_alt' => 'Twin room with kitchenette photo gallery - Black Cat Hostal',
     'superior_king_gallery_alt' => 'Superior King room photo gallery - Black Cat Hostal',
     'reduce_room_gallery_alt' => 'Accessible room photo gallery - Black Cat Hostal',
@@ -184,7 +184,7 @@ return [
 
     // Room descriptions
     'family_room_desc' => 'Enjoy our family room',
-    'king_queen_room_desc' => 'Enjoy our king & queen standard room',
+    'king_queen_room_desc' => 'Enjoy our matrimonial standard room',
     'twin_room_desc' => 'Enjoy our twin kitchenette room',
     'breakfast_service' => 'Enjoy a continental breakfast served to your room from 08:00 to 11:30 am.',
 

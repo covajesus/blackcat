@@ -219,7 +219,7 @@
             <div class="col-md-4">
               <div class="room-grid-item">
                 <figure class="gradient-overlay-hover link-icon">
-                  <a href="{{ url('room/detail/family') }}" title="{{ __('messages.view_family_room') }}" aria-label="{{ __('messages.view_family_room') }}">
+                  <a href="{{ app()->getLocale() == 'es' ? url('room/detail/family') : url(app()->getLocale() . '/room/detail/family') }}" title="{{ __('messages.view_family_room') }}" aria-label="{{ __('messages.view_family_room') }}">
                     <img src="{{ asset('public/frontend/images/rooms/family/pic1.png') }}" class="img-fluid" alt="{{ __('messages.family_room_image_alt') }}" title="{{ __('messages.family_room_image_alt') }}" loading="lazy">
                   </a>
                   <div class="room-services">
@@ -231,7 +231,7 @@
                 </figure>
                 <div class="room-info">
                   <h2 class="room-title">
-                    <a href="{{ url('room/detail/family') }}" title="{{ __('messages.view_family_room') }}">{{ __('messages.family_room') }}</a>
+                    <a href="{{ app()->getLocale() == 'es' ? url('room/detail/family') : url(app()->getLocale() . '/room/detail/family') }}" title="{{ __('messages.view_family_room') }}">{{ __('messages.family_room') }}</a>
                   </h2>
                   <p>{{ __('messages.family_room_desc') }}</p>
                 </div>
@@ -241,7 +241,7 @@
             <div class="col-md-4">
               <div class="room-grid-item">
                 <figure class="gradient-overlay-hover link-icon">
-                  <a href="{{ url('room/detail/king-queen') }}" title="{{ __('messages.view_king_queen_room') }}" aria-label="{{ __('messages.view_king_queen_room') }}">
+                  <a href="{{ app()->getLocale() == 'es' ? url('room/detail/king-queen') : url(app()->getLocale() . '/room/detail/king-queen') }}" title="{{ __('messages.view_king_queen_room') }}" aria-label="{{ __('messages.view_king_queen_room') }}">
                     <img src="{{ asset('public/frontend/images/rooms/queen/pic1.png') }}" class="img-fluid" alt="{{ __('messages.king_queen_room_image_alt') }}" title="{{ __('messages.king_queen_room_image_alt') }}" loading="lazy">
                   </a>
                   <div class="room-services">
@@ -254,7 +254,7 @@
                 </figure>
                 <div class="room-info">
                   <h2 class="room-title">
-                    <a href="{{ url('room/detail/king-queen') }}" title="{{ __('messages.view_king_queen_room') }}">{{ __('messages.king_queen_room') }}</a>
+                    <a href="{{ app()->getLocale() == 'es' ? url('room/detail/king-queen') : url(app()->getLocale() . '/room/detail/king-queen') }}" title="{{ __('messages.view_king_queen_room') }}">{{ __('messages.king_queen_room') }}</a>
                   </h2>
                   <p>{{ __('messages.king_queen_room_desc') }}</p>
                 </div>
