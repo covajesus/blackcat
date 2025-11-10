@@ -296,4 +296,28 @@ The staff responded to our requirements with excellent disposition and made the 
     // Twin room content
     'twin_room_concept' => 'If you travel with a friend or family, this is the ideal room for 2 guests to rest separately in the same place. You will find good taste in design in every corner.',
     'twin_room_capacity' => 'Each of these rooms is equipped with 2 beds of 1.5 person each, it has a rest area, certified biodegradable products to enjoy a refreshing shower, television with entertainment channel alternatives - news, sports and children\'s - wifi, air conditioning/heating, fully equipped kitchenette and minibar to accompany a good moment of relaxation.',
+    
+    // Room amenities
+    'amenities_biodegradable' => 'Biodegradable Amenities',
+    'bunk_beds' => '1.5-person Bunk Beds',
+    'parking' => 'Parking',
+    'usb_connections' => 'USB Connections',
+    'wc_shower' => 'Private WC and Shower',
+    'arcade' => 'Arcade',
+    'wifi' => 'Wi-Fi',
+    'emergency_button' => 'Emergency Button',
+    'air_conditioning' => 'Air Conditioning / Heating',
+    'capacity_4_to_6' => 'Capacity to Accommodate 4 to 6 People Maximum',
+    'closet_personalized' => 'Closet with Personalized Reference Drawer',
+    'matrimonial_bed' => 'Double Bed',
+    'double_bed' => 'Double Bed',
+    'twin_beds' => '2 Twin Beds',
+    'capacity_2_guests' => 'For 2 guests',
+    'kitchenette' => 'Kitchenette',
+    'minibar' => 'Minibar',
+    'work_desk' => 'Work Desk',
+    'tv_cable' => 'Cable TV',
+    'rest_area' => 'Rest Area',
+    'king_size_bed' => 'King Size Bed',
+    'equipped_kitchenette' => 'Equipped Kitchenette',
 ];

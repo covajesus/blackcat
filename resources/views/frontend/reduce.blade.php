@@ -87,37 +87,37 @@
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Amenities Biodegradables</li>
+                        <i class="fa fa-check"></i>{{ __('messages.amenities_biodegradable') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Para aceptar 2 huéspedes</li>
+                        <i class="fa fa-check"></i>{{ __('messages.capacity_2_guests') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Estacionamiento</li>
+                        <i class="fa fa-check"></i>{{ __('messages.parking') }}</li>
                     </ul>
                   </div>
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Conexiones USB</li>
+                        <i class="fa fa-check"></i>{{ __('messages.usb_connections') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>WC y Ducha interior</li>
+                        <i class="fa fa-check"></i>{{ __('messages.wc_shower') }}</li>
                     <li>
-                        <i class="fa fa-check"></i>Sector de descanso</li>
+                        <i class="fa fa-check"></i>{{ __('messages.rest_area') }}</li>
                     </ul>
                   </div>
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Wi-Fi</li>
+                        <i class="fa fa-check"></i>{{ __('messages.wifi') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Botón de Emergencia</li>
+                        <i class="fa fa-check"></i>{{ __('messages.emergency_button') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Aire Acondicionado / Calefacción</li>
+                        <i class="fa fa-check"></i>{{ __('messages.air_conditioning') }}</li>
                     </ul>
                   </div>
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Frigobar</li>
+                        <i class="fa fa-check"></i>{{ __('messages.minibar') }}</li>
                     </ul>
                   </div>
                 </div>

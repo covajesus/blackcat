@@ -292,4 +292,28 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     // Twin room content
     'twin_room_concept' => 'Si viajas con amigo o familia, esta es la habitación ideal para que 2 huéspedes descansen por separado en el mismo lugar. El buen gusto del diseño lo encontraras en cada rincón.',
     'twin_room_capacity' => 'Cada una de estas habitaciones están equipadas con 2 camas de 1 plza. ½ cada una, cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovadora ducha, televisión con alternativas de canales de entretenimiento - noticias, deportes e infantil - wifi, aire acondicionado/calefacción, kitchenette completamente equipado y frigobar para acompañar un buen momento de relajo.',
+    
+    // Room amenities
+    'amenities_biodegradable' => 'Amenities Biodegradables',
+    'bunk_beds' => 'Camarotes de 1.5 plazas',
+    'parking' => 'Estacionamiento',
+    'usb_connections' => 'Conexiones USB',
+    'wc_shower' => 'WC y Ducha interior',
+    'arcade' => 'Arcade',
+    'wifi' => 'Wi-Fi',
+    'emergency_button' => 'Botón de Emergencia',
+    'air_conditioning' => 'Aire Acondicionado / Calefacción',
+    'capacity_4_to_6' => 'Capacidad para Recibir entre 4 a 6 Personas como Máximo',
+    'closet_personalized' => 'Closet con su Cajonera Referente y Personalizada',
+    'matrimonial_bed' => 'Cama de Matrimonial',
+    'double_bed' => 'Cama de 2 Plazas',
+    'twin_beds' => '2 Camas de 1 Plaza ½',
+    'capacity_2_guests' => 'Para aceptar 2 huéspedes',
+    'kitchenette' => 'Kitchenette',
+    'minibar' => 'Frigobar',
+    'work_desk' => 'Escritorio de Trabajo',
+    'tv_cable' => 'Televisión por Cable',
+    'rest_area' => 'Sector de Descanso',
+    'king_size_bed' => 'Cama de 2 y media plazas',
+    'equipped_kitchenette' => 'Kitchenette equipado',
 ];

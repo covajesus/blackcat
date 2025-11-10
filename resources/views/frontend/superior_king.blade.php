@@ -98,46 +98,46 @@
               <br>
               <div class="section-title sm">
                 <h4>{{ __('messages.room_services_title') }}</h4>
-                <p class="section-subtitle">La habitación incluye</p>
+                <p class="section-subtitle">{{ __('messages.room_includes') }}</p>
               </div>
               <div class="room-services-list">
                 <div class="row">
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Amenities Biodegradables</li>
+                        <i class="fa fa-check"></i>{{ __('messages.amenities_biodegradable') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Cama de 2 y media plazas</li>
+                        <i class="fa fa-check"></i>{{ __('messages.king_size_bed') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Estacionamiento</li>
+                        <i class="fa fa-check"></i>{{ __('messages.parking') }}</li>
                     </ul>
                   </div>
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Conexiones USB</li>
+                        <i class="fa fa-check"></i>{{ __('messages.usb_connections') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>WC y Ducha interior</li>
+                        <i class="fa fa-check"></i>{{ __('messages.wc_shower') }}</li>
                     <li>
-                        <i class="fa fa-check"></i>Sector de descanso</li>
+                        <i class="fa fa-check"></i>{{ __('messages.rest_area') }}</li>
                     </ul>
                   </div>
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Wi-Fi</li>
+                        <i class="fa fa-check"></i>{{ __('messages.wifi') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Botón de Emergencia</li>
+                        <i class="fa fa-check"></i>{{ __('messages.emergency_button') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Aire Acondicionado / Calefacción</li>
+                        <i class="fa fa-check"></i>{{ __('messages.air_conditioning') }}</li>
                     </ul>
                   </div>
                   <div class="col-sm-3">
                     <ul class="list-unstyled">
                       <li>
-                        <i class="fa fa-check"></i>Kitchenette equipado</li>
+                        <i class="fa fa-check"></i>{{ __('messages.equipped_kitchenette') }}</li>
                       <li>
-                        <i class="fa fa-check"></i>Frigobar</li>
+                        <i class="fa fa-check"></i>{{ __('messages.minibar') }}</li>
                     </ul>
                   </div>
                 </div>

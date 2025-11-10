@@ -294,4 +294,28 @@ A equipe respondeu aos nossos requisitos com excelente disposição e fizeram da
     // Twin room content
     'twin_room_concept' => 'Se você viaja com um amigo ou família, este é o quarto ideal para que 2 hóspedes descansem separadamente no mesmo lugar. O bom gosto do design você encontrará em cada canto.',
     'twin_room_capacity' => 'Cada um desses quartos está equipado com 2 camas de 1,5 pessoa cada, conta com área de descanso, produtos biodegradáveis certificados para desfrutar de um banho renovador, televisão com alternativas de canais de entretenimento - notícias, esportes e infantil - wifi, ar condicionado/aquecimento, kitchenette totalmente equipada e frigobar para acompanhar um bom momento de relaxamento.',
+    
+    // Room amenities
+    'amenities_biodegradable' => 'Amenidades Biodegradáveis',
+    'bunk_beds' => 'Beliches de 1,5 pessoa',
+    'parking' => 'Estacionamento',
+    'usb_connections' => 'Conexões USB',
+    'wc_shower' => 'WC e Chuveiro Privativos',
+    'arcade' => 'Arcade',
+    'wifi' => 'Wi-Fi',
+    'emergency_button' => 'Botão de Emergência',
+    'air_conditioning' => 'Ar Condicionado / Aquecimento',
+    'capacity_4_to_6' => 'Capacidade para Acomodar de 4 a 6 Pessoas no Máximo',
+    'closet_personalized' => 'Closet com Gaveteiro Referente e Personalizado',
+    'matrimonial_bed' => 'Cama de Casal',
+    'double_bed' => 'Cama de Casal',
+    'twin_beds' => '2 Camas de Solteiro',
+    'capacity_2_guests' => 'Para 2 hóspedes',
+    'kitchenette' => 'Kitchenette',
+    'minibar' => 'Frigobar',
+    'work_desk' => 'Escrivaninha',
+    'tv_cable' => 'TV a Cabo',
+    'rest_area' => 'Área de Descanso',
+    'king_size_bed' => 'Cama King Size',
+    'equipped_kitchenette' => 'Kitchenette Equipada',
 ];
