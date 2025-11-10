@@ -11,7 +11,7 @@ return [
     // Tipos de habitación
     'family_room' => 'Familiar',
     'matrimonial_room' => 'Matrimonial', 
-    'king_standard_room' => 'Estándar King',
+    'matrimonial_standard_room' => 'Matrimonial Estándar',
     'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Movilidad Reducida',
 
@@ -197,7 +197,6 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     'book_now_action' => 'Reserva Ahora',
     'adults' => 'Adultos',
     'children' => 'Niños',
-    'rooms' => 'Habitaciones',
     'search_availability' => 'Buscar Disponibilidad',
     'booking_form_error' => 'Por favor complete las fechas de entrada y salida',
     

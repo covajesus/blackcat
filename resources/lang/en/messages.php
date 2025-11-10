@@ -9,9 +9,9 @@ return [
     'reserve' => 'BOOK NOW',
 
     // Room types
-    'family_room' => 'Family Room',
-    'matrimonial_room' => 'Double Room', 
-    'king_standard_room' => 'King Standard',
+    'family_room' => 'Family',
+    'matrimonial_room' => 'Matrimonial', 
+    'matrimonial_standard_room' => 'Matrimonial Standard',
     'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Reduced Mobility',
 
@@ -260,8 +260,7 @@ The staff responded to our requirements with excellent disposition and made the 
     'consult' => 'Search',
     'book_now_action' => 'Book Now',
     'adults' => 'Adults',
-    'children' => 'Children', 
-    'rooms' => 'Rooms',
+    'children' => 'Children',
     'search_availability' => 'Search Availability',
     'booking_form_error' => 'Please fill in check-in and check-out dates',
     

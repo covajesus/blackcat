@@ -9,9 +9,9 @@ return [
     'reserve' => 'RESERVAR',
 
     // Tipos de quarto
-    'family_room' => 'Quarto Família',
-    'matrimonial_room' => 'Quarto Matrimonial',
-    'king_standard_room' => 'King Standard',
+    'family_room' => 'Familiar',
+    'matrimonial_room' => 'Matrimonial',
+    'matrimonial_standard_room' => 'Matrimonial Padrão',
     'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Mobilidade Reduzida',
 
@@ -259,7 +259,6 @@ A equipe respondeu aos nossos requisitos com excelente disposição e fizeram da
     'book_now_action' => 'Reserve Agora',
     'adults' => 'Adultos',
     'children' => 'Crianças',
-    'rooms' => 'Quartos',
     'search_availability' => 'Pesquisar Disponibilidade',
     'booking_form_error' => 'Por favor preencha as datas de check-in e check-out',
     
