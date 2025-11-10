@@ -76,28 +76,28 @@
                   <div class="item"><img class="img-fluid" src="{{ asset('public/frontend/images/rooms/superior_king/pic5.png') }}" alt="Image"></div>
                 </div>
               </div>
-              <p sstyle="text-align: justify;">
-              Cada detalle tiene su historia, sus terminaciones son modernas las cuales te invitan a ser parte de un estilo único en la Hotelería Urbana.
+              <p style="text-align: justify;">
+              {{ __('messages.superior_king_concept') }}
               </p>
               <p style="text-align: justify;">
-              Estas habitaciones están equipadas para recibir hasta 2 huéspedes, descansarán en cama de 2 ½ plazas, además cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovadora ducha, televisión con alternativas de canales de entretenimiento -noticias, deportes e infantil - wifi, aire acondicionado/calefacción, kitchenette completamente equipado y frigobar para acompañar un buen momento de relajo. 
+              {{ __('messages.superior_king_capacity') }}
               </p>
               <br>
               <div style="background: #CCC !important; padding: 10px; text-align: justify;">
-                <h5 style="font-size:13px;"><center><i class="fa fa-globe" aria-hidden="true"></i> TRABAJEMOS JUNTOS CON LA CONCIENCIA DEL MEDIO AMBIENTE</center> </h5>
+                <h5 style="font-size:13px;"><center><i class="fa fa-globe" aria-hidden="true"></i> {{ __('messages.environmental_consciousness') }}</center> </h5>
                 <div>
-                - Si quieres reutilizar las toallas, indícanos dejándolas colgadas en los toalleros, así sabremos que también te sumas.
+                - {{ __('messages.towel_reuse') }}
                 <br>
-                - Si desean cambio de tollas, indícanos dejándolas en el lavamanos dentro de su respectiva bolsa, así sabremos que debemos cambiarlas.
+                - {{ __('messages.towel_change') }}
                 <br>
-                - En las habitaciones está prohibido fumar, te invitamos a conocer las terrazas habilitadas.                
+                - {{ __('messages.no_smoking') }}                
                 <br>
-                - Déjanos los desechos y nosotros los trasladamos a los contenedores de reciclaje.
+                - {{ __('messages.recycling') }}
                 </div>
               </div>
               <br>
               <div class="section-title sm">
-                <h4>SERVICIOS DE LA HABITACIÓN</h4>
+                <h4>{{ __('messages.room_services_title') }}</h4>
                 <p class="section-subtitle">La habitación incluye</p>
               </div>
               <div class="room-services-list">

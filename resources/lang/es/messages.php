@@ -264,4 +264,32 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     'twin_room_gallery_alt' => 'Galería de fotos habitación Twin con kitchenette - Black Cat Hostal',
     'superior_king_gallery_alt' => 'Galería de fotos habitación Superior King - Black Cat Hostal',
     'reduce_room_gallery_alt' => 'Galería de fotos habitación accesible - Black Cat Hostal',
+    
+    // Family room content
+    'family_room_concept' => 'Un concepto único para compartir con amigos y familiares, el espacio está diseñado para descansar en un cómodo ambiente, con detalles únicos como la máquina Arcade para la entretención en el mismo lugar.',
+    'family_room_capacity' => 'Cada una de estas habitaciones, tienen la capacidad para recibir entre 4 a 6 personas como máximo, están equipadas con camarotes o literas de 1 plza. ½, sector de descanso, privado al interior, productos biodegradables certificados para que disfruten de una reconfortante ducha, closet con su cajonera referente y personalizada.',
+    'family_room_kitchenette' => 'En esta misma categoría, tenemos disponible una habitación con Kitchenette completamente equipada para un máximo de 3 huéspedes. ¡Consulta por ella!',
+    'environmental_consciousness' => 'TRABAJEMOS JUNTOS CON LA CONCIENCIA DEL MEDIO AMBIENTE',
+    'towel_reuse' => 'Si quieres reutilizar las toallas, indícanos dejándolas colgadas en los toalleros, así sabremos que también te sumas.',
+    'towel_change' => 'Si desean cambio de toallas, indícanos dejándolas en el lavamanos dentro de su respectiva bolsa, así sabremos que debemos cambiarlas.',
+    'no_smoking' => 'En las habitaciones está prohibido fumar, te invitamos a conocer las terrazas habilitadas.',
+    'recycling' => 'Déjanos los desechos y nosotros los trasladamos a los contenedores de reciclaje.',
+    'room_services_title' => 'SERVICIOS DE LA HABITACIÓN',
+    'room_includes' => 'La habitación incluye',
+    
+    // King Queen (Matrimonial) room content
+    'matrimonial_room_concept' => 'Un lugar amplio, cómodo, cálido con terminaciones modernas, estilo y vanguardia.',
+    'matrimonial_room_capacity' => 'Su capacidad es para recibir hasta 2 huéspedes, descansaran en una cama de 2 plazas, además cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovadora ducha, televisión con alternativas de canales de entretenimiento - noticias, deportes e infantil - wifi, aire acondicionado/calefacción, escritorio de trabajo y frigobar para acompañar un buen momento de relajo.',
+    
+    // Superior King room content
+    'superior_king_concept' => 'Cada detalle tiene su historia, sus terminaciones son modernas las cuales te invitan a ser parte de un estilo único en la Hotelería Urbana.',
+    'superior_king_capacity' => 'Estas habitaciones están equipadas para recibir hasta 2 huéspedes, descansarán en cama de 2 ½ plazas, además cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovadora ducha, televisión con alternativas de canales de entretenimiento -noticias, deportes e infantil - wifi, aire acondicionado/calefacción, kitchenette completamente equipado y frigobar para acompañar un buen momento de relajo.',
+    
+    // Reduced mobility room content
+    'reduce_room_concept' => 'Iniciamos este lindo proyecto, conscientes de la inclusión - movilidad reducida – facilitando accesos a las diferentes áreas y específicamente a la habitación, complementando el diseño y estilo que nos diferencia.',
+    'reduce_room_capacity' => 'La habitación está equipada para recibir a 2 huéspedes, cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovada ducha, wifi, aire acondicionado/calefacción, escritorio de trabajo y frigobar para acompañar un buen momento de relajo.',
+    
+    // Twin room content
+    'twin_room_concept' => 'Si viajas con amigo o familia, esta es la habitación ideal para que 2 huéspedes descansen por separado en el mismo lugar. El buen gusto del diseño lo encontraras en cada rincón.',
+    'twin_room_capacity' => 'Cada una de estas habitaciones están equipadas con 2 camas de 1 plza. ½ cada una, cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovadora ducha, televisión con alternativas de canales de entretenimiento - noticias, deportes e infantil - wifi, aire acondicionado/calefacción, kitchenette completamente equipado y frigobar para acompañar un buen momento de relajo.',
 ];

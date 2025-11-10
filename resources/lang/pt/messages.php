@@ -266,4 +266,32 @@ A equipe respondeu aos nossos requisitos com excelente disposição e fizeram da
     'contact_success' => 'Obrigado por entrar em contato. Responderemos em breve.',
     'contact_error' => 'Houve um erro ao enviar a mensagem. Tente novamente.',
     'form_sending' => 'Enviando...',
+    
+    // Family room content
+    'family_room_concept' => 'Um conceito único para compartilhar com amigos e familiares, o espaço foi projetado para descansar em um ambiente confortável, com detalhes únicos como a máquina Arcade para entretenimento no mesmo local.',
+    'family_room_capacity' => 'Cada um desses quartos tem capacidade para acomodar entre 4 a 6 pessoas no máximo, estão equipados com beliches de 1,5 pessoa, área de descanso privativa no interior, produtos biodegradáveis certificados para que você possa desfrutar de um banho refrescante, closet com sua gaveta referencial e personalizada.',
+    'family_room_kitchenette' => 'Nesta mesma categoria, temos disponível um quarto com Kitchenette totalmente equipada para no máximo 3 hóspedes. Consulte sobre ela!',
+    'environmental_consciousness' => 'VAMOS TRABALHAR JUNTOS COM A CONSCIÊNCIA AMBIENTAL',
+    'towel_reuse' => 'Se você quiser reutilizar as toalhas, nos avise pendurando-as nos toalheiros, assim saberemos que você está se juntando a nós.',
+    'towel_change' => 'Se desejarem troca de toalhas, nos avisem deixando-as na pia dentro de sua respectiva sacola, assim saberemos que precisamos trocá-las.',
+    'no_smoking' => 'É proibido fumar nos quartos, convidamos vocês a conhecerem os terraços habilitados.',
+    'recycling' => 'Deixe-nos os resíduos e nós os transportaremos para os contêineres de reciclagem.',
+    'room_services_title' => 'SERVIÇOS DO QUARTO',
+    'room_includes' => 'O quarto inclui',
+    
+    // King Queen (Matrimonial) room content
+    'matrimonial_room_concept' => 'Um lugar espaçoso, confortável, acolhedor com acabamentos modernos, estilo e vanguarda.',
+    'matrimonial_room_capacity' => 'Sua capacidade é para acomodar até 2 hóspedes, descansarão em uma cama de casal, além disso conta com área de descanso, produtos biodegradáveis certificados para desfrutar de um banho renovador, televisão com alternativas de canais de entretenimento - notícias, esportes e infantil - wifi, ar condicionado/aquecimento, mesa de trabalho e frigobar para acompanhar um bom momento de relaxamento.',
+    
+    // Superior King room content
+    'superior_king_concept' => 'Cada detalhe tem sua história, seus acabamentos são modernos que te convidam a fazer parte de um estilo único na Hotelaria Urbana.',
+    'superior_king_capacity' => 'Estes quartos estão equipados para acomodar até 2 hóspedes, descansarão em cama de 2,5 lugares, além disso conta com área de descanso, produtos biodegradáveis certificados para desfrutar de um banho renovador, televisão com alternativas de canais de entretenimento - notícias, esportes e infantil - wifi, ar condicionado/aquecimento, kitchenette totalmente equipada e frigobar para acompanhar um bom momento de relaxamento.',
+    
+    // Reduced mobility room content
+    'reduce_room_concept' => 'Iniciamos este belo projeto, conscientes da inclusão - mobilidade reduzida - facilitando o acesso às diferentes áreas e especificamente ao quarto, complementando o design e estilo que nos diferencia.',
+    'reduce_room_capacity' => 'O quarto está equipado para acomodar 2 hóspedes, conta com área de descanso, produtos biodegradáveis certificados para desfrutar de um banho renovador, wifi, ar condicionado/aquecimento, mesa de trabalho e frigobar para acompanhar um bom momento de relaxamento.',
+    
+    // Twin room content
+    'twin_room_concept' => 'Se você viaja com um amigo ou família, este é o quarto ideal para que 2 hóspedes descansem separadamente no mesmo lugar. O bom gosto do design você encontrará em cada canto.',
+    'twin_room_capacity' => 'Cada um desses quartos está equipado com 2 camas de 1,5 pessoa cada, conta com área de descanso, produtos biodegradáveis certificados para desfrutar de um banho renovador, televisão com alternativas de canais de entretenimento - notícias, esportes e infantil - wifi, ar condicionado/aquecimento, kitchenette totalmente equipada e frigobar para acompanhar um bom momento de relaxamento.',
 ];

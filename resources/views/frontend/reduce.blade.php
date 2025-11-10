@@ -58,30 +58,29 @@
                   <div class="item"><img class="img-fluid" src="{{ asset('public/frontend/images/rooms/reduce/pic3.png') }}" alt="Image"></div>
                 </div>
               </div>
-              <p sstyle="text-align: justify;">
-              Iniciamos este lindo proyecto, conscientes de la inclusión - movilidad reducida – facilitando accesos a las diferentes áreas y específicamente a la habitación, complementando el diseño y estilo que nos diferencia. 
-              La habitación está equipada para recibir a 2 huéspedes, cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovada ducha, wifi, aire acondicionado/calefacción, escritorio de trabajo y frigobar para acompañar un buen momento de relajo. 
+              <p style="text-align: justify;">
+              {{ __('messages.reduce_room_concept') }}
               </p>
-              <p sstyle="text-align: justify;">
-              La habitación está equipada para recibir a 2 huéspedes, cuenta con sector de descanso, productos biodegradables certificados para disfrutar de una renovada ducha, wifi, aire acondicionado/calefacción, escritorio de trabajo y frigobar para acompañar un buen momento de relajo. 
+              <p style="text-align: justify;">
+              {{ __('messages.reduce_room_capacity') }}
               </p>
               <br>
               <div style="background: #CCC !important; padding: 10px; text-align: justify;">
-                <h5 style="font-size:13px;"><center><i class="fa fa-globe" aria-hidden="true"></i> TRABAJEMOS JUNTOS CON LA CONCIENCIA DEL MEDIO AMBIENTE</center> </h5>
+                <h5 style="font-size:13px;"><center><i class="fa fa-globe" aria-hidden="true"></i> {{ __('messages.environmental_consciousness') }}</center> </h5>
                 <div>
-                - Si quieres reutilizar las toallas, indícanos dejándolas colgadas en los toalleros, así sabremos que también te sumas.
+                - {{ __('messages.towel_reuse') }}
                 <br>
-                - Si desean cambio de tollas, indícanos dejándolas en el lavamanos dentro de su respectiva bolsa, así sabremos que debemos cambiarlas.
+                - {{ __('messages.towel_change') }}
                 <br>
-                - En las habitaciones está prohibido fumar, te invitamos a conocer las terrazas habilitadas.                
+                - {{ __('messages.no_smoking') }}                
                 <br>
-                - Déjanos los desechos y nosotros los trasladamos a los contenedores de reciclaje.
+                - {{ __('messages.recycling') }}
                 </div>
               </div>
               <br>
               <div class="section-title sm">
-                <h4>SERVICIOS DE LA HABITACIÓN</h4>
-                <p class="section-subtitle">La habitación incluye</p>
+                <h4>{{ __('messages.room_services_title') }}</h4>
+                <p class="section-subtitle">{{ __('messages.room_includes') }}</p>
               </div>
               <div class="room-services-list">
                 <div class="row">

@@ -73,31 +73,31 @@
                 </div>
               </div>
               <p style="text-align: justify;">
-              Un concepto único para compartir con amigos y familiares, el espacio está diseñado para descansar en un cómodo ambiente, con detalles únicos como la máquina Arcade para la entretención en el mismo lugar.
+              {{ __('messages.family_room_concept') }}
               </p>
               <p style="text-align: justify;">
-              Cada una de estas habitaciones, tienen la capacidad para recibir entre 4 a 6 personas como máximo, están equipadas con camarotes o literas de 1 plza. ½, sector de descanso, privado al interior, productos biodegradables certificados para que disfruten de una reconfortante ducha, closet con su cajonera referente y personalizada.
+              {{ __('messages.family_room_capacity') }}
               </p>
               <p style="text-align: justify;">
-              En esta misma categoría, tenemos disponible una habitación con Kitchenette completamente equipada para un máximo de 3 huéspedes. ¡Consulta por ella!
+              {{ __('messages.family_room_kitchenette') }}
               </p>
               <br>
               <div style="background: #CCC !important; padding: 10px; text-align: justify;">
-                <h5 style="font-size:13px;"><center><i class="fa fa-globe" aria-hidden="true"></i> TRABAJEMOS JUNTOS CON LA CONCIENCIA DEL MEDIO AMBIENTE</center> </h5>
+                <h5 style="font-size:13px;"><center><i class="fa fa-globe" aria-hidden="true"></i> {{ __('messages.environmental_consciousness') }}</center> </h5>
                 <div>
-                - Si quieres reutilizar las toallas, indícanos dejándolas colgadas en los toalleros, así sabremos que también te sumas.
+                - {{ __('messages.towel_reuse') }}
                 <br>
-                - Si desean cambio de tollas, indícanos dejándolas en el lavamanos dentro de su respectiva bolsa, así sabremos que debemos cambiarlas.
+                - {{ __('messages.towel_change') }}
                 <br>
-                - En las habitaciones está prohibido fumar, te invitamos a conocer las terrazas habilitadas.                
+                - {{ __('messages.no_smoking') }}                
                 <br>
-                - Déjanos los desechos y nosotros los trasladamos a los contenedores de reciclaje.
+                - {{ __('messages.recycling') }}
                 </div>
               </div>
               <br>
               <div class="section-title sm">
-                <h4>SERVICIOS DE LA HABITACIÓN</h4>
-                <p class="section-subtitle">La habitación incluye</p>
+                <h4>{{ __('messages.room_services_title') }}</h4>
+                <p class="section-subtitle">{{ __('messages.room_includes') }}</p>
               </div>
               <div class="room-services-list">
                 <div class="row">

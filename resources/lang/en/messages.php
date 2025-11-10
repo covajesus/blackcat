@@ -268,4 +268,32 @@ The staff responded to our requirements with excellent disposition and made the 
     'contact_success' => 'Thank you for contacting us. We will respond shortly.',
     'contact_error' => 'There was an error sending the message. Please try again.',
     'form_sending' => 'Sending...',
+    
+    // Family room content
+    'family_room_concept' => 'A unique concept to share with friends and family, the space is designed to rest in a comfortable environment, with unique details such as the Arcade machine for entertainment in the same place.',
+    'family_room_capacity' => 'Each of these rooms has the capacity to accommodate between 4 to 6 people maximum, they are equipped with 1.5-person bunk beds, private rest area inside, certified biodegradable products so you can enjoy a refreshing shower, closet with its referential and personalized drawer.',
+    'family_room_kitchenette' => 'In this same category, we have available a room with a fully equipped Kitchenette for a maximum of 3 guests. Ask about it!',
+    'environmental_consciousness' => 'LET\'S WORK TOGETHER WITH ENVIRONMENTAL AWARENESS',
+    'towel_reuse' => 'If you want to reuse towels, let us know by hanging them on the towel racks, so we\'ll know you\'re joining us.',
+    'towel_change' => 'If you want towel changes, let us know by leaving them in the sink inside their respective bag, so we\'ll know we need to change them.',
+    'no_smoking' => 'Smoking is prohibited in the rooms, we invite you to visit the enabled terraces.',
+    'recycling' => 'Leave us the waste and we will transport it to the recycling containers.',
+    'room_services_title' => 'ROOM SERVICES',
+    'room_includes' => 'The room includes',
+    
+    // King Queen (Matrimonial) room content
+    'matrimonial_room_concept' => 'A spacious, comfortable, warm place with modern finishes, style and avant-garde.',
+    'matrimonial_room_capacity' => 'Its capacity is to accommodate up to 2 guests, they will rest in a double bed, it also has a rest area, certified biodegradable products to enjoy a refreshing shower, television with entertainment channel alternatives - news, sports and children\'s - wifi, air conditioning/heating, work desk and minibar to accompany a good moment of relaxation.',
+    
+    // Superior King room content
+    'superior_king_concept' => 'Every detail has its story, its finishes are modern which invite you to be part of a unique style in Urban Hospitality.',
+    'superior_king_capacity' => 'These rooms are equipped to accommodate up to 2 guests, they will rest in a 2.5-person bed, it also has a rest area, certified biodegradable products to enjoy a refreshing shower, television with entertainment channel alternatives - news, sports and children\'s - wifi, air conditioning/heating, fully equipped kitchenette and minibar to accompany a good moment of relaxation.',
+    
+    // Reduced mobility room content
+    'reduce_room_concept' => 'We started this beautiful project, aware of inclusion - reduced mobility - facilitating access to different areas and specifically to the room, complementing the design and style that differentiates us.',
+    'reduce_room_capacity' => 'The room is equipped to accommodate 2 guests, it has a rest area, certified biodegradable products to enjoy a refreshing shower, wifi, air conditioning/heating, work desk and minibar to accompany a good moment of relaxation.',
+    
+    // Twin room content
+    'twin_room_concept' => 'If you travel with a friend or family, this is the ideal room for 2 guests to rest separately in the same place. You will find good taste in design in every corner.',
+    'twin_room_capacity' => 'Each of these rooms is equipped with 2 beds of 1.5 person each, it has a rest area, certified biodegradable products to enjoy a refreshing shower, television with entertainment channel alternatives - news, sports and children\'s - wifi, air conditioning/heating, fully equipped kitchenette and minibar to accompany a good moment of relaxation.',
 ];
