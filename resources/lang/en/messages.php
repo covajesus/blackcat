@@ -4,7 +4,7 @@ return [
     // Navigation
     'home' => 'HOME',
     'about' => 'ABOUT US',
-    'rooms' => 'ROOMS',
+    'rooms' => 'Rooms',
     'contact' => 'CONTACT US',
     'reserve' => 'BOOK NOW',
 

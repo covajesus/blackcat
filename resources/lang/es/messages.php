@@ -4,7 +4,7 @@ return [
     // Navegación
     'home' => 'INICIO',
     'about' => 'NOSOTROS',
-    'rooms' => 'HABITACIONES',
+    'rooms' => 'Habitaciones',
     'contact' => 'CONTÁCTENOS',
     'reserve' => 'RESERVAR',
 
