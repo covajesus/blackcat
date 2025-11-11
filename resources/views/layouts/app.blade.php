@@ -357,6 +357,22 @@
             .simple-slider:active {
                 opacity: 0.9;
             }
+        }
+        
+        /* Desktop/Tablet slider clickable indicator */
+        @media (min-width: 768px) {
+            .simple-slider {
+                cursor: pointer !important;
+            }
+            
+            .simple-slider:hover {
+                opacity: 0.95;
+                transition: opacity 0.2s ease;
+            }
+            
+            .simple-slider:active {
+                opacity: 0.9;
+            }
             
             /* Extra mobile fixes for different screen sizes */
             @media (max-width: 480px) {
@@ -902,20 +918,32 @@
             // Initialize first slide
             showSlide(0);
 
-            // WhatsApp functionality for mobile slider clicks
+            // Click functionality for slider - WhatsApp on mobile, Contact page on desktop/tablet
             const sliderContainer = document.getElementById('sliderContainer');
             if (sliderContainer) {
                 sliderContainer.addEventListener('click', function(e) {
-                    // Only trigger on mobile devices (screen width <= 767px)
-                    if (window.innerWidth <= 767) {
-                        // Don't trigger if clicking on navigation buttons
-                        if (!e.target.closest('button')) {
+                    // Don't trigger if clicking on navigation buttons
+                    if (!e.target.closest('button')) {
+                        
+                        if (window.innerWidth <= 767) {
+                            // Mobile: Open WhatsApp
                             const whatsappNumber = '+56949105984';
                             const message = encodeURIComponent('Hola! Me interesa obtener más información sobre Black Cat Hostal. ¿Podrían ayudarme?');
                             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
-                            
-                            // Open WhatsApp
                             window.open(whatsappUrl, '_blank');
+                            
+                        } else {
+                            // Desktop/Tablet: Redirect to contact page
+                            const currentLang = document.documentElement.lang || 'es';
+                            let contactUrl;
+                            
+                            if (currentLang === 'es') {
+                                contactUrl = window.location.origin + '/contactus';
+                            } else {
+                                contactUrl = window.location.origin + '/' + currentLang + '/contactus';
+                            }
+                            
+                            window.location.href = contactUrl;
                         }
                     }
                 });
