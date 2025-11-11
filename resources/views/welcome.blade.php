@@ -9,7 +9,7 @@
                     <!-- SLIDE 1: Ofertas (Sin overlay) -->
                     <li class="splide__slide hero-slide no-overlay">
                         <div class="hero-slide__image">
-                            <img src="{{ asset('public/frontend/images/slider/slider5.png') }}" 
+                            <img src="{{ asset('public/frontend/images/slider/slider5.jpg') }}" 
                                  alt="{{ __('messages.slider_hostal_alt') }}" 
                                  loading="eager">
                         </div>
