@@ -1,29 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- ========== MODERN SLIDER - SPLIDE.JS ========== -->
-    <div class="hero-slider-container">
-        <div class="splide hero-slider" id="hero-slider">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <!-- SLIDE 1: Ofertas (Sin overlay) -->
-                    <li class="splide__slide hero-slide no-overlay">
-                        <div class="hero-slide__image">
-                            <img src="{{ asset('public/frontend/images/slider/slider5.jpg') }}" 
-                                 alt="{{ __('messages.slider_hostal_alt') }}" 
-                                 loading="eager">
-                        </div>
-                    </li>
-                    
-                   
-                </ul>
-            </div>
-        </div>
-        
-      </div>
+
       <img src="{{ asset('public/frontend/images/slider/slider5.jpg') }}" 
                                  alt="{{ __('messages.slider_hostal_alt') }}" 
-                                 loading="eager">
+                                 loading="eager"
+                                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
       
       <!-- ========== ABOUT ========== -->
       <section class="about mt100">
