@@ -21,6 +21,9 @@
         </div>
         
       </div>
+      <img src="{{ asset('public/frontend/images/slider/slider5.jpg') }}" 
+                                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                                 loading="eager">
       
       <!-- ========== ABOUT ========== -->
       <section class="about mt100">
