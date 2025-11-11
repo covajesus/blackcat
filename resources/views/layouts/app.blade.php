@@ -517,7 +517,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize modern hero slider
-            new Splide('#hero-slider', {
+            const splide = new Splide('#hero-slider', {
                 type: 'fade',
                 autoplay: true,
                 interval: 6000,
@@ -527,19 +527,33 @@
                 resetProgress: false,
                 arrows: true,
                 pagination: false,
-                cover: true,
-                height: '60vh',
+                cover: false,
+                fixedHeight: '60vh',
                 breakpoints: {
                     768: {
-                        height: '50vh',
+                        fixedHeight: '50vh',
                         interval: 5000,
                     },
                     480: {
-                        height: '40vh',
+                        fixedHeight: '40vh',
                         interval: 4000,
                     }
                 }
             }).mount();
+            
+            // Force refresh on scroll to fix image sizing issues
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+                    splide.refresh();
+                }, 100);
+            });
+            
+            // Also refresh on resize
+            window.addEventListener('resize', function() {
+                splide.refresh();
+            });
         });
     </script>
 
