@@ -49,15 +49,16 @@
         <link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap-select.min.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/jquery.mmenu.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/layers.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/settings.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/navigation.css') }}">
+
         <link rel="stylesheet" href="{{ asset('public/frontend/css/animate.min.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/daterangepicker.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/magnific-popup.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css') }}">
+        
+        <!-- ========== SWIPER SLIDER ========== -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
         @include('partials.analytics')
 
@@ -214,38 +215,141 @@
         
         <!-- ========== CUSTOM STYLES ========== -->
         <style>
-        /* Remove dark overlay from first slider only */
-        .gradient-slider li.no-overlay .slotholder:after {
-            opacity: 0 !important;
+        /* ========== SWIPER SLIDER STYLES ========== */
+        .slider-container {
+            margin-top: 110px; /* Space for sticky header */
+            position: relative;
+            z-index: 1;
         }
         
-        /* Fix slider height and prevent overflow */
-        .slider {
-            max-height: 600px !important;
-            overflow: hidden !important;
-            margin-top: 110px !important; /* Space for sticky header */
+        .hostal-slider {
+            width: 100%;
+            height: 500px;
         }
         
-        #rev-slider-1 {
-            max-height: 600px !important;
-            height: 600px !important;
+        .swiper-slide {
+            position: relative;
+            overflow: hidden;
         }
         
-        .gradient-slider .rev-slidebg {
-            height: 600px !important;
-            max-height: 600px !important;
-            object-fit: cover !important;
+        .slide-bg {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
         }
         
-        /* Ensure proper positioning under fixed header */
-        .slider {
-            position: relative !important;
-            z-index: 1 !important;
+        /* Dark overlay for all slides except first */
+        .swiper-slide:not(.no-overlay) .slide-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
         
-        /* Fix content positioning for pages with sticky header */
-        .sticky-header + * .slider {
-            padding-top: 0 !important;
+        /* Content positioning */
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            color: white;
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        .slide-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .slide-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Navigation buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white !important;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            width: 50px !important;
+            height: 50px !important;
+            margin-top: -25px !important;
+        }
+        
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px !important;
+            font-weight: bold;
+        }
+        
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(0,0,0,0.6);
+        }
+        
+        /* Pagination */
+        .swiper-pagination {
+            bottom: 20px !important;
+        }
+        
+        .swiper-pagination-bullet {
+            background: white !important;
+            opacity: 0.5 !important;
+            width: 12px !important;
+            height: 12px !important;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            background: #ff8000 !important;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hostal-slider {
+                height: 400px;
+            }
+            
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1rem;
+            }
+            
+            .slider-container {
+                margin-top: 80px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hostal-slider {
+                height: 350px;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 0.9rem;
+            }
         }
         </style>
     </head>
@@ -518,18 +622,7 @@
     <script src="{{ asset('public/frontend/js/smoothscroll.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/instafeed.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/main.js') }}"></script>
-    <!-- ========== REVOLUTION SLIDER ========== -->
-    <script src="{{ asset('public/frontend/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+
     
     <!-- Sojern Tag v6_js, Pixel Version: 1 -->
     <script src='https://static.sojern.com/utils/sjrn_autocx.js'></script>
@@ -660,6 +753,63 @@
                     
                     console.log('✅ reCAPTCHA válido - permitiendo envío del formulario');
                 });
+            });
+        });
+    </script>
+
+    <!-- ========== SWIPER SLIDER JS ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializar Swiper Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.hostal-slider', {
+                // Configuración básica
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                speed: 1000,
+                
+                // Efectos
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                
+                // Navegación
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                // Paginación
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    },
+                },
+                
+                // Responsive
+                breakpoints: {
+                    320: {
+                        autoplay: {
+                            delay: 4000,
+                        },
+                    },
+                    768: {
+                        autoplay: {
+                            delay: 5000,
+                        },
+                    },
+                    1024: {
+                        autoplay: {
+                            delay: 6000,
+                        },
+                    }
+                }
             });
         });
     </script>
