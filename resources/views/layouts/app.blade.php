@@ -294,11 +294,22 @@
             padding-top: 30px !important;
         }
         
-        /* Mobile responsive fixes - Solo ajustar posición, mantener estilos inline */
+        /* Mobile responsive fixes - 130px height */
         @media (max-width: 767px) {
             .simple-slider {
                 margin-top: -20px !important;
                 padding-top: 0 !important;
+                height: 130px !important;
+            }
+            
+            .simple-slider .slider-wrapper {
+                height: 130px !important;
+            }
+            
+            .simple-slider .slider-wrapper img {
+                height: 130px !important;
+                object-fit: cover !important;
+                object-position: center !important;
             }
             
             .about {
@@ -318,11 +329,22 @@
             }
         }
         
-        /* Tablet responsive fixes - Solo ajustar posición */
-        @media (min-width: 768px) and (max-width: 991px) {
+        /* Tablet responsive fixes - 500px height */
+        @media (min-width: 768px) and (max-width: 1199px) {
             .simple-slider {
                 margin-top: -15px !important;
                 padding-top: 0 !important;
+                height: 500px !important;
+            }
+            
+            .simple-slider .slider-wrapper {
+                height: 500px !important;
+            }
+            
+            .simple-slider .slider-wrapper img {
+                height: 500px !important;
+                object-fit: cover !important;
+                object-position: center !important;
             }
             
             .about {
@@ -330,11 +352,22 @@
             }
         }
         
-        /* Desktop fixes - Solo ajustar posición */
-        @media (min-width: 992px) {
+        /* Desktop fixes - 800px height */
+        @media (min-width: 1200px) {
             .simple-slider {
                 margin-top: -10px !important;
                 padding-top: 0 !important;
+                height: 800px !important;
+            }
+            
+            .simple-slider .slider-wrapper {
+                height: 800px !important;
+            }
+            
+            .simple-slider .slider-wrapper img {
+                height: 800px !important;
+                object-fit: cover !important;
+                object-position: center !important;
             }
         }
         </style>
