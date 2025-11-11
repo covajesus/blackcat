@@ -183,7 +183,7 @@ return [
     // Descrições dos quartos
     'family_room_desc' => 'Desfrute do nosso quarto familiar',
     'king_queen_room' => 'Quarto Matrimonial',
-    'king_queen_room_desc' => 'Quarto matrimonial padrão com banheiro privativo e todas as comodidades',
+    'king_queen_room_desc' => 'Quarto matrimonial padrão com banheiro',
     'twin_room' => 'Quarto Twin',
     'twin_room_desc' => 'Quarto twin com kitchenette equipada',
     'breakfast_service' => 'Desfrute de um café da manhã continental servido no seu quarto das 08:00 às 11:30.',
