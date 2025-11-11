@@ -7,7 +7,7 @@
             <ul>
               <li data-transition="crossfade" class="no-overlay">
                     <!-- MAIN IMAGE -->
-                    <img src="{{ asset('public/frontend/images/slider/slider5.jpg') }}" 
+                    <img src="{{ asset('public/frontend/images/slider/slider5.png') }}" 
                          alt="{{ __('messages.slider_hostal_alt') }}" 
                          title="{{ __('messages.slider_hostal_alt') }}" 
                          data-bgposition="center center" 
