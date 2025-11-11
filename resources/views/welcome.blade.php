@@ -15,77 +15,11 @@
                         </div>
                     </li>
                     
-                    <!-- SLIDE 2: Bienvenida -->
-                    <li class="splide__slide hero-slide">
-                        <div class="hero-slide__image">
-                            <img src="{{ asset('public/frontend/images/slider/slider4.jpg') }}" 
-                                 alt="{{ __('messages.slider_hostal_alt') }}" 
-                                 loading="lazy">
-                        </div>
-                        <div class="hero-slide__content">
-                            <h1 class="hero-title">{{ __('messages.welcome_title') }}</h1>
-                            <p class="hero-subtitle">{{ __('messages.welcome_subtitle') }}</p>
-                        </div>
-                    </li>
-                    
-                    <!-- SLIDE 3: Habitaciones -->
-                    <li class="splide__slide hero-slide">
-                        <div class="hero-slide__image">
-                            <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}" 
-                                 alt="{{ __('messages.slider_rooms_alt') }}" 
-                                 loading="lazy">
-                        </div>
-                        <div class="hero-slide__content">
-                            <h1 class="hero-title">{{ __('messages.slide2_title') }}</h1>
-                            <p class="hero-subtitle">{{ __('messages.slide2_subtitle') }}</p>
-                        </div>
-                    </li>
-                    
-                    <!-- SLIDE 4: Cultura -->
-                    <li class="splide__slide hero-slide">
-                        <div class="hero-slide__image">
-                            <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}" 
-                                 alt="{{ __('messages.slider_culture_alt') }}" 
-                                 loading="lazy">
-                        </div>
-                        <div class="hero-slide__content">
-                            <h1 class="hero-title">{{ __('messages.slide3_title') }}</h1>
-                            <p class="hero-subtitle">{{ __('messages.slide3_subtitle') }}</p>
-                        </div>
-                    </li>
-                    
-                    <!-- SLIDE 5: Hostal -->
-                    <li class="splide__slide hero-slide">
-                        <div class="hero-slide__image">
-                            <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" 
-                                 alt="{{ __('messages.slider_hostal_alt') }}" 
-                                 loading="lazy">
-                        </div>
-                        <div class="hero-slide__content">
-                            <h1 class="hero-title">{{ __('messages.slide4_title') }}</h1>
-                            <p class="hero-subtitle">{{ __('messages.slide4_subtitle') }}</p>
-                        </div>
-                    </li>
+                   
                 </ul>
             </div>
         </div>
         
-        <!--Inicio Codigo FnsRooms-->
-        <div id="form_reservas" class="detail_room booking-widget"></div>
-        <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
-        @php
-          $locale = app()->getLocale();
-          // Map locales to widget languages
-          if ($locale === 'en') {
-              $widgetLocale = 'en';
-          } elseif ($locale === 'pt') {
-              $widgetLocale = 'pt';
-          } else {
-              $widgetLocale = 'es';
-          }
-        @endphp
-        <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js"></script>
-        <!--Fin Codigo FnsRooms-->
       </div>
       
       <!-- ========== ABOUT ========== -->
