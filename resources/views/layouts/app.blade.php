@@ -331,22 +331,9 @@
             height: 24px !important;
         }
         
-        /* Custom pagination */
+        /* Hide pagination completely */
         .splide__pagination {
-            bottom: 30px !important;
-        }
-        
-        .splide__pagination__page {
-            background: rgba(255, 255, 255, 0.5) !important;
-            border: 2px solid transparent !important;
-            width: 16px !important;
-            height: 16px !important;
-            margin: 0 8px !important;
-        }
-        
-        .splide__pagination__page.is-active {
-            background: #ff8000 !important;
-            border-color: white !important;
+            display: none !important;
         }
         
         /* Booking widget positioning */
@@ -671,7 +658,7 @@
                 pauseOnFocus: false,
                 resetProgress: false,
                 arrows: true,
-                pagination: true,
+                pagination: false,
                 cover: true,
                 height: '60vh',
                 breakpoints: {
