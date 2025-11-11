@@ -218,15 +218,19 @@
         /* ========== MODERN HERO SLIDER STYLES ========== */
         .hero-slider-container {
             position: relative;
-            margin: 0 !important;
+            margin: 0 auto !important;
             padding: 0 !important;
             overflow: hidden;
+            width: 100%;
+            display: block;
         }
         
         .hero-slider {
             height: 100vh;
             min-height: 600px;
             max-height: 800px;
+            width: 100% !important;
+            margin: 0 auto !important;
         }
         
         .hero-slide {
@@ -235,6 +239,28 @@
             display: flex !important;
             align-items: center;
             justify-content: center;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Fix Splide container centering */
+        .splide__track {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .splide__list {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .splide__slide {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
         
         .hero-slide__image {
@@ -244,6 +270,9 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .hero-slide__image img {
@@ -251,6 +280,8 @@
             height: 100%;
             object-fit: cover;
             object-position: center center;
+            display: block;
+            margin: 0 auto;
         }
         
         /* Dark overlay for all slides except no-overlay */
