@@ -3,7 +3,7 @@
 @section('content')
     <!-- ========== REVOLUTION SLIDER ========== -->
     <div class="slider">
-        <div style="display:none" data-version="5.4.5">
+        <div id="rev-slider-1" class="rev_slider" style="display:none" data-version="5.4.5">
             <ul>
               <li data-transition="crossfade" class="no-overlay">
                     <!-- MAIN IMAGE -->
