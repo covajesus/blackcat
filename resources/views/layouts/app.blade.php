@@ -211,6 +211,14 @@
           ]
         }
         </script>
+        
+        <!-- ========== CUSTOM STYLES ========== -->
+        <style>
+        /* Remove dark overlay from first slider only */
+        .gradient-slider li.no-overlay .slotholder:after {
+            opacity: 0 !important;
+        }
+        </style>
     </head>
     <body>
 
