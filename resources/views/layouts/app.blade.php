@@ -226,9 +226,9 @@
         }
         
         .hero-slider {
-            height: 100vh;
-            min-height: 600px;
-            max-height: 800px;
+            height: 60vh;
+            min-height: 400px;
+            max-height: 500px;
             width: 100% !important;
             margin: 0 auto !important;
         }
@@ -372,8 +372,8 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero-slider {
-                height: 70vh;
-                min-height: 500px;
+                height: 50vh;
+                min-height: 350px;
             }
             
             .splide__arrow {
@@ -384,8 +384,8 @@
         
         @media (max-width: 480px) {
             .hero-slider {
-                height: 60vh;
-                min-height: 400px;
+                height: 40vh;
+                min-height: 300px;
             }
             
             .splide__arrow {
@@ -681,14 +681,14 @@
                 arrows: true,
                 pagination: true,
                 cover: true,
-                height: '100vh',
+                height: '60vh',
                 breakpoints: {
                     768: {
-                        height: '70vh',
+                        height: '50vh',
                         interval: 5000,
                     },
                     480: {
-                        height: '60vh',
+                        height: '40vh',
                         interval: 4000,
                     }
                 }
