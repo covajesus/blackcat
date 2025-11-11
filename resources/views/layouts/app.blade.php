@@ -215,7 +215,31 @@
         
         <!-- ========== CUSTOM STYLES ========== -->
         <style>
-        /* ========== NO CUSTOM SLIDER STYLES ========== */
+        /* ========== MINIMAL SLIDER STYLES ========== */
+        .hero-slider {
+            height: 60vh;
+            min-height: 400px;
+            overflow: hidden;
+        }
+        
+        .hero-slide {
+            height: 100% !important;
+        }
+        
+        .hero-slide__image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: block;
+        }
+        
+        .hero-slide__image img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+            display: block !important;
+        }
         </style>
     </head>
     <body>
