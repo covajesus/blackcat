@@ -228,7 +228,7 @@
         .hero-slider {
             height: 60vh;
             min-height: 400px;
-            max-height: 500px;
+            max-height: 800px;
             width: 100% !important;
             margin: 0 auto !important;
         }
@@ -270,18 +270,10 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .hero-slide__image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            display: block;
-            margin: 0 auto;
+            /* No styles - natural image behavior */
         }
         
         /* Dark overlay for all slides except no-overlay */
