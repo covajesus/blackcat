@@ -64,23 +64,7 @@
             <!-- Paginación -->
             <div class="swiper-pagination"></div>
         </div>
-        <!--Inicio Codigo FnsRooms-->
-          <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;"></div>
-          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
-          @php
-            $locale = app()->getLocale();
-            // Map locales to widget languages
-            if ($locale === 'en') {
-                $widgetLocale = 'en';
-            } elseif ($locale === 'pt') {
-                $widgetLocale = 'pt';
-            } else {
-                $widgetLocale = 'es';
-            }
-          @endphp
-          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js"></script>
-        <!--Fin Codigo FnsRooms-->
-      </div>
+    </div>
       
       <!-- ========== ABOUT ========== -->
       <section class="about mt100">
