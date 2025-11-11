@@ -294,24 +294,11 @@
             padding-top: 30px !important;
         }
         
-        /* Mobile responsive fixes */
+        /* Mobile responsive fixes - Solo ajustar posición, mantener estilos inline */
         @media (max-width: 767px) {
             .simple-slider {
-                margin-top: 0 !important;
+                margin-top: -20px !important;
                 padding-top: 0 !important;
-                height: 250px !important;
-                overflow: hidden !important;
-            }
-            
-            .simple-slider .slider-wrapper {
-                height: 250px !important;
-            }
-            
-            .simple-slider .slider-wrapper img {
-                height: 250px !important;
-                width: 100% !important;
-                object-fit: cover !important;
-                object-position: center !important;
             }
             
             .about {
@@ -324,22 +311,18 @@
                 margin-top: 0 !important;
                 padding-top: 0 !important;
             }
+            
+            body {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
         }
         
-        /* Tablet responsive fixes */
+        /* Tablet responsive fixes - Solo ajustar posición */
         @media (min-width: 768px) and (max-width: 991px) {
             .simple-slider {
-                height: 350px !important;
-            }
-            
-            .simple-slider .slider-wrapper {
-                height: 350px !important;
-            }
-            
-            .simple-slider .slider-wrapper img {
-                height: 350px !important;
-                object-fit: cover !important;
-                object-position: center !important;
+                margin-top: -15px !important;
+                padding-top: 0 !important;
             }
             
             .about {
@@ -347,20 +330,11 @@
             }
         }
         
-        /* Desktop fixes */
+        /* Desktop fixes - Solo ajustar posición */
         @media (min-width: 992px) {
             .simple-slider {
-                height: 500px !important;
-            }
-            
-            .simple-slider .slider-wrapper {
-                height: 500px !important;
-            }
-            
-            .simple-slider .slider-wrapper img {
-                height: 500px !important;
-                object-fit: cover !important;
-                object-position: center !important;
+                margin-top: -10px !important;
+                padding-top: 0 !important;
             }
         }
         </style>

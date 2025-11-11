@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Simple Slider -->
-    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin-top: 0; padding-top: 0; height: 500px;">
+    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0; height: 500px;">
         <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out; height: 100%;" id="sliderWrapper">
             <img src="{{ asset('public/frontend/images/slider/slider5.webp') }}" 
                  alt="{{ __('messages.slider_hostal_alt') }}" 
