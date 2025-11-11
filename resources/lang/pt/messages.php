@@ -318,4 +318,20 @@ A equipe respondeu aos nossos requisitos com excelente disposição e fizeram da
     'rest_area' => 'Área de Descanso',
     'king_size_bed' => 'Cama King Size',
     'equipped_kitchenette' => 'Kitchenette Equipada',
+    
+    // Slider offers
+    'offer_impact' => 'OFERTA IMPACTO!',
+    'shared_room_offer' => 'Quarto compartilhado',
+    'shared_room_price_before' => 'Antes USD$ 27',
+    'shared_room_price_now' => 'Agora: USD$ 22',
+    'shared_room_price_clp' => '$19.990',
+    'shared_room_features' => 'Banheiro privado • Café da manhã • Piscina • Churrasqueira',
+    'matrimonial_room_offer' => 'Quarto matrimonial',
+    'matrimonial_room_price_before' => 'Antes USD$ 83',
+    'matrimonial_room_price_now' => 'Agora: USD$ 63', 
+    'matrimonial_room_price_clp' => '$59.990',
+    'matrimonial_room_features' => 'Café da manhã • Piscina • Estacionamento',
+    'wifi_all_rooms' => 'Todos os quartos têm WIFI',
+    'wifi_netflix' => 'Este quarto tem WIFI e Netflix',
+    'reserve_here' => 'Reserve AQUI',
 ];

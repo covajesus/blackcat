@@ -170,6 +170,16 @@
                 style="z-index: 6; color: #fff;">{{ __('messages.slide4_subtitle') }}
               </div>
             </li>
+            <!-- SLIDE OFERTA COMPARTIDA -->
+            <li data-transition="crossfade">
+              <!-- MAIN IMAGE -->
+              <img src="{{ asset('public/frontend/images/slider/oferta-compartida.jpg') }}" alt="Oferta habitación compartida" title="Oferta habitación compartida" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="" loading="eager">
+            </li>
+            <!-- SLIDE OFERTA MATRIMONIAL -->
+            <li data-transition="crossfade">
+              <!-- MAIN IMAGE -->
+              <img src="{{ asset('public/frontend/images/slider/oferta-matrimonial.jpg') }}" alt="Oferta habitación matrimonial" title="Oferta habitación matrimonial" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="" loading="eager">
+            </li>
           </ul>
         </div>
         <!--Inicio Codigo FnsRooms-->

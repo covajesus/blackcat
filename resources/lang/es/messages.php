@@ -316,4 +316,20 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     'rest_area' => 'Sector de Descanso',
     'king_size_bed' => 'Cama de 2 y media plazas',
     'equipped_kitchenette' => 'Kitchenette equipado',
+    
+    // Slider offers
+    'offer_impact' => '¡OFERTA IMPACTO!',
+    'shared_room_offer' => 'Habitación compartida',
+    'shared_room_price_before' => 'Antes USD$ 27',
+    'shared_room_price_now' => 'Ahora: USD$ 22',
+    'shared_room_price_clp' => '$19.990',
+    'shared_room_features' => 'Baño privado • Desayuno • Piscina • Quincho',
+    'matrimonial_room_offer' => 'Habitación matrimonial', 
+    'matrimonial_room_price_before' => 'Antes USD$ 83',
+    'matrimonial_room_price_now' => 'Ahora: USD$ 63',
+    'matrimonial_room_price_clp' => '$59.990',
+    'matrimonial_room_features' => 'Desayuno • Piscina • Estacionamiento',
+    'wifi_all_rooms' => 'Todas las habitaciones cuentan con WIFI',
+    'wifi_netflix' => 'Esta habitación cuenta con WIFI y Netflix',
+    'reserve_here' => 'Reserva AQUÍ',
 ];

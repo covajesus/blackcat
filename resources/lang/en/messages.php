@@ -320,4 +320,20 @@ The staff responded to our requirements with excellent disposition and made the 
     'rest_area' => 'Rest Area',
     'king_size_bed' => 'King Size Bed',
     'equipped_kitchenette' => 'Equipped Kitchenette',
+    
+    // Slider offers
+    'offer_impact' => 'IMPACT OFFER!',
+    'shared_room_offer' => 'Shared room',
+    'shared_room_price_before' => 'Before USD$ 27',
+    'shared_room_price_now' => 'Now: USD$ 22',
+    'shared_room_price_clp' => '$19.990',
+    'shared_room_features' => 'Private bathroom • Breakfast • Pool • Barbecue',
+    'matrimonial_room_offer' => 'Matrimonial room',
+    'matrimonial_room_price_before' => 'Before USD$ 83', 
+    'matrimonial_room_price_now' => 'Now: USD$ 63',
+    'matrimonial_room_price_clp' => '$59.990',
+    'matrimonial_room_features' => 'Breakfast • Pool • Parking',
+    'wifi_all_rooms' => 'All rooms have WIFI',
+    'wifi_netflix' => 'This room has WIFI and Netflix',
+    'reserve_here' => 'Book HERE',
 ];
