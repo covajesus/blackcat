@@ -7,6 +7,7 @@ return [
     'rooms' => 'Rooms',
     'contact' => 'CONTACT US',
     'reserve' => 'BOOK NOW',
+    'reserve_with_us' => 'Book with Us',
 
     // Room types
     'family_room' => 'Family',

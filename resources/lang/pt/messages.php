@@ -7,6 +7,7 @@ return [
     'rooms' => 'Quartos',
     'contact' => 'CONTATO',
     'reserve' => 'RESERVAR',
+    'reserve_with_us' => 'Reserve Conosco',
 
     // Tipos de quarto
     'family_room' => 'Familiar',

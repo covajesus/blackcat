@@ -364,11 +364,9 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 60px;
-            height: 60px;
             background: #25D366;
             color: white;
-            border-radius: 50%;
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -376,27 +374,58 @@
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             transition: all 0.3s ease;
-            font-size: 28px;
+            padding: 12px 20px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float i {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        
+        .whatsapp-text {
+            font-size: 14px;
+            white-space: nowrap;
         }
         
         .whatsapp-float:hover {
             background: #20ba5a;
-            transform: scale(1.1);
+            transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
         }
         
         .whatsapp-float:active {
-            transform: scale(0.95);
+            transform: translateY(0px);
         }
         
         /* Mobile adjustments */
         @media (max-width: 767px) {
             .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
+                padding: 10px 15px;
+                border-radius: 25px;
                 bottom: 15px;
                 right: 15px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 20px;
+                margin-right: 6px;
+            }
+            
+            .whatsapp-text {
+                font-size: 12px;
+            }
+        }
+        
+        /* Very small mobile screens */
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                padding: 8px 12px;
+            }
+            
+            .whatsapp-text {
+                font-size: 11px;
             }
         }
         
@@ -723,6 +752,7 @@
     <!-- ========== WHATSAPP BUTTON ========== -->
     <div class="whatsapp-float" id="whatsappFloat">
         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span class="whatsapp-text">{{ __('messages.reserve_with_us') }}</span>
     </div>
 
     <!-- ========== JAVASCRIPT ========== -->

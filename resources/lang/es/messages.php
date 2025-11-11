@@ -7,6 +7,7 @@ return [
     'rooms' => 'Habitaciones',
     'contact' => 'CONTÁCTENOS',
     'reserve' => 'RESERVAR',
+    'reserve_with_us' => 'Reserva con Nosotros',
 
     // Tipos de habitación
     'family_room' => 'Familiar',
