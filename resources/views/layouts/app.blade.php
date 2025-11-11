@@ -324,6 +324,18 @@
                 margin-top: 0 !important;
                 padding-top: 0 !important;
             }
+            
+            /* Smaller navigation arrows for mobile */
+            .simple-slider button {
+                padding: 8px 12px !important;
+                font-size: 14px !important;
+                left: 10px !important;
+            }
+            
+            .simple-slider button:last-of-type {
+                right: 10px !important;
+                left: auto !important;
+            }
         }
         
         /* Tablet responsive fixes - max-height 500px */
@@ -343,6 +355,18 @@
             
             .about {
                 padding-top: 40px !important;
+            }
+            
+            /* Medium size navigation arrows for tablet */
+            .simple-slider button {
+                padding: 12px 16px !important;
+                font-size: 16px !important;
+                left: 15px !important;
+            }
+            
+            .simple-slider button:last-of-type {
+                right: 15px !important;
+                left: auto !important;
             }
         }
         

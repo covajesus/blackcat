@@ -25,14 +25,6 @@
                 style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
             ❯
         </button>
-        
-        <!-- Dots indicator -->
-        <div style="text-align: center; position: absolute; bottom: 20px; width: 100%;">
-            <span class="dot" onclick="currentSlide(1)" 
-                  style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
-            <span class="dot" onclick="currentSlide(2)" 
-                  style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
-        </div>
     </div>
       <!-- ========== ABOUT ========== -->
       <section class="about" style="margin-top: 50px; padding-top: 50px;">
