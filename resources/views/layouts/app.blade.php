@@ -224,7 +224,7 @@
         
         .hostal-slider {
             width: 100%;
-            height: 500px;
+            height: 1000px;
         }
         
         .swiper-slide {
@@ -328,9 +328,15 @@
         }
         
         /* Responsive */
+        @media (max-width: 1200px) {
+            .hostal-slider {
+                height: 800px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hostal-slider {
-                height: 400px;
+                height: 600px;
             }
             
             .slide-title {
@@ -348,7 +354,7 @@
         
         @media (max-width: 480px) {
             .hostal-slider {
-                height: 350px;
+                height: 450px;
             }
             
             .slide-title {
