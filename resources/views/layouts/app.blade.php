@@ -297,8 +297,10 @@
         /* Mobile responsive fixes - max-height 130px */
         @media (max-width: 767px) {
             .simple-slider {
-                margin-top: -20px !important;
+                margin-top: -30px !important;
                 padding-top: 0 !important;
+                position: relative !important;
+                z-index: 1 !important;
             }
             
             .simple-slider .slider-wrapper img {
@@ -325,6 +327,16 @@
                 padding-top: 0 !important;
             }
             
+            /* Force no gaps in mobile */
+            .wrapper {
+                padding-top: 0 !important;
+            }
+            
+            header.horizontal-header {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            
             /* Smaller navigation arrows for mobile */
             .simple-slider button {
                 padding: 8px 12px !important;
@@ -344,6 +356,19 @@
             
             .simple-slider:active {
                 opacity: 0.9;
+            }
+            
+            /* Extra mobile fixes for different screen sizes */
+            @media (max-width: 480px) {
+                .simple-slider {
+                    margin-top: -35px !important;
+                }
+            }
+            
+            @media (max-width: 360px) {
+                .simple-slider {
+                    margin-top: -40px !important;
+                }
             }
         }
         
