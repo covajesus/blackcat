@@ -273,7 +273,7 @@
         }
         
         .hero-slide__image img {
-            /* No styles - natural image behavior */
+            width: 100%;
         }
         
         /* Dark overlay for all slides except no-overlay */
