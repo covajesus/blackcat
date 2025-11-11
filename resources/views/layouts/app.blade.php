@@ -278,6 +278,55 @@
                 min-height: 300px !important;
             }
         }
+
+        /* ========== CUSTOM SLIDER FIXES ========== */
+        .simple-slider {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        /* Header and content spacing fixes */
+        .horizontal-header {
+            margin-bottom: 0 !important;
+        }
+        
+        .about {
+            padding-top: 30px !important;
+        }
+        
+        /* Mobile responsive fixes */
+        @media (max-width: 767px) {
+            .simple-slider {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            .simple-slider img {
+                height: 300px !important;
+            }
+            
+            .about {
+                padding-top: 20px !important;
+                margin-top: 20px !important;
+            }
+            
+            /* Remove any gap between header and slider on mobile */
+            .wrapper {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+        }
+        
+        /* Tablet responsive fixes */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .simple-slider img {
+                height: 400px !important;
+            }
+            
+            .about {
+                padding-top: 40px !important;
+            }
+        }
         </style>
     </head>
     <body>

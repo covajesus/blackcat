@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Simple Slider -->
-    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden;">
+    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin-top: 0; padding-top: 0;">
         <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out;" id="sliderWrapper">
             <img src="{{ asset('public/frontend/images/slider/slider5.webp') }}" 
                  alt="{{ __('messages.slider_hostal_alt') }}" 
@@ -35,7 +35,7 @@
         </div>
     </div>
       <!-- ========== ABOUT ========== -->
-      <section class="about mt100">
+      <section class="about" style="margin-top: 50px; padding-top: 50px;">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">

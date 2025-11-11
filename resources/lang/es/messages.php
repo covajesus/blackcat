@@ -119,7 +119,7 @@ return [
     // Descripciones de habitaciones
     'family_room_desc' => 'Disfruta nuestra habitación familiar',
     'king_queen_room' => 'Habitación Matrimonial',
-    'king_queen_room_desc' => 'Disfruta nuestra habitación matrimonial estándar',
+    'king_queen_room_desc' => 'Habitación matrimonial estándar con baño privado y todas las comodidades',
     'twin_room' => 'Habitación Twin',
     'twin_room_desc' => 'Habitación twin con kitchenette equipada',
     'breakfast_service' => 'Disfruta un desayuno continental servido a la habitación de 08:00 a 11:30 am.',
