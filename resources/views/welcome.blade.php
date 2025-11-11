@@ -10,7 +10,10 @@
                     <img src="{{ asset('public/frontend/images/slider/slider5.png') }}" 
                          alt="{{ __('messages.slider_hostal_alt') }}" 
                          title="{{ __('messages.slider_hostal_alt') }}" 
-                        
+                         data-bgposition="center center" 
+                         data-bgfit="contain" 
+                         data-bgrepeat="no-repeat" 
+                         data-bgparallax="off" 
                          class="rev-slidebg" 
                          data-no-retina="" 
                          loading="eager">
