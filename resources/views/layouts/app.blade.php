@@ -219,6 +219,31 @@
         .gradient-slider li.no-overlay .slotholder:after {
             opacity: 0 !important;
         }
+        
+        /* Remove space between header and slider */
+        .slider {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Remove any spacing from content section when slider is first */
+        .content-section .slider:first-child,
+        section .slider:first-child {
+            margin-top: 0 !important;
+        }
+        
+        /* Fix any default margins */
+        .rev_slider {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        
+        /* Ensure no gaps */
+        .wrapper > * .slider {
+            margin-top: 0 !important;
+        }
         </style>
     </head>
     <body>
