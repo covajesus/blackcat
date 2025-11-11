@@ -336,6 +336,15 @@
                 right: 10px !important;
                 left: auto !important;
             }
+            
+            /* Mobile slider clickable indicator */
+            .simple-slider {
+                cursor: pointer !important;
+            }
+            
+            .simple-slider:active {
+                opacity: 0.9;
+            }
         }
         
         /* Tablet responsive fixes - max-height 500px */
@@ -867,6 +876,25 @@
 
             // Initialize first slide
             showSlide(0);
+
+            // WhatsApp functionality for mobile slider clicks
+            const sliderContainer = document.getElementById('sliderContainer');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('click', function(e) {
+                    // Only trigger on mobile devices (screen width <= 767px)
+                    if (window.innerWidth <= 767) {
+                        // Don't trigger if clicking on navigation buttons
+                        if (!e.target.closest('button')) {
+                            const whatsappNumber = '+56949105984';
+                            const message = encodeURIComponent('Hola! Me interesa obtener más información sobre Black Cat Hostal. ¿Podrían ayudarme?');
+                            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+                            
+                            // Open WhatsApp
+                            window.open(whatsappUrl, '_blank');
+                        }
+                    }
+                });
+            }
         }
         
         // Initialize slider when DOM is loaded
