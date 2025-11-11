@@ -716,6 +716,54 @@
                 });
             });
         });
+
+        // Simple Slider Functions
+        let currentSlideIndex = 0;
+        
+        function initSlider() {
+            const slides = document.querySelectorAll('.slider-wrapper img');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (slides.length === 0) return; // No slider on this page
+            
+            window.showSlide = function(index) {
+                const wrapper = document.getElementById('sliderWrapper');
+                if (!wrapper) return;
+                
+                wrapper.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Update dots
+                dots.forEach(dot => dot.style.backgroundColor = '#bbb');
+                if (dots[index]) {
+                    dots[index].style.backgroundColor = '#717171';
+                }
+                
+                currentSlideIndex = index;
+            };
+
+            window.nextSlide = function() {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                showSlide(currentSlideIndex);
+            };
+
+            window.prevSlide = function() {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                showSlide(currentSlideIndex);
+            };
+
+            window.currentSlide = function(index) {
+                showSlide(index - 1);
+            };
+
+            // Auto-play slider
+            setInterval(nextSlide, 5000);
+
+            // Initialize first slide
+            showSlide(0);
+        }
+        
+        // Initialize slider when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initSlider);
     </script>
 
 </body>

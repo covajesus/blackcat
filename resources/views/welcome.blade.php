@@ -2,73 +2,38 @@
 
 @section('content')
 
-<!-- Simple Slider -->
-<div class="simple-slider" style="position: relative; width: 100%; overflow: hidden;">
-    <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out;" id="sliderWrapper">
-        <img src="{{ asset('public/frontend/images/slider/slider5.webp') }}" 
-             alt="{{ __('messages.slider_hostal_alt') }}" 
-             loading="eager"
-             style="width: 100%; height: 500px; object-fit: cover; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+    <!-- Simple Slider -->
+    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden;">
+        <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out;" id="sliderWrapper">
+            <img src="{{ asset('public/frontend/images/slider/slider5.webp') }}" 
+                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                 loading="eager"
+                 style="width: 100%; height: 500px; object-fit: cover; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+            
+            <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" 
+                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                 loading="lazy"
+                 style="width: 100%; height: 500px; object-fit: cover; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+        </div>
         
-        <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" 
-             alt="{{ __('messages.slider_hostal_alt') }}" 
-             loading="lazy"
-             style="width: 100%; height: 500px; object-fit: cover; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+        <!-- Navigation buttons -->
+        <button onclick="prevSlide()" 
+                style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
+            ❮
+        </button>
+        <button onclick="nextSlide()" 
+                style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
+            ❯
+        </button>
+        
+        <!-- Dots indicator -->
+        <div style="text-align: center; position: absolute; bottom: 20px; width: 100%;">
+            <span class="dot" onclick="currentSlide(1)" 
+                  style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
+            <span class="dot" onclick="currentSlide(2)" 
+                  style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
+        </div>
     </div>
-    
-    <!-- Navigation buttons -->
-    <button onclick="prevSlide()" 
-            style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
-        ❮
-    </button>
-    <button onclick="nextSlide()" 
-            style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
-        ❯
-    </button>
-    
-    <!-- Dots indicator -->
-    <div style="text-align: center; position: absolute; bottom: 20px; width: 100%;">
-        <span class="dot" onclick="currentSlide(1)" style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
-        <span class="dot" onclick="currentSlide(2)" style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
-    </div>
-</div>
-
-<script>
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.slider-wrapper img');
-const dots = document.querySelectorAll('.dot');
-
-function showSlide(index) {
-    const wrapper = document.getElementById('sliderWrapper');
-    wrapper.style.transform = `translateX(-${index * 100}%)`;
-    
-    // Update dots
-    dots.forEach(dot => dot.style.backgroundColor = '#bbb');
-    dots[index].style.backgroundColor = '#717171';
-    
-    currentSlideIndex = index;
-}
-
-function nextSlide() {
-    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-    showSlide(currentSlideIndex);
-}
-
-function prevSlide() {
-    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-    showSlide(currentSlideIndex);
-}
-
-function currentSlide(index) {
-    showSlide(index - 1);
-}
-
-// Auto-play slider
-setInterval(nextSlide, 5000);
-
-// Initialize first slide
-showSlide(0);
-</script>
       <!-- ========== ABOUT ========== -->
       <section class="about mt100">
         <div class="container">
