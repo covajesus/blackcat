@@ -216,29 +216,67 @@
         <!-- ========== CUSTOM STYLES ========== -->
         <style>
         /* ========== MINIMAL SLIDER STYLES ========== */
+        .hero-slider-container {
+            position: relative;
+            width: 100%;
+        }
+        
         .hero-slider {
-            height: 60vh;
-            min-height: 400px;
+            height: 600px !important;
+            min-height: 600px !important;
+            max-height: 600px !important;
             overflow: hidden;
+            position: relative;
+        }
+        
+        .splide__track {
+            height: 100% !important;
+        }
+        
+        .splide__list {
+            height: 100% !important;
         }
         
         .hero-slide {
-            height: 100% !important;
+            height: 600px !important;
+            min-height: 600px !important;
+            position: relative;
         }
         
         .hero-slide__image {
             width: 100%;
-            height: 100%;
+            height: 600px !important;
             position: relative;
             display: block;
         }
         
         .hero-slide__image img {
             width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
+            height: 600px !important;
+            object-fit: cover !important;
             object-position: center center !important;
             display: block !important;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-slider,
+            .hero-slide,
+            .hero-slide__image,
+            .hero-slide__image img {
+                height: 400px !important;
+                min-height: 400px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-slider,
+            .hero-slide,
+            .hero-slide__image,
+            .hero-slide__image img {
+                height: 300px !important;
+                min-height: 300px !important;
+            }
         }
         </style>
     </head>
@@ -516,7 +554,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize modern hero slider
+            // Initialize modern hero slider with fixed height
             const splide = new Splide('#hero-slider', {
                 type: 'fade',
                 autoplay: true,
@@ -528,32 +566,21 @@
                 arrows: true,
                 pagination: false,
                 cover: false,
-                fixedHeight: '60vh',
+                height: '600px',
+                fixedHeight: '600px',
                 breakpoints: {
                     768: {
-                        fixedHeight: '50vh',
+                        height: '400px',
+                        fixedHeight: '400px',
                         interval: 5000,
                     },
                     480: {
-                        fixedHeight: '40vh',
+                        height: '300px',
+                        fixedHeight: '300px',
                         interval: 4000,
                     }
                 }
             }).mount();
-            
-            // Force refresh on scroll to fix image sizing issues
-            let scrollTimeout;
-            window.addEventListener('scroll', function() {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(function() {
-                    splide.refresh();
-                }, 100);
-            });
-            
-            // Also refresh on resize
-            window.addEventListener('resize', function() {
-                splide.refresh();
-            });
         });
     </script>
 
