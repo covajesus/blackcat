@@ -55,10 +55,10 @@
         <link rel="stylesheet" href="{{ asset('public/frontend/css/daterangepicker.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/magnific-popup.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/layers.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/settings.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/navigation.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css') }}">
+        
+        <!-- ========== SPLIDE SLIDER ========== -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
         @include('partials.analytics')
 
@@ -215,61 +215,151 @@
         
         <!-- ========== CUSTOM STYLES ========== -->
         <style>
-        /* Remove dark overlay from first slider only */
-        .gradient-slider li.no-overlay .slotholder:after {
-            opacity: 0 !important;
-        }
-        
-        /* FORCE REMOVE ALL SPACING BETWEEN HEADER AND SLIDER */
-        .slider {
-            margin: 0 !important;
-            padding: 0 !important;
+        /* ========== MODERN HERO SLIDER STYLES ========== */
+        .hero-slider-container {
             position: relative;
-            z-index: 1;
-            display: block !important;
-        }
-        
-        /* Remove spacing from Revolution Slider container */
-        .rev_slider, 
-        #rev-slider-1 {
             margin: 0 !important;
             padding: 0 !important;
+            overflow: hidden;
         }
         
-        /* Force remove any wrapper/container spacing */
-        .wrapper,
-        .wrapper > *,
-        .content,
-        main {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
+        .hero-slider {
+            height: 100vh;
+            min-height: 600px;
+            max-height: 800px;
         }
         
-        /* Target any potential spacing elements */
-        body .slider,
-        body .wrapper .slider,
-        body main .slider {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
+        .hero-slide {
+            position: relative;
+            height: 100%;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
         }
         
-        /* Remove default spacing from first elements */
-        .wrapper > :first-child,
-        main > :first-child,
-        .content > :first-child {
-            margin-top: 0 !important;
+        .hero-slide__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         
-        /* Negative margin to pull slider up if needed */
-        .slider {
-            margin-top: -2px !important;
+        .hero-slide__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
         }
         
-        /* Alternative approach: Position slider absolutely under header */
-        @media (min-width: 768px) {
-            .slider {
-                position: relative;
-                top: -2px;
+        /* Dark overlay for all slides except no-overlay */
+        .hero-slide:not(.no-overlay)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+        
+        .hero-slide__content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+        
+        /* Custom navigation arrows */
+        .splide__arrow {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border: 2px solid rgba(255, 255, 255, 0.5) !important;
+            border-radius: 50% !important;
+            width: 60px !important;
+            height: 60px !important;
+        }
+        
+        .splide__arrow:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+            border-color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        .splide__arrow svg {
+            fill: white !important;
+            width: 24px !important;
+            height: 24px !important;
+        }
+        
+        /* Custom pagination */
+        .splide__pagination {
+            bottom: 30px !important;
+        }
+        
+        .splide__pagination__page {
+            background: rgba(255, 255, 255, 0.5) !important;
+            border: 2px solid transparent !important;
+            width: 16px !important;
+            height: 16px !important;
+            margin: 0 8px !important;
+        }
+        
+        .splide__pagination__page.is-active {
+            background: #ff8000 !important;
+            border-color: white !important;
+        }
+        
+        /* Booking widget positioning */
+        .booking-widget {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-slider {
+                height: 70vh;
+                min-height: 500px;
+            }
+            
+            .splide__arrow {
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-slider {
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .splide__arrow {
+                width: 40px !important;
+                height: 40px !important;
             }
         }
         </style>
@@ -543,18 +633,37 @@
     <script src="{{ asset('public/frontend/js/smoothscroll.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/instafeed.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/main.js') }}"></script>
-    <!-- ========== REVOLUTION SLIDER ========== -->
-    <script src="{{ asset('public/frontend/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+    
+    <!-- ========== SPLIDE SLIDER ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize modern hero slider
+            new Splide('#hero-slider', {
+                type: 'fade',
+                autoplay: true,
+                interval: 6000,
+                speed: 1500,
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                resetProgress: false,
+                arrows: true,
+                pagination: true,
+                cover: true,
+                height: '100vh',
+                breakpoints: {
+                    768: {
+                        height: '70vh',
+                        interval: 5000,
+                    },
+                    480: {
+                        height: '60vh',
+                        interval: 4000,
+                    }
+                }
+            }).mount();
+        });
+    </script>
 
     
     <!-- Sojern Tag v6_js, Pixel Version: 1 -->

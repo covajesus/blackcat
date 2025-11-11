@@ -1,40 +1,90 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- ========== REVOLUTION SLIDER ========== -->
-    <div class="slider">
-        <div id="rev-slider-1" class="rev_slider gradient-slider" style="display:none; margin-top:-20px;" data-version="5.4.5">
-            <ul>
-              <li data-transition="crossfade" class="no-overlay">
-                    <!-- MAIN IMAGE -->
-                    <img src="{{ asset('public/frontend/images/slider/slider5.png') }}" 
-                         alt="{{ __('messages.slider_hostal_alt') }}" 
-                         title="{{ __('messages.slider_hostal_alt') }}" 
-                         data-bgposition="center center" 
-                         data-bgfit="contain" 
-                         data-bgrepeat="no-repeat" 
-                         data-bgparallax="off" 
-                         class="rev-slidebg" 
-                         data-no-retina="" 
-                         loading="eager">
-              </li>
-          </ul>
+    <!-- ========== MODERN SLIDER - SPLIDE.JS ========== -->
+    <div class="hero-slider-container">
+        <div class="splide hero-slider" id="hero-slider">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <!-- SLIDE 1: Ofertas (Sin overlay) -->
+                    <li class="splide__slide hero-slide no-overlay">
+                        <div class="hero-slide__image">
+                            <img src="{{ asset('public/frontend/images/slider/slider5.png') }}" 
+                                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                                 loading="eager">
+                        </div>
+                    </li>
+                    
+                    <!-- SLIDE 2: Bienvenida -->
+                    <li class="splide__slide hero-slide">
+                        <div class="hero-slide__image">
+                            <img src="{{ asset('public/frontend/images/slider/slider4.jpg') }}" 
+                                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                                 loading="lazy">
+                        </div>
+                        <div class="hero-slide__content">
+                            <h1 class="hero-title">{{ __('messages.welcome_title') }}</h1>
+                            <p class="hero-subtitle">{{ __('messages.welcome_subtitle') }}</p>
+                        </div>
+                    </li>
+                    
+                    <!-- SLIDE 3: Habitaciones -->
+                    <li class="splide__slide hero-slide">
+                        <div class="hero-slide__image">
+                            <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}" 
+                                 alt="{{ __('messages.slider_rooms_alt') }}" 
+                                 loading="lazy">
+                        </div>
+                        <div class="hero-slide__content">
+                            <h1 class="hero-title">{{ __('messages.slide2_title') }}</h1>
+                            <p class="hero-subtitle">{{ __('messages.slide2_subtitle') }}</p>
+                        </div>
+                    </li>
+                    
+                    <!-- SLIDE 4: Cultura -->
+                    <li class="splide__slide hero-slide">
+                        <div class="hero-slide__image">
+                            <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}" 
+                                 alt="{{ __('messages.slider_culture_alt') }}" 
+                                 loading="lazy">
+                        </div>
+                        <div class="hero-slide__content">
+                            <h1 class="hero-title">{{ __('messages.slide3_title') }}</h1>
+                            <p class="hero-subtitle">{{ __('messages.slide3_subtitle') }}</p>
+                        </div>
+                    </li>
+                    
+                    <!-- SLIDE 5: Hostal -->
+                    <li class="splide__slide hero-slide">
+                        <div class="hero-slide__image">
+                            <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" 
+                                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                                 loading="lazy">
+                        </div>
+                        <div class="hero-slide__content">
+                            <h1 class="hero-title">{{ __('messages.slide4_title') }}</h1>
+                            <p class="hero-subtitle">{{ __('messages.slide4_subtitle') }}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
+        
         <!--Inicio Codigo FnsRooms-->
-          <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;"></div>
-          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
-          @php
-            $locale = app()->getLocale();
-            // Map locales to widget languages
-            if ($locale === 'en') {
-                $widgetLocale = 'en';
-            } elseif ($locale === 'pt') {
-                $widgetLocale = 'pt';
-            } else {
-                $widgetLocale = 'es';
-            }
-          @endphp
-          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js"></script>
+        <div id="form_reservas" class="detail_room booking-widget"></div>
+        <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script>
+        @php
+          $locale = app()->getLocale();
+          // Map locales to widget languages
+          if ($locale === 'en') {
+              $widgetLocale = 'en';
+          } elseif ($locale === 'pt') {
+              $widgetLocale = 'pt';
+          } else {
+              $widgetLocale = 'es';
+          }
+        @endphp
+        <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $widgetLocale }}.js"></script>
         <!--Fin Codigo FnsRooms-->
       </div>
       
