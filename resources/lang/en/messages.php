@@ -184,8 +184,10 @@ return [
 
     // Room descriptions
     'family_room_desc' => 'Enjoy our family room',
+    'king_queen_room' => 'Matrimonial Room',
     'king_queen_room_desc' => 'Enjoy our matrimonial standard room',
-    'twin_room_desc' => 'Enjoy our twin kitchenette room',
+    'twin_room' => 'Twin Room',
+    'twin_room_desc' => 'Twin room with equipped kitchenette',
     'breakfast_service' => 'Enjoy a continental breakfast served to your room from 08:00 to 11:30 am.',
 
     // Testimonials

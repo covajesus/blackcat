@@ -10,7 +10,7 @@
                  loading="eager"
                  style="width: 100%; height: 500px; object-fit: cover; display: block; margin: 0; padding: 0; flex-shrink: 0;">
             
-            <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" 
+            <img src="{{ asset('public/frontend/images/slider/slider6.webp') }}" 
                  alt="{{ __('messages.slider_hostal_alt') }}" 
                  loading="lazy"
                  style="width: 100%; height: 500px; object-fit: cover; display: block; margin: 0; padding: 0; flex-shrink: 0;">
