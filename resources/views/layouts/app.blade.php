@@ -220,29 +220,57 @@
             opacity: 0 !important;
         }
         
-        /* Remove space between header and slider */
+        /* FORCE REMOVE ALL SPACING BETWEEN HEADER AND SLIDER */
         .slider {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
             position: relative;
             z-index: 1;
+            display: block !important;
         }
         
-        /* Remove any spacing from content section when slider is first */
-        .content-section .slider:first-child,
-        section .slider:first-child {
+        /* Remove spacing from Revolution Slider container */
+        .rev_slider, 
+        #rev-slider-1 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* Force remove any wrapper/container spacing */
+        .wrapper,
+        .wrapper > *,
+        .content,
+        main {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        /* Target any potential spacing elements */
+        body .slider,
+        body .wrapper .slider,
+        body main .slider {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        /* Remove default spacing from first elements */
+        .wrapper > :first-child,
+        main > :first-child,
+        .content > :first-child {
             margin-top: 0 !important;
         }
         
-        /* Fix any default margins */
-        .rev_slider {
-            margin-top: 0 !important;
-            margin-bottom: 0 !important;
+        /* Negative margin to pull slider up if needed */
+        .slider {
+            margin-top: -2px !important;
         }
         
-        /* Ensure no gaps */
-        .wrapper > * .slider {
-            margin-top: 0 !important;
+        /* Alternative approach: Position slider absolutely under header */
+        @media (min-width: 768px) {
+            .slider {
+                position: relative;
+                top: -2px;
+            }
         }
         </style>
     </head>
