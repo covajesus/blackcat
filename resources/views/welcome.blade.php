@@ -7,12 +7,16 @@
             <div class="swiper-wrapper">
                 <!-- SLIDE 1: Ofertas (Sin overlay) -->
                 <div class="swiper-slide no-overlay">
-                    <div class="slide-bg" style="background-image: url('{{ asset('public/frontend/images/slider/slider5.jpg') }}')"></div>
+                    <img src="{{ asset('public/frontend/images/slider/slider5.jpg') }}" 
+                         alt="{{ __('messages.slider_hostal_alt') }}" 
+                         class="slide-image">
                 </div>
                 
                 <!-- SLIDE 2: Bienvenida -->
                 <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('{{ asset('public/frontend/images/slider/slider4.jpg') }}')"></div>
+                    <img src="{{ asset('public/frontend/images/slider/slider4.jpg') }}" 
+                         alt="{{ __('messages.slider_hostal_alt') }}" 
+                         class="slide-image">
                     <div class="slide-content">
                         <h1 class="slide-title">{{ __('messages.welcome_title') }}</h1>
                         <p class="slide-subtitle">{{ __('messages.welcome_subtitle') }}</p>
@@ -21,7 +25,9 @@
                 
                 <!-- SLIDE 3: Habitaciones -->
                 <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('{{ asset('public/frontend/images/slider/slider2.jpg') }}')"></div>
+                    <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}" 
+                         alt="{{ __('messages.slider_rooms_alt') }}" 
+                         class="slide-image">
                     <div class="slide-content">
                         <h1 class="slide-title">{{ __('messages.slide2_title') }}</h1>
                         <p class="slide-subtitle">{{ __('messages.slide2_subtitle') }}</p>
@@ -30,7 +36,9 @@
                 
                 <!-- SLIDE 4: Cultura -->
                 <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('{{ asset('public/frontend/images/slider/slider3.jpg') }}')"></div>
+                    <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}" 
+                         alt="{{ __('messages.slider_culture_alt') }}" 
+                         class="slide-image">
                     <div class="slide-content">
                         <h1 class="slide-title">{{ __('messages.slide3_title') }}</h1>
                         <p class="slide-subtitle">{{ __('messages.slide3_subtitle') }}</p>
@@ -39,7 +47,9 @@
                 
                 <!-- SLIDE 5: Hostal -->
                 <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('{{ asset('public/frontend/images/slider/slider1.jpg') }}')"></div>
+                    <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" 
+                         alt="{{ __('messages.slider_hostal_alt') }}" 
+                         class="slide-image">
                     <div class="slide-content">
                         <h1 class="slide-title">{{ __('messages.slide4_title') }}</h1>
                         <p class="slide-subtitle">{{ __('messages.slide4_subtitle') }}</p>
