@@ -294,20 +294,17 @@
             padding-top: 30px !important;
         }
         
-        /* Mobile responsive fixes - 130px height */
+        /* Mobile responsive fixes - max-height 130px */
         @media (max-width: 767px) {
             .simple-slider {
                 margin-top: -20px !important;
                 padding-top: 0 !important;
-                height: 130px !important;
-            }
-            
-            .simple-slider .slider-wrapper {
-                height: 130px !important;
             }
             
             .simple-slider .slider-wrapper img {
-                height: 130px !important;
+                max-height: 130px !important;
+                height: auto !important;
+                width: 100% !important;
                 object-fit: cover !important;
                 object-position: center !important;
             }
@@ -329,20 +326,17 @@
             }
         }
         
-        /* Tablet responsive fixes - 500px height */
+        /* Tablet responsive fixes - max-height 500px */
         @media (min-width: 768px) and (max-width: 1199px) {
             .simple-slider {
                 margin-top: -15px !important;
                 padding-top: 0 !important;
-                height: 500px !important;
-            }
-            
-            .simple-slider .slider-wrapper {
-                height: 500px !important;
             }
             
             .simple-slider .slider-wrapper img {
-                height: 500px !important;
+                max-height: 500px !important;
+                height: auto !important;
+                width: 100% !important;
                 object-fit: cover !important;
                 object-position: center !important;
             }
@@ -352,20 +346,17 @@
             }
         }
         
-        /* Desktop fixes - 800px height */
+        /* Desktop fixes - max-height 800px */
         @media (min-width: 1200px) {
             .simple-slider {
                 margin-top: -10px !important;
                 padding-top: 0 !important;
-                height: 800px !important;
-            }
-            
-            .simple-slider .slider-wrapper {
-                height: 800px !important;
             }
             
             .simple-slider .slider-wrapper img {
-                height: 800px !important;
+                max-height: 800px !important;
+                height: auto !important;
+                width: 100% !important;
                 object-fit: cover !important;
                 object-position: center !important;
             }
