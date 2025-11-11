@@ -218,6 +218,35 @@
         .gradient-slider li.no-overlay .slotholder:after {
             opacity: 0 !important;
         }
+        
+        /* Fix slider height and prevent overflow */
+        .slider {
+            max-height: 600px !important;
+            overflow: hidden !important;
+            margin-top: 110px !important; /* Space for sticky header */
+        }
+        
+        #rev-slider-1 {
+            max-height: 600px !important;
+            height: 600px !important;
+        }
+        
+        .gradient-slider .rev-slidebg {
+            height: 600px !important;
+            max-height: 600px !important;
+            object-fit: cover !important;
+        }
+        
+        /* Ensure proper positioning under fixed header */
+        .slider {
+            position: relative !important;
+            z-index: 1 !important;
+        }
+        
+        /* Fix content positioning for pages with sticky header */
+        .sticky-header + * .slider {
+            padding-top: 0 !important;
+        }
         </style>
     </head>
     <body>
