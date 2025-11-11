@@ -11,7 +11,7 @@
                          alt="{{ __('messages.slider_hostal_alt') }}" 
                          title="{{ __('messages.slider_hostal_alt') }}" 
                        
-                         class="rev-slidebg" 
+                       
                          data-no-retina="" 
                          loading="eager">
               </li>
