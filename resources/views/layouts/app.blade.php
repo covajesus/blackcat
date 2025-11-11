@@ -358,6 +358,47 @@
                 opacity: 0.9;
             }
         }
+
+        /* ========== WHATSAPP FLOAT BUTTON ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            font-size: 28px;
+        }
+        
+        .whatsapp-float:hover {
+            background: #20ba5a;
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float:active {
+            transform: scale(0.95);
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 767px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
         
         /* Desktop/Tablet slider clickable indicator */
         @media (min-width: 768px) {
@@ -679,9 +720,9 @@
     </div>
     <!-- ========== CONTACT NOTIFICATION ========== -->
     <div id="contact-notification" class="notification fixed"></div>
-    <!-- ========== BACK TO TOP ========== -->
-    <div class="back-to-top">
-    <i class="fa fa-angle-up" aria-hidden="true"></i>
+    <!-- ========== WHATSAPP BUTTON ========== -->
+    <div class="whatsapp-float" id="whatsappFloat">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </div>
 
     <!-- ========== JAVASCRIPT ========== -->
@@ -952,6 +993,21 @@
         
         // Initialize slider when DOM is loaded
         document.addEventListener('DOMContentLoaded', initSlider);
+
+        // WhatsApp Float Button Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappFloat = document.getElementById('whatsappFloat');
+            if (whatsappFloat) {
+                whatsappFloat.addEventListener('click', function() {
+                    const whatsappNumber = '+56949105984';
+                    const message = encodeURIComponent('Hola! Me interesa obtener más información sobre Black Cat Hostal. ¿Podrían ayudarme?');
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+                    
+                    // Open WhatsApp in new window
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+        });
     </script>
 
 </body>
