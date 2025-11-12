@@ -637,7 +637,8 @@
 @push('scripts')
     @php
         $locale = app()->getLocale();
-        $fnsLocale = $locale == 'pt' ? 'pt' : 'es';
+        // FNS Booking usa: 'es' para español, 'pt' para portugués, 'en' para inglés
+        $fnsLocale = $locale; // Usar el locale directamente (es, pt, en)
     @endphp
     <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $fnsLocale }}.js"></script>
 @endpush
