@@ -127,32 +127,15 @@
             </li>
           </ul>
         </div>
+        <!--Inicio Codigo FnsRooms-->
+        <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;"></div>
+        @php
+          $locale = app()->getLocale();
+          $fnsLocale = $locale == 'pt' ? 'pt' : 'es';
+        @endphp
+        <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $fnsLocale }}.js"></script>
+        <!--Fin Codigo FnsRooms-->
       </div>
-      
-      <!--Inicio Codigo FnsRooms-->
-      <div class="container" style="margin-top: -80px; position: relative; z-index: 10;">
-        <div id="form_reservas" class="detail_room" style="padding: 20px; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 4px;"></div>
-      </div>
-      @php
-        $locale = app()->getLocale();
-        $fnsLocale = $locale == 'pt' ? 'pt' : 'es';
-      @endphp
-      <script>
-        (function() {
-          var fnsScript = document.createElement('script');
-          fnsScript.type = 'text/javascript';
-          fnsScript.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_{{ $fnsLocale }}.js';
-          fnsScript.async = true;
-          fnsScript.onload = function() {
-            console.log('✅ FNS Booking widget cargado correctamente');
-          };
-          fnsScript.onerror = function() {
-            console.error('❌ Error cargando FNS Booking widget');
-          };
-          document.head.appendChild(fnsScript);
-        })();
-      </script>
-      <!--Fin Codigo FnsRooms-->
       <!-- ========== ABOUT ========== -->
       <section class="about" style="margin-top: 50px; padding-top: 50px;">
         <div class="container">
