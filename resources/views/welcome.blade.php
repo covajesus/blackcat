@@ -127,7 +127,8 @@
                 data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                 style="z-index: 6; color: #fff;">Barrio Brasil - Santiago de Chile
               </div>
-              <!-- SLIDE NR. 4 -->
+            </li>
+            <!-- SLIDE NR. 4 -->
             <li data-transition="crossfade">
               <!-- MAIN IMAGE -->
               <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" alt="{{ __('messages.slider_hostal_alt') }}" title="{{ __('messages.slider_hostal_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
