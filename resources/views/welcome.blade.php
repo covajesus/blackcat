@@ -129,6 +129,11 @@
         </div>
         <!--Inicio Codigo FnsRooms-->
         <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;"></div>
+        @php
+          $locale = app()->getLocale();
+          $fnsLocale = $locale == 'pt' ? 'pt' : 'es';
+        @endphp
+        <script type="text/javascript" src="https://admin.fnsbooking.com/motores/js/2326/fe_{{ $fnsLocale }}.js"></script>
         <!--Fin Codigo FnsRooms-->
       </div>
       <!-- ========== ABOUT ========== -->

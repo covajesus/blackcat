@@ -966,26 +966,5 @@
         });
     </script>
 
-    <!-- ========== FNS BOOKING WIDGET ========== -->
-    @php
-        $locale = app()->getLocale();
-        $fnsLocale = $locale == 'pt' ? 'pt' : 'es';
-    @endphp
-    <script>
-        // Load FNS booking widget after jQuery is ready
-        jQuery(document).ready(function($) {
-            var fnsScript = document.createElement('script');
-            fnsScript.type = 'text/javascript';
-            fnsScript.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_{{ $fnsLocale }}.js';
-            fnsScript.onload = function() {
-                console.log('✅ FNS Booking widget cargado');
-            };
-            fnsScript.onerror = function() {
-                console.error('❌ Error cargando FNS widget');
-            };
-            document.head.appendChild(fnsScript);
-        });
-    </script>
-
 </body>
 </html>
