@@ -690,6 +690,9 @@
     <!-- ========== JAVASCRIPT ========== -->
     <script src="https://kit.fontawesome.com/31c1b74049.js" crossorigin="anonymous"></script>
     <script src="{{ asset('public/frontend/js/jquery.min.js') }}"></script>
+    <!-- jQuery UI for datepicker (required by FNS booking widget) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/jquery.mmenu.js') }}"></script>
