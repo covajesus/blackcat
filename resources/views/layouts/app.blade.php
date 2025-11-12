@@ -691,8 +691,19 @@
     <script src="https://kit.fontawesome.com/31c1b74049.js" crossorigin="anonymous"></script>
     <script src="{{ asset('public/frontend/js/jquery.min.js') }}"></script>
     <!-- jQuery UI for datepicker (required by FNS booking widget) -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        // Fix for jQuery browser detection (removed in jQuery 3.x but required by old plugins)
+        if (!jQuery.browser) {
+            jQuery.browser = {};
+            jQuery.browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase());
+            jQuery.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
+            jQuery.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
+            jQuery.browser.msie = /msie/.test(navigator.userAgent.toLowerCase()) || /trident/.test(navigator.userAgent.toLowerCase());
+            jQuery.browser.safari = /safari/.test(navigator.userAgent.toLowerCase());
+        }
+    </script>
     <script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/jquery.mmenu.js') }}"></script>
