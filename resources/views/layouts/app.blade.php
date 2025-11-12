@@ -61,9 +61,6 @@
         <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/settings.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/layers.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/navigation.css') }}">
-        
-        <!-- ========== SPLIDE SLIDER ========== -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
         @include('partials.analytics')
 
@@ -220,76 +217,6 @@
         
         <!-- ========== CUSTOM STYLES ========== -->
         <style>
-        /* ========== MINIMAL SLIDER STYLES ========== */
-        .hero-slider-container {
-            position: relative;
-            width: 100%;
-        }
-        
-        .hero-slider {
-            height: 600px !important;
-            min-height: 600px !important;
-            max-height: 600px !important;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .splide__track {
-            height: 100% !important;
-        }
-        
-        .splide__list {
-            height: 100% !important;
-        }
-        
-        .hero-slide {
-            height: 600px !important;
-            min-height: 600px !important;
-            position: relative;
-        }
-        
-        .hero-slide__image {
-            width: 100%;
-            height: 600px !important;
-            position: relative;
-            display: block;
-        }
-        
-        .hero-slide__image img {
-            width: 100% !important;
-            height: 600px !important;
-            object-fit: cover !important;
-            object-position: center center !important;
-            display: block !important;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-slider,
-            .hero-slide,
-            .hero-slide__image,
-            .hero-slide__image img {
-                height: 400px !important;
-                min-height: 400px !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-slider,
-            .hero-slide,
-            .hero-slide__image,
-            .hero-slide__image img {
-                height: 300px !important;
-                min-height: 300px !important;
-            }
-        }
-
-        /* ========== CUSTOM SLIDER FIXES ========== */
-        .simple-slider {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-        
         /* Header and content spacing fixes */
         .horizontal-header {
             margin-bottom: 0 !important;
@@ -812,41 +739,6 @@
         });
     </script>
     
-    <!-- ========== SPLIDE SLIDER ========== -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize modern hero slider with fixed height
-            const splide = new Splide('#hero-slider', {
-                type: 'fade',
-                autoplay: true,
-                interval: 6000,
-                speed: 1500,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                resetProgress: false,
-                arrows: true,
-                pagination: false,
-                cover: false,
-                height: '600px',
-                fixedHeight: '600px',
-                breakpoints: {
-                    768: {
-                        height: '400px',
-                        fixedHeight: '400px',
-                        interval: 5000,
-                    },
-                    480: {
-                        height: '300px',
-                        fixedHeight: '300px',
-                        interval: 4000,
-                    }
-                }
-            }).mount();
-        });
-    </script>
-
-    
     <!-- Sojern Tag v6_js, Pixel Version: 1 -->
     <script src='https://static.sojern.com/utils/sjrn_autocx.js'></script>
     <script>
@@ -1071,6 +963,27 @@
                     window.open(whatsappUrl, '_blank');
                 });
             }
+        });
+    </script>
+
+    <!-- ========== FNS BOOKING WIDGET ========== -->
+    @php
+        $locale = app()->getLocale();
+        $fnsLocale = $locale == 'pt' ? 'pt' : 'es';
+    @endphp
+    <script>
+        // Load FNS booking widget after jQuery is ready
+        jQuery(document).ready(function($) {
+            var fnsScript = document.createElement('script');
+            fnsScript.type = 'text/javascript';
+            fnsScript.src = 'https://admin.fnsbooking.com/motores/js/2326/fe_{{ $fnsLocale }}.js';
+            fnsScript.onload = function() {
+                console.log('✅ FNS Booking widget cargado');
+            };
+            fnsScript.onerror = function() {
+                console.error('❌ Error cargando FNS widget');
+            };
+            document.head.appendChild(fnsScript);
         });
     </script>
 
