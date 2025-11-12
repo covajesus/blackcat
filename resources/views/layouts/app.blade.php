@@ -693,8 +693,6 @@
     <!-- jQuery UI for datepicker (required by FNS booking widget) -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/i18n/datepicker-es.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/i18n/datepicker-pt.min.js"></script>
     <script>
         // Fix for jQuery browser detection (removed in jQuery 3.x but required by old plugins)
         if (!jQuery.browser) {
@@ -704,22 +702,63 @@
             jQuery.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
             jQuery.browser.msie = /msie/.test(navigator.userAgent.toLowerCase()) || /trident/.test(navigator.userAgent.toLowerCase());
             jQuery.browser.safari = /safari/.test(navigator.userAgent.toLowerCase());
+            jQuery.browser.version = navigator.userAgent.match(/(?:msie |rv:)(\d+(\.\d+)?)/i)?.[1] || '11';
         }
         
-        // Configurar idioma del datepicker según el locale de Laravel
-        jQuery(document).ready(function($) {
+        // Inicializar regionales del datepicker para evitar errores del widget FNS
+        if (jQuery.datepicker && jQuery.datepicker.regional) {
+            // Asegurar que los objetos regionales existen
+            if (!jQuery.datepicker.regional['es']) {
+                jQuery.datepicker.regional['es'] = {
+                    closeText: 'Cerrar',
+                    prevText: '&#x3C;Ant',
+                    nextText: 'Sig&#x3E;',
+                    currentText: 'Hoy',
+                    monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                    monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+                    dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+                    dayNamesShort: ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],
+                    dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+                    weekHeader: 'Sm',
+                    dateFormat: 'dd/mm/yy',
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: ''
+                };
+            }
+            
+            if (!jQuery.datepicker.regional['pt']) {
+                jQuery.datepicker.regional['pt'] = {
+                    closeText: 'Fechar',
+                    prevText: '&#x3C;Anterior',
+                    nextText: 'Seguinte&#x3E;',
+                    currentText: 'Hoje',
+                    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                    dayNames: ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'],
+                    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],
+                    dayNamesMin: ['Do','Se','Te','Qu','Qu','Se','Sá'],
+                    weekHeader: 'Sm',
+                    dateFormat: 'dd/mm/yy',
+                    firstDay: 0,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: ''
+                };
+            }
+            
+            // Configurar idioma según locale
             @php
                 $locale = app()->getLocale();
             @endphp
             var locale = '{{ $locale }}';
-            if (locale === 'pt') {
-                $.datepicker.setDefaults($.datepicker.regional['pt']);
-            } else if (locale === 'es') {
-                $.datepicker.setDefaults($.datepicker.regional['es']);
-            } else {
-                $.datepicker.setDefaults($.datepicker.regional['']);
+            if (locale === 'pt' && jQuery.datepicker.regional['pt']) {
+                jQuery.datepicker.setDefaults(jQuery.datepicker.regional['pt']);
+            } else if (locale === 'es' && jQuery.datepicker.regional['es']) {
+                jQuery.datepicker.setDefaults(jQuery.datepicker.regional['es']);
             }
-        });
+        }
     </script>
     <script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
