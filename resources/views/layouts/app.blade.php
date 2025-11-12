@@ -57,6 +57,11 @@
         <link rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css') }}">
         
+        <!-- ========== REVOLUTION SLIDER ========== -->
+        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/settings.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/layers.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/frontend/revolution/css/navigation.css') }}">
+        
         <!-- ========== SPLIDE SLIDER ========== -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
@@ -777,6 +782,33 @@
     <script src="{{ asset('public/frontend/js/smoothscroll.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/instafeed.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/main.js') }}"></script>
+    
+    <!-- ========== REVOLUTION SLIDER ========== -->
+    <script src="{{ asset('public/frontend/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+    <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("#rev-slider-1").revolution({
+                sliderType: "standard",
+                sliderLayout: "fullwidth",
+                delay: 9000,
+                navigation: {
+                    arrows: {enable: true},
+                    bullets: {enable: true, style: "hesperiden", hide_onleave: false}
+                },
+                gridwidth: 1170,
+                gridheight: 700
+            });
+        });
+    </script>
     
     <!-- ========== SPLIDE SLIDER ========== -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>

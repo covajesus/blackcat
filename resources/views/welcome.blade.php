@@ -8,7 +8,7 @@
           <ul>
             <li data-transition="crossfade">
               <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider4.jpg') }}" alt="{{ __('messages.slider_hostal_alt') }}" title="{{ __('messages.slider_hostal_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+              <img src="{{ url('public/frontend/images/slider/slider4.jpg') }}" alt="{{ __('messages.slider_hostal_alt') }}" title="{{ __('messages.slider_hostal_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
               <!-- LAYER NR. 1 -->
               <h1
                 class="tp-caption tp-resizeme"
