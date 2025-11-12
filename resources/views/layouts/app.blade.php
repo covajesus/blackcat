@@ -693,6 +693,8 @@
     <!-- jQuery UI for datepicker (required by FNS booking widget) -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/i18n/datepicker-es.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/i18n/datepicker-pt.min.js"></script>
     <script>
         // Fix for jQuery browser detection (removed in jQuery 3.x but required by old plugins)
         if (!jQuery.browser) {
@@ -703,6 +705,21 @@
             jQuery.browser.msie = /msie/.test(navigator.userAgent.toLowerCase()) || /trident/.test(navigator.userAgent.toLowerCase());
             jQuery.browser.safari = /safari/.test(navigator.userAgent.toLowerCase());
         }
+        
+        // Configurar idioma del datepicker según el locale de Laravel
+        jQuery(document).ready(function($) {
+            @php
+                $locale = app()->getLocale();
+            @endphp
+            var locale = '{{ $locale }}';
+            if (locale === 'pt') {
+                $.datepicker.setDefaults($.datepicker.regional['pt']);
+            } else if (locale === 'es') {
+                $.datepicker.setDefaults($.datepicker.regional['es']);
+            } else {
+                $.datepicker.setDefaults($.datepicker.regional['']);
+            }
+        });
     </script>
     <script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
