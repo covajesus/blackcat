@@ -803,10 +803,11 @@
                 delay: 9000,
                 navigation: {
                     arrows: {enable: true},
-                    bullets: {enable: true, style: "hesperiden", hide_onleave: false}
+                    bullets: {enable: false}
                 },
                 gridwidth: 1170,
-                gridheight: 700
+                gridheight: 700,
+                spinner: "off"
             });
         });
     </script>
