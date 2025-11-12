@@ -59,6 +59,8 @@ return [
     'slide2_subtitle' => 'Vanguardia y modernidad',
     'slide3_title' => 'INSPIRADO EN LA CULTURA',
     'slide3_subtitle' => 'Barrio Brasil - Santiago de Chile',
+    'slide4_title' => 'EL MEJOR LUGAR DE SANTIAGO',
+    'slide4_subtitle' => 'Ven y visitanos',
     'book_now' => 'Reserva Ahora',
     'check_availability' => 'Verificar Disponibilidad',
     'our_rooms' => 'Nuestras Habitaciones',

@@ -59,6 +59,8 @@ return [
     'slide2_subtitle' => 'Avant-garde and modernity',
     'slide3_title' => 'INSPIRED BY CULTURE',
     'slide3_subtitle' => 'Barrio Brasil - Santiago de Chile',
+    'slide4_title' => 'THE BEST PLACE IN SANTIAGO',
+    'slide4_subtitle' => 'Come and visit us',
     'book_now' => 'Book Now',
     'check_availability' => 'Check Availability',
     'our_rooms' => 'Our Rooms',
