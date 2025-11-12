@@ -784,6 +784,7 @@
     <script src="{{ asset('public/frontend/js/main.js') }}"></script>
     
     <!-- ========== REVOLUTION SLIDER ========== -->
+    <script src="{{ asset('public/frontend/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
     <script src="{{ asset('public/frontend/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
