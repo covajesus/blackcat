@@ -2,172 +2,30 @@
 
 @section('content')
 
-     <!-- ========== REVOLUTION SLIDER ========== -->
-      <div class="slider">
-        <div id="rev-slider-1" class="rev_slider gradient-slider" style="display:none" data-version="5.4.5">
-          <ul>
-            <li data-transition="crossfade">
-              <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider4.jpg') }}" alt="{{ __('messages.slider_hostal_alt') }}" title="{{ __('messages.slider_hostal_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-              <!-- LAYER NR. 1 -->
-              <h1
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="320"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="['80','50','40','30']"
-                data-lineheight="['60','50','40','30']"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">
-                {{ __('messages.welcome_title') }}</h1>
-              <!-- LAYER NR. 2 -->
-              <div
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="410"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="16"
-                data-lineheight="16"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 6; color: #fff;">{{ __('messages.welcome_subtitle') }}</div>
-              <!-- LAYER NR. 3 -->
-              <div
-                class="tp-caption"
-                data-x="center"
-                data-hoffset="-120"
-                data-y="480"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":2400,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 11;">
-              </div>
-              <!-- LAYER NR. 4 -->
-              <div
-                class="tp-caption"
-                data-x="center"
-                data-hoffset="128"
-                data-y="480"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":2400,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 11;">
-              </div>
-              <!-- LAYER NR. 5 -->
-            </li>
-            <!-- SLIDE NR. 2 -->
-            <li data-transition="crossfade">
-              <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}" alt="{{ __('messages.slider_rooms_alt') }}" title="{{ __('messages.slider_rooms_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-              <!-- LAYER NR. 1 -->
-              <div
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="320"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="['70','50','40','25']"
-                data-lineheight="['60','50','40','25']"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">HOTELERÍA URBANA
-              </div>
-              <!-- LAYER NR. 2 -->
-              <div
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="410"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="16"
-                data-lineheight="16"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 6; color: #fff;">Vanguardia y modernidad
-              </div>
-            </li>
-            <!-- SLIDE NR. 3 -->
-            <li data-transition="crossfade">
-              <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}" alt="{{ __('messages.slider_culture_alt') }}" title="{{ __('messages.slider_culture_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-              <!-- LAYER NR. 1 -->
-              <div
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="320"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="['70','50','40','25']"
-                data-lineheight="['60','50','40','25']"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">INSPIRADO EN LA CULTURA
-              </div>
-              <!-- LAYER NR. 2 -->
-              <div
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="410"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="16"
-                data-lineheight="16"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 6; color: #fff;">Barrio Brasil - Santiago de Chile
-              </div>
-              <!-- SLIDE NR. 4 -->
-            <li data-transition="crossfade">
-              <!-- MAIN IMAGE -->
-              <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}" alt="{{ __('messages.slider_hostal_alt') }}" title="{{ __('messages.slider_hostal_alt') }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-              <!-- LAYER NR. 1 -->
-              <div
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="320"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="['70','50','40','25']"
-                data-lineheight="['60','50','40','25']"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 5; color: #fff; font-weight: 900;">EL MEJOR LUGAR DE SANTIAGO
-              </div>
-              <!-- LAYER NR. 2 -->
-              <div
-                class="tp-caption tp-resizeme"
-                data-x="center"
-                data-hoffset=""
-                data-y="410"
-                data-voffset=""
-                data-responsive_offset="on"
-                data-fontsize="16"
-                data-lineheight="16"
-                data-whitespace="nowrap"
-                data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                style="z-index: 6; color: #fff;">Ven y visitanos
-              </div>
-            </li>
-          </ul>
+    <!-- Simple Slider -->
+    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0; cursor: pointer;" id="sliderContainer">
+        <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out;" id="sliderWrapper">
+            <img src="{{ asset('public/frontend/images/slider/slider5.webp') }}" 
+                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                 loading="eager"
+                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+            
+            <img src="{{ asset('public/frontend/images/slider/slider6.webp') }}" 
+                 alt="{{ __('messages.slider_hostal_alt') }}" 
+                 loading="lazy"
+                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
         </div>
-        <!--Inicio Codigo FnsRooms Español-->
-          <div id="form_reservas" class="detail_room" style="padding: 0px; margin-top: -60px; text-align:center !important;"></div>
-          <script type="text/javascript" src="https://admin.fnsbooking.com/motores/comunes/js/jquery-1.7.1.min.js"></script><!-- Si la web ya carga jQuery no hace falta poner esta línea -->
-          <script src="https://admin.fnsbooking.com/motores/js/2326/fe_es.js"></script>
-        <!--Fin Codigo FnsRooms-->
-      </div>
+        
+        <!-- Navigation buttons -->
+        <button onclick="prevSlide()" 
+                style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
+            ❮
+        </button>
+        <button onclick="nextSlide()" 
+                style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
+            ❯
+        </button>
+    </div>
       <!-- ========== ABOUT ========== -->
       <section class="about" style="margin-top: 50px; padding-top: 50px;">
         <div class="container">
