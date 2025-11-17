@@ -1023,7 +1023,10 @@
                             
                         } else {
                             // Desktop/Tablet: Redirect to contact page
-                            const currentLang = document.documentElement.lang || 'es';
+                            @php
+                                $currentLocale = app()->getLocale();
+                            @endphp
+                            const currentLang = '{{ $currentLocale }}';
                             let contactUrl;
                             
                             if (currentLang === 'es') {
