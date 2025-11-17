@@ -121,7 +121,7 @@ return [
 
     // Descripciones de habitaciones
     'family_room_desc' => 'Disfruta nuestra habitación familiar',
-    'king_queen_room' => 'Habitación Matrimonial/Queen',
+    'king_queen_room' => 'Matrimonial/Queen',
     'king_queen_room_desc' => 'Habitación matrimonial/queen estándar con baño',
     'twin_room' => 'Habitación Twin',
     'twin_room_desc' => 'Habitación twin con kitchenette equipada',
