@@ -121,8 +121,8 @@ return [
 
     // Descripciones de habitaciones
     'family_room_desc' => 'Disfruta nuestra habitación familiar',
-    'king_queen_room' => 'Habitación Matrimonial',
-    'king_queen_room_desc' => 'Habitación matrimonial estándar con baño',
+    'king_queen_room' => 'Habitación Matrimonial/Queen',
+    'king_queen_room_desc' => 'Habitación matrimonial/queen estándar con baño',
     'twin_room' => 'Habitación Twin',
     'twin_room_desc' => 'Habitación twin con kitchenette equipada',
     'breakfast_service' => 'Disfruta un desayuno continental servido a la habitación de 08:00 a 11:30 am.',
@@ -226,26 +226,26 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     // Room detail pages
     'twin_room_title' => 'HABITACIÓN TWIN CON KITCHENETTE',
     'twin_room_breadcrumb' => 'Twin con kitchenette',
-    'king_queen_room_title' => 'HABITACIÓN MATRIMONIAL',
-    'king_queen_breadcrumb' => 'Matrimonial',
+    'king_queen_room_title' => 'HABITACIÓN MATRIMONIAL/QUEEN',
+    'king_queen_breadcrumb' => 'Matrimonial/Queen',
     'superior_king_room_title' => 'HABITACIÓN SUPERIOR KING',
     'superior_king_breadcrumb' => 'Superior King',
-    'reduce_room_title' => 'HABITACIÓN REDUCIDA',
-    'reduce_room_breadcrumb' => 'Habitación Reducida',
+    'reduce_room_title' => 'HABITACIÓN MOVILIDAD REDUCIDA',
+    'reduce_room_breadcrumb' => 'Movilidad Reducida',
     
     // SEO Alt Text para imágenes
     'slider_hostal_alt' => 'Black Cat Hostal - Fachada del hostal boutique en Barrio Brasil Santiago',
     'slider_rooms_alt' => 'Habitaciones modernas del Black Cat Hostal Santiago',
     'slider_culture_alt' => 'Arquitectura patrimonial del Barrio Brasil Santiago Chile',
     'family_room_image_alt' => 'Habitación familiar del Black Cat Hostal con camas cómodas',
-    'king_queen_room_image_alt' => 'Habitación matrimonial estándar con baño privado',
+    'king_queen_room_image_alt' => 'Habitación matrimonial/queen estándar con baño privado',
     'twin_room_image_alt' => 'Habitación twin con kitchenette equipada',
     'breakfast_service_alt' => 'Desayuno continental servido en Black Cat Hostal',
     'gallery_hostal_alt' => 'Galería de fotos del Black Cat Hostal Santiago',
     
     // Title para enlaces
     'view_family_room' => 'Ver detalles de la habitación familiar',
-    'view_king_queen_room' => 'Ver detalles de la habitación matrimonial',
+    'view_king_queen_room' => 'Ver detalles de la habitación matrimonial/queen',
     'view_twin_room' => 'Ver detalles de la habitación Twin',
     
     // Servicios - Alt text
@@ -265,7 +265,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     
     // Room images alt text
     'family_room_gallery_alt' => 'Galería de fotos de la habitación familiar - Black Cat Hostal',
-    'king_queen_gallery_alt' => 'Galería de fotos habitación matrimonial - Black Cat Hostal',
+    'king_queen_gallery_alt' => 'Galería de fotos habitación matrimonial/queen - Black Cat Hostal',
     'twin_room_gallery_alt' => 'Galería de fotos habitación Twin con kitchenette - Black Cat Hostal',
     'superior_king_gallery_alt' => 'Galería de fotos habitación Superior King - Black Cat Hostal',
     'reduce_room_gallery_alt' => 'Galería de fotos habitación accesible - Black Cat Hostal',
@@ -329,7 +329,7 @@ El staff respondió a nuestros requerimientos con excelente disposición e hicie
     'shared_room_price_now' => 'Ahora: USD$ 22',
     'shared_room_price_clp' => '$19.990',
     'shared_room_features' => 'Baño privado • Desayuno • Piscina • Quincho',
-    'matrimonial_room_offer' => 'Habitación matrimonial', 
+    'matrimonial_room_offer' => 'Habitación Matrimonial/Queen', 
     'matrimonial_room_price_before' => 'Antes USD$ 83',
     'matrimonial_room_price_now' => 'Ahora: USD$ 63',
     'matrimonial_room_price_clp' => '$59.990',

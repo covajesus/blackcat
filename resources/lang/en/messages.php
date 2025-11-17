@@ -114,26 +114,26 @@ return [
     // Room detail pages
     'twin_room_title' => 'TWIN ROOM WITH KITCHENETTE',
     'twin_room_breadcrumb' => 'Twin with kitchenette',
-    'king_queen_room_title' => 'MATRIMONIAL ROOM',
-    'king_queen_breadcrumb' => 'Matrimonial',
+    'king_queen_room_title' => 'MATRIMONIAL/QUEEN ROOM',
+    'king_queen_breadcrumb' => 'Matrimonial/Queen',
     'superior_king_room_title' => 'SUPERIOR KING ROOM',
     'superior_king_breadcrumb' => 'Superior King',
-    'reduce_room_title' => 'REDUCED ROOM',
-    'reduce_room_breadcrumb' => 'Reduced Room',
+    'reduce_room_title' => 'REDUCED MOBILITY ROOM',
+    'reduce_room_breadcrumb' => 'Reduced Mobility',
     
     // SEO Alt Text for images
     'slider_hostal_alt' => 'Black Cat Hostal - Boutique hostel facade in Barrio Brasil Santiago',
     'slider_rooms_alt' => 'Modern rooms at Black Cat Hostal Santiago',
     'slider_culture_alt' => 'Heritage architecture of Barrio Brasil Santiago Chile',
     'family_room_image_alt' => 'Family room at Black Cat Hostal with comfortable beds',
-    'king_queen_room_image_alt' => 'Matrimonial standard room with private bathroom',
+    'king_queen_room_image_alt' => 'Matrimonial/Queen standard room with private bathroom',
     'twin_room_image_alt' => 'Twin room with equipped kitchenette',
     'breakfast_service_alt' => 'Continental breakfast served at Black Cat Hostal',
     'gallery_hostal_alt' => 'Photo gallery of Black Cat Hostal Santiago',
     
     // Title for links
     'view_family_room' => 'View family room details',
-    'view_king_queen_room' => 'View matrimonial room details',
+    'view_king_queen_room' => 'View matrimonial/queen room details',
     'view_twin_room' => 'View Twin room details',
     
     // Services - Alt text
@@ -153,7 +153,7 @@ return [
     
     // Room images alt text
     'family_room_gallery_alt' => 'Family room photo gallery - Black Cat Hostal',
-    'king_queen_gallery_alt' => 'Matrimonial room photo gallery - Black Cat Hostal',
+    'king_queen_gallery_alt' => 'Matrimonial/Queen room photo gallery - Black Cat Hostal',
     'twin_room_gallery_alt' => 'Twin room with kitchenette photo gallery - Black Cat Hostal',
     'superior_king_gallery_alt' => 'Superior King room photo gallery - Black Cat Hostal',
     'reduce_room_gallery_alt' => 'Accessible room photo gallery - Black Cat Hostal',
@@ -187,8 +187,8 @@ return [
 
     // Room descriptions
     'family_room_desc' => 'Enjoy our family room',
-    'king_queen_room' => 'Matrimonial Room',
-    'king_queen_room_desc' => 'Standard matrimonial room with bathroom',
+    'king_queen_room' => 'Matrimonial/Queen Room',
+    'king_queen_room_desc' => 'Standard matrimonial/queen room with bathroom',
     'twin_room' => 'Twin Room',
     'twin_room_desc' => 'Twin room with equipped kitchenette',
     'breakfast_service' => 'Enjoy a continental breakfast served to your room from 08:00 to 11:30 am.',
@@ -333,7 +333,7 @@ The staff responded to our requirements with excellent disposition and made the 
     'shared_room_price_now' => 'Now: USD$ 22',
     'shared_room_price_clp' => '$19.990',
     'shared_room_features' => 'Private bathroom • Breakfast • Pool • Barbecue',
-    'matrimonial_room_offer' => 'Matrimonial room',
+    'matrimonial_room_offer' => 'Matrimonial/Queen Room',
     'matrimonial_room_price_before' => 'Before USD$ 83', 
     'matrimonial_room_price_now' => 'Now: USD$ 63',
     'matrimonial_room_price_clp' => '$59.990',
