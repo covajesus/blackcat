@@ -10,8 +10,8 @@ return [
     'reserve_with_us' => 'Book with Us',
 
     // Room types
-    'family_room' => 'Family',
-    'matrimonial_room' => 'Matrimonial', 
+    'family_room' => 'Family/Shared',
+    'matrimonial_room' => 'Matrimonial/Queen', 
     'matrimonial_standard_room' => 'Matrimonial Standard',
     'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Reduced Mobility',

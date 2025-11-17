@@ -10,8 +10,8 @@ return [
     'reserve_with_us' => 'Reserva con Nosotros',
 
     // Tipos de habitación
-    'family_room' => 'Familiar',
-    'matrimonial_room' => 'Matrimonial', 
+    'family_room' => 'Familiar/Compartida',
+    'matrimonial_room' => 'Matrimonial/Queen', 
     'matrimonial_standard_room' => 'Matrimonial Estándar',
     'king_superior_room' => 'King Superior',
     'reduced_mobility_room' => 'Movilidad Reducida',
