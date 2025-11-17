@@ -965,12 +965,27 @@
 
         // Simple Slider Functions
         let currentSlideIndex = 0;
+        let autoPlayInterval = null;
         
         function initSlider() {
             const slides = document.querySelectorAll('.slider-wrapper img');
             const dots = document.querySelectorAll('.dot');
             
             if (slides.length === 0) return; // No slider on this page
+            
+            function startAutoPlay() {
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                }
+                autoPlayInterval = setInterval(() => {
+                    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                    showSlide(currentSlideIndex);
+                }, 5000);
+            }
+            
+            function resetAutoPlay() {
+                startAutoPlay();
+            }
             
             window.showSlide = function(index) {
                 const wrapper = document.getElementById('sliderWrapper');
@@ -988,24 +1003,27 @@
             };
 
             window.nextSlide = function() {
+                resetAutoPlay();
                 currentSlideIndex = (currentSlideIndex + 1) % slides.length;
                 showSlide(currentSlideIndex);
             };
 
             window.prevSlide = function() {
+                resetAutoPlay();
                 currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
                 showSlide(currentSlideIndex);
             };
 
             window.currentSlide = function(index) {
+                resetAutoPlay();
                 showSlide(index - 1);
             };
 
-            // Auto-play slider
-            setInterval(nextSlide, 5000);
-
             // Initialize first slide
             showSlide(0);
+            
+            // Start auto-play
+            startAutoPlay();
 
             // Click functionality for slider - WhatsApp on mobile, Contact page on desktop/tablet
             const sliderContainer = document.getElementById('sliderContainer');
