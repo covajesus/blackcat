@@ -191,7 +191,7 @@ return [
     'king_queen_room_desc' => 'Standard matrimonial/queen room with bathroom',
     'twin_room' => 'Twin Room',
     'twin_room_desc' => 'Twin room with equipped kitchenette',
-    'breakfast_service' => 'Enjoy a continental breakfast served to your room from 08:00 to 11:30 am.',
+    'breakfast_service' => 'Enjoy a continental breakfast served to your room from 08:00 to 10:30 am.',
 
     // Testimonials
     'testimonial_text' => 'Very beautiful experience, it is a very nice place with very good location, the room is very comfortable, cozy and well equipped, the staff attention was very good with very good disposition and the breakfast was very tasty and varied, cereals, fruits, yogurt, cold cuts, jams, etc.',

@@ -125,7 +125,7 @@ return [
     'king_queen_room_desc' => 'Habitación matrimonial/queen estándar con baño',
     'twin_room' => 'Habitación Twin',
     'twin_room_desc' => 'Habitación twin con kitchenette equipada',
-    'breakfast_service' => 'Disfruta un desayuno continental servido a la habitación de 08:00 a 11:30 am.',
+    'breakfast_service' => 'Disfruta un desayuno continental servido a la habitación de 08:00 a 10:30 am.',
 
     // Testimonial
         // Depoimentos

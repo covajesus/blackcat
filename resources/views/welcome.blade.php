@@ -133,37 +133,37 @@
             <div class="col-lg-7 col-12">
               <div data-slider-id="services" class="services-owl owl-carousel">
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place1.jpg') }}" class="img-fluid" alt="{{ __('messages.service_1_alt') }}" title="{{ __('messages.service_1_alt') }}" loading="lazy">
+                  <img src="{{ asset('public/frontend/images/places/place1.jpg') }}" class="img-fluid" alt="{{ __('messages.service_1_alt') }}" title="{{ __('messages.service_1_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>{{ __('messages.service_dining_room') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place2.jpg') }}" class="img-fluid" alt="{{ __('messages.service_2_alt') }}" title="{{ __('messages.service_2_alt') }}" loading="lazy">
+                  <img src="{{ asset('public/frontend/images/places/place2.jpg') }}" class="img-fluid" alt="{{ __('messages.service_2_alt') }}" title="{{ __('messages.service_2_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>{{ __('messages.service_meeting_patio') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place3.jpg') }}" class="img-fluid" alt="{{ __('messages.service_3_alt') }}" title="{{ __('messages.service_3_alt') }}" loading="lazy">
+                  <img src="{{ asset('public/frontend/images/places/place3.jpg') }}" class="img-fluid" alt="{{ __('messages.service_3_alt') }}" title="{{ __('messages.service_3_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>{{ __('messages.service_events') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place4.jpg') }}" class="img-fluid" alt="{{ __('messages.service_4_alt') }}" title="{{ __('messages.service_4_alt') }}" loading="lazy">
+                  <img src="{{ asset('public/frontend/images/places/place4.jpg') }}" class="img-fluid" alt="{{ __('messages.service_4_alt') }}" title="{{ __('messages.service_4_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>{{ __('messages.service_tours') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place5.jpg') }}" class="img-fluid" alt="{{ __('messages.service_5_alt') }}" title="{{ __('messages.service_5_alt') }}" loading="lazy">
+                  <img src="{{ asset('public/frontend/images/places/place5.jpg') }}" class="img-fluid" alt="{{ __('messages.service_5_alt') }}" title="{{ __('messages.service_5_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>{{ __('messages.service_summer') }}</h4>
                   </figcaption>
                 </figure>
                 <figure class="gradient-overlay">
-                  <img src="{{ url('public/frontend/images/places/place6.jpg') }}" class="img-fluid" alt="{{ __('messages.service_6_alt') }}" title="{{ __('messages.service_6_alt') }}" loading="lazy">
+                  <img src="{{ asset('public/frontend/images/places/place6.jpg') }}" class="img-fluid" alt="{{ __('messages.service_6_alt') }}" title="{{ __('messages.service_6_alt') }}" loading="lazy">
                   <figcaption>
                     <h4>{{ __('messages.service_coffee_bar') }}</h4>
                   </figcaption>

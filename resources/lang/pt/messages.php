@@ -189,7 +189,7 @@ return [
     'king_queen_room_desc' => 'Quarto matrimonial/queen padrão com banheiro',
     'twin_room' => 'Quarto Twin',
     'twin_room_desc' => 'Quarto twin com kitchenette equipada',
-    'breakfast_service' => 'Desfrute de um café da manhã continental servido no seu quarto das 08:00 às 11:30.',
+    'breakfast_service' => 'Desfrute de um café da manhã continental servido no seu quarto das 08:00 às 10:30.',
 
     // Depoimentos
     'testimonial_text' => 'Experiência muito linda, é um lugar muito bonito com muito boa localização, o quarto é muito confortável, aconchegante e bem equipado, o atendimento da equipe foi muito bom com muito boa disposição e o café da manhã estava muito gostoso e variado, cereais, frutas, iogurte, frios, geleias, etc.',
