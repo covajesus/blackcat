@@ -244,7 +244,7 @@
             <!-- ITEM -->
             <div class="gallery-item">
               <figure class="gradient-overlay image-icon">
-                <a href="{{ asset('public/frontend/images/gallery/pic1.ppg') }}" title="{{ __('messages.gallery_hostal_alt') }}">
+                <a href="{{ asset('public/frontend/images/gallery/pic1.png') }}" title="{{ __('messages.gallery_hostal_alt') }}">
                   <img src="{{ asset('public/frontend/images/gallery/pic1.png') }}" alt="{{ __('messages.gallery_hostal_alt') }}" title="{{ __('messages.gallery_hostal_alt') }}" loading="lazy">
                 </a>
                 <figcaption>{{ __('messages.breakfasts') }}</figcaption>
