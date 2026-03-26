@@ -226,21 +226,21 @@
             padding-top: 30px !important;
         }
         
-        /* Mobile responsive fixes - max-height 130px */
+        /* Mobile responsive fixes - prevent slider cropping/overlap */
         @media (max-width: 767px) {
             .simple-slider {
-                margin-top: -30px !important;
+                margin-top: 0 !important;
                 padding-top: 0 !important;
                 position: relative !important;
-                z-index: 1 !important;
+                z-index: 10 !important;
             }
             
             .simple-slider .slider-wrapper img {
-                max-height: 130px !important;
+                max-height: none !important;
                 height: auto !important;
                 width: 100% !important;
-                object-fit: cover !important;
-                object-position: center !important;
+                object-fit: unset !important;
+                object-position: initial !important;
             }
             
             .about {
