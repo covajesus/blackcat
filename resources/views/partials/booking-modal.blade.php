@@ -73,8 +73,18 @@ document.addEventListener('DOMContentLoaded', function () {
             return parts[2] + '/' + parts[1] + '/' + parts[0];
         }
 
+        // Misma lógica de "release" que usa el buscador del motor fnsbooking:
+        // 500 por defecto; si la entrada es en menos de 5 días, horas restantes.
+        var now = new Date();
+        var entradaDate = new Date(checkIn.value + 'T00:00:00');
+        var release = 500;
+        var numDias = Math.round((entradaDate.getTime() - now.getTime()) / 86400000);
+        if (numDias < 0) numDias = 0;
+        if (numDias < 5) release = numDias * 24 + (24 - now.getHours());
+
         var url = 'https://reservas.fnsbooking.com/busqueda.php'
-            + '?accion=F&release=12&datos=845419461--7402--------------'
+            + '?accion=D&release=' + release
+            + '&datos=' + encodeURIComponent('--7402--7402------------')
             + '&idioma={{ app()->getLocale() }}'
             + '&fecha_entrada=&fecha_salida=&orden=&pfe=2326&currency=&oferta_id='
             + '&tipo_habitacion_id=&bookingonline=&ocupacion=&codigoexclusivo=&mejortarifa=&ciudad='
