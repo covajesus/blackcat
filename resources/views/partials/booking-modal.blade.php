@@ -1,14 +1,44 @@
 <!-- Modal de selección de fechas para reservar -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
 <style>
-#bookingDatesModal input[type="date"] {
-    /* Color del día seleccionado en el calendario nativo del navegador */
-    accent-color: #000;
-    color-scheme: light;
+#bookingDatesModal input.form-control[readonly] {
+    background-color: #fff;
+    cursor: pointer;
 }
-#bookingDatesModal input[type="date"]:focus {
+#bookingDatesModal input.form-control:focus {
     border-color: #000;
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.15);
     outline: none;
+}
+/* Calendario flatpickr en negro, a juego con el template */
+.flatpickr-calendar {
+    z-index: 20050 !important;
+}
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+}
+.flatpickr-day.today {
+    border-color: #000;
+}
+.flatpickr-day.today:hover,
+.flatpickr-day.today:focus {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+}
+.flatpickr-day:hover {
+    background: #efefef;
+    border-color: #efefef;
+}
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+    fill: #FF823A;
 }
 #bookingLoadingOverlay {
     display: none;
@@ -73,11 +103,11 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="bookingCheckIn">{{ __('messages.check_in_date') }}</label>
-                    <input type="date" class="form-control" id="bookingCheckIn">
+                    <input type="text" class="form-control" id="bookingCheckIn" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="bookingCheckOut">{{ __('messages.check_out_date') }}</label>
-                    <input type="date" class="form-control" id="bookingCheckOut">
+                    <input type="text" class="form-control" id="bookingCheckOut" autocomplete="off">
                 </div>
                 <div class="alert alert-danger d-none" id="bookingDatesError">{{ __('messages.booking_form_error') }}</div>
             </div>
@@ -91,36 +121,47 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+@if (app()->getLocale() !== 'en')
+<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/{{ app()->getLocale() }}.js"></script>
+@endif
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var checkIn = document.getElementById('bookingCheckIn');
     var checkOut = document.getElementById('bookingCheckOut');
     var errorBox = document.getElementById('bookingDatesError');
 
-    function toInputValue(date) {
-        var m = ('0' + (date.getMonth() + 1)).slice(-2);
-        var d = ('0' + date.getDate()).slice(-2);
-        return date.getFullYear() + '-' + m + '-' + d;
-    }
-
     var today = new Date();
-    var tomorrow = new Date();
+    today.setHours(0, 0, 0, 0);
+    var tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
 
-    checkIn.min = toInputValue(today);
-    checkIn.value = toInputValue(today);
-    checkOut.min = toInputValue(tomorrow);
-    checkOut.value = toInputValue(tomorrow);
+    var fpOptions = {
+        dateFormat: 'Y-m-d',      // valor interno que usa el script
+        altInput: true,           // campo visible con formato dd/mm/aaaa
+        altFormat: 'd/m/Y',
+        disableMobile: true,      // usar siempre flatpickr, nunca el calendario nativo
+        locale: @if (app()->getLocale() !== 'en') '{{ app()->getLocale() }}' @else 'default' @endif
+    };
 
-    checkIn.addEventListener('change', function () {
-        if (!checkIn.value) return;
-        var minOut = new Date(checkIn.value + 'T00:00:00');
-        minOut.setDate(minOut.getDate() + 1);
-        checkOut.min = toInputValue(minOut);
-        if (!checkOut.value || checkOut.value < checkOut.min) {
-            checkOut.value = checkOut.min;
+    var checkOutPicker = flatpickr(checkOut, Object.assign({}, fpOptions, {
+        minDate: tomorrow,
+        defaultDate: tomorrow
+    }));
+
+    flatpickr(checkIn, Object.assign({}, fpOptions, {
+        minDate: today,
+        defaultDate: today,
+        onChange: function (selectedDates) {
+            if (!selectedDates.length) return;
+            var minOut = new Date(selectedDates[0]);
+            minOut.setDate(minOut.getDate() + 1);
+            checkOutPicker.set('minDate', minOut);
+            if (!checkOutPicker.selectedDates.length || checkOutPicker.selectedDates[0] < minOut) {
+                checkOutPicker.setDate(minOut, true);
+            }
         }
-    });
+    }));
 
     document.getElementById('bookingDatesSubmit').addEventListener('click', function () {
         if (!checkIn.value || !checkOut.value || checkOut.value <= checkIn.value) {
