@@ -21,13 +21,13 @@
     animation: booking-rotate 2s linear infinite;
 }
 #bookingLoadingOverlay svg.spinner-container .path {
-    stroke: #18a185;
+    stroke: #FF823A;
     stroke-linecap: round;
     animation: booking-dash 1.5s ease-in-out infinite;
 }
 #bookingLoadingOverlay .booking-spinner-text {
     margin-top: 15px;
-    color: #18a185;
+    color: #FF823A;
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -72,7 +72,7 @@
                 <div class="alert alert-danger d-none" id="bookingDatesError">{{ __('messages.booking_form_error') }}</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-block" id="bookingDatesSubmit" style="background-color: #18a185; border-color: #18a185;">
+                <button type="button" class="btn btn-primary btn-block" id="bookingDatesSubmit" style="background-color: #FF823A; border-color: #FF823A;">
                     <i class="fa fa-calendar"></i>
                     {{ __('messages.reserve') }}
                 </button>
