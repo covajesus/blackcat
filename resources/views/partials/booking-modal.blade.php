@@ -1,4 +1,56 @@
 <!-- Modal de selección de fechas para reservar -->
+<style>
+#bookingLoadingOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 20000;
+    text-align: center;
+}
+#bookingLoadingOverlay .booking-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#bookingLoadingOverlay svg.spinner-container {
+    animation: booking-rotate 2s linear infinite;
+}
+#bookingLoadingOverlay svg.spinner-container .path {
+    stroke: #18a185;
+    stroke-linecap: round;
+    animation: booking-dash 1.5s ease-in-out infinite;
+}
+#bookingLoadingOverlay .booking-spinner-text {
+    margin-top: 15px;
+    color: #18a185;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+@keyframes booking-rotate {
+    100% { transform: rotate(360deg); }
+}
+@keyframes booking-dash {
+    0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+    50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+    100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+}
+</style>
+
+<!-- Overlay de carga (mismo estilo que el motor fnsbooking) -->
+<div id="bookingLoadingOverlay">
+    <div class="booking-spinner">
+        <svg class="spinner-container" width="60" height="60" viewBox="0 0 44 44">
+            <circle class="path" cx="22" cy="22" r="20" fill="none" stroke-width="4"></circle>
+        </svg>
+        <div class="booking-spinner-text">{{ __('messages.reserve_with_us') }}...</div>
+    </div>
+</div>
+
 <div class="modal fade" id="bookingDatesModal" tabindex="-1" role="dialog" aria-labelledby="bookingDatesModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -90,6 +142,12 @@ document.addEventListener('DOMContentLoaded', function () {
             + '&tipo_habitacion_id=&bookingonline=&ocupacion=&codigoexclusivo=&mejortarifa=&ciudad='
             + '&entrada=' + encodeURIComponent(toFnsFormat(checkIn.value))
             + '&salida=' + encodeURIComponent(toFnsFormat(checkOut.value));
+
+        // Cerrar el modal y mostrar el spinner mientras carga el motor de reservas
+        if (window.jQuery) {
+            jQuery('#bookingDatesModal').modal('hide');
+        }
+        document.getElementById('bookingLoadingOverlay').style.display = 'block';
 
         window.location.href = url;
     });
