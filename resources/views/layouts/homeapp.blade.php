@@ -247,7 +247,7 @@
                     <a href="{{ url('contactus') }}">CONTÁCTENOS</a>
                 </li>
                 <li class="menu-item menu-btn">
-                    <a href="https://reservas.fnsbooking.com/busqueda.php?accion=F&release=12&datos=845419461--7402--------------&idioma={{ app()->getLocale() }}&fecha_entrada=&fecha_salida=&orden=&pfe=2326&currency=&oferta_id=&tipo_habitacion_id=&bookingonline=&ocupacion=&codigoexclusivo=&mejortarifa=&ciudad=&entrada={{ urlencode(now()->format('d/m/Y')) }}&salida={{ urlencode(now()->addDay()->format('d/m/Y')) }}" class="btn">
+                    <a href="#" data-toggle="modal" data-target="#bookingDatesModal" class="btn">
                         <i class="fa fa-caret-right"></i>
                         {{ __('messages.book_button') }}
                     </a>
@@ -360,6 +360,8 @@
     <div class="back-to-top">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
     </div>
+
+    @include('partials.booking-modal')
 
     <!-- ========== JAVASCRIPT ========== -->
     <script src="https://kit.fontawesome.com/31c1b74049.js" crossorigin="anonymous"></script>

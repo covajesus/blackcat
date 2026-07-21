@@ -1,0 +1,87 @@
+<!-- Modal de selección de fechas para reservar -->
+<div class="modal fade" id="bookingDatesModal" tabindex="-1" role="dialog" aria-labelledby="bookingDatesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookingDatesModalLabel">{{ __('messages.reserve_with_us') }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="bookingCheckIn">{{ __('messages.check_in_date') }}</label>
+                    <input type="date" class="form-control" id="bookingCheckIn">
+                </div>
+                <div class="form-group">
+                    <label for="bookingCheckOut">{{ __('messages.check_out_date') }}</label>
+                    <input type="date" class="form-control" id="bookingCheckOut">
+                </div>
+                <div class="alert alert-danger d-none" id="bookingDatesError">{{ __('messages.booking_form_error') }}</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-block" id="bookingDatesSubmit" style="background-color: #18a185; border-color: #18a185;">
+                    <i class="fa fa-calendar"></i>
+                    {{ __('messages.reserve') }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var checkIn = document.getElementById('bookingCheckIn');
+    var checkOut = document.getElementById('bookingCheckOut');
+    var errorBox = document.getElementById('bookingDatesError');
+
+    function toInputValue(date) {
+        var m = ('0' + (date.getMonth() + 1)).slice(-2);
+        var d = ('0' + date.getDate()).slice(-2);
+        return date.getFullYear() + '-' + m + '-' + d;
+    }
+
+    var today = new Date();
+    var tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+
+    checkIn.min = toInputValue(today);
+    checkIn.value = toInputValue(today);
+    checkOut.min = toInputValue(tomorrow);
+    checkOut.value = toInputValue(tomorrow);
+
+    checkIn.addEventListener('change', function () {
+        if (!checkIn.value) return;
+        var minOut = new Date(checkIn.value + 'T00:00:00');
+        minOut.setDate(minOut.getDate() + 1);
+        checkOut.min = toInputValue(minOut);
+        if (!checkOut.value || checkOut.value < checkOut.min) {
+            checkOut.value = checkOut.min;
+        }
+    });
+
+    document.getElementById('bookingDatesSubmit').addEventListener('click', function () {
+        if (!checkIn.value || !checkOut.value || checkOut.value <= checkIn.value) {
+            errorBox.classList.remove('d-none');
+            return;
+        }
+        errorBox.classList.add('d-none');
+
+        // fnsbooking espera fechas en formato dd/mm/aaaa
+        function toFnsFormat(value) {
+            var parts = value.split('-');
+            return parts[2] + '/' + parts[1] + '/' + parts[0];
+        }
+
+        var url = 'https://reservas.fnsbooking.com/busqueda.php'
+            + '?accion=F&release=12&datos=845419461--7402--------------'
+            + '&idioma={{ app()->getLocale() }}'
+            + '&fecha_entrada=&fecha_salida=&orden=&pfe=2326&currency=&oferta_id='
+            + '&tipo_habitacion_id=&bookingonline=&ocupacion=&codigoexclusivo=&mejortarifa=&ciudad='
+            + '&entrada=' + encodeURIComponent(toFnsFormat(checkIn.value))
+            + '&salida=' + encodeURIComponent(toFnsFormat(checkOut.value));
+
+        window.location.href = url;
+    });
+});
+</script>
