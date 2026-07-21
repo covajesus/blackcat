@@ -569,7 +569,7 @@
                     <a href="{{ url('contactus') }}">{{ __('messages.contact') }}</a>
                 </li>
                 <li class="menu-item menu-btn">
-                    <a href="https://reservas.fnsbooking.com/busqueda.php?accion=N&release=6&datos=111188682----------------&idioma={{ app()->getLocale() }}&fecha_entrada=&fecha_salida=&orden=&pfe=2326&currency=&oferta_id=&tipo_habitacion_id=&bookingonline=&ocupacion=&ciudad=&entrada=21%2F11%2F2020&salida=28%2F11%2F2020" class="btn">
+                    <a href="https://reservas.fnsbooking.com/busqueda.php?accion=N&release=6&datos=111188682----------------&idioma={{ app()->getLocale() }}&fecha_entrada=&fecha_salida=&orden=&pfe=2326&currency=&oferta_id=&tipo_habitacion_id=&bookingonline=&ocupacion=&ciudad=&entrada={{ urlencode(now()->format('d/m/Y')) }}&salida={{ urlencode(now()->addDay()->format('d/m/Y')) }}" class="btn">
                         <i class="fa fa-calendar"></i>
                         {{ __('messages.reserve') }}
                     </a>
