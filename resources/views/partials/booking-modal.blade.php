@@ -1,5 +1,15 @@
 <!-- Modal de selección de fechas para reservar -->
 <style>
+#bookingDatesModal input[type="date"] {
+    /* Color del día seleccionado en el calendario nativo del navegador */
+    accent-color: #000;
+    color-scheme: light;
+}
+#bookingDatesModal input[type="date"]:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.15);
+    outline: none;
+}
 #bookingLoadingOverlay {
     display: none;
     position: fixed;
