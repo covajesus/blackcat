@@ -4,104 +4,11 @@
 
     <!-- Hero Banner -->
     <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0;" id="sliderContainer">
-        <img src="{{ asset('public/frontend/images/slider/old_slider1.png') }}"
-             alt="{{ __('messages.slider_hostal_alt') }}"
+        <img src="{{ asset('public/frontend/images/slider/santiago_hero.webp') }}"
+             alt="{{ __('messages.slider_culture_alt') }}"
              loading="eager"
              style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
-
-        <div class="hero-banner-text">
-            <span class="hero-eyebrow">{{ __('messages.hero_eyebrow') }}</span>
-            <h1>{{ __('messages.hero_title') }}</h1>
-            <span class="hero-divider"></span>
-            <p>{{ __('messages.hero_subtitle') }}</p>
-        </div>
     </div>
-
-    <style>
-        .hero-banner-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 92%;
-            max-width: 900px;
-            padding: 42px 36px;
-            color: #fff;
-            text-align: center;
-            pointer-events: none;
-            background: transparent;
-        }
-        .hero-banner-text::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.40);
-            border-radius: 4px;
-            z-index: -1;
-            backdrop-filter: blur(2px);
-        }
-        .hero-banner-text .hero-eyebrow {
-            display: block;
-            margin: 0 0 18px;
-            color: #FF823A;
-            font-family: 'Oswald', sans-serif;
-            font-size: 11px;
-            font-weight: 400;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-        .hero-banner-text h1 {
-            margin: 0;
-            color: #fff;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 72px;
-            font-weight: 400;
-            font-style: italic;
-            letter-spacing: 1px;
-            text-transform: none;
-            line-height: 1.15;
-            text-shadow: 0 3px 22px rgba(0,0,0,0.4);
-        }
-        .hero-banner-text .hero-divider {
-            display: block;
-            width: 56px;
-            height: 1px;
-            margin: 22px auto;
-            background: rgba(255,255,255,0.75);
-        }
-        .hero-banner-text p {
-            margin: 0 auto;
-            max-width: 560px;
-            color: #d7d8d9;
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-            font-weight: 300;
-            font-style: normal;
-            letter-spacing: 0.6px;
-            line-height: 1.55;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.35);
-        }
-        @media (max-width: 767px) {
-            .hero-banner-text {
-                padding: 28px 18px;
-                width: 94%;
-            }
-            .hero-banner-text .hero-eyebrow {
-                font-size: 9px;
-                letter-spacing: 3px;
-                margin-bottom: 12px;
-            }
-            .hero-banner-text h1 {
-                font-size: 36px;
-            }
-            .hero-banner-text .hero-divider {
-                margin: 16px auto;
-            }
-            .hero-banner-text p {
-                font-size: 12px;
-            }
-        }
-    </style>
       <!-- ========== ABOUT ========== -->
       <section class="about" style="margin-top: 50px; padding-top: 50px;">
         <div class="container">
