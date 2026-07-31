@@ -4,11 +4,38 @@
 
     <!-- Hero Banner -->
     <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0;" id="sliderContainer">
-        <img src="{{ asset('public/frontend/images/slider/santiago_hero.webp') }}"
-             alt="{{ __('messages.slider_culture_alt') }}"
+        <img src="{{ asset('public/frontend/images/slider/blackcat_hero.webp') }}"
+             alt="{{ __('messages.slider_hostal_alt') }}"
              loading="eager"
-             style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
+             class="hero-slider-img">
     </div>
+
+    <style>
+        .simple-slider .hero-slider-img {
+            width: 100%;
+            height: 420px;
+            display: block;
+            margin: 0;
+            padding: 0;
+            object-fit: cover;
+            object-position: center center;
+        }
+        @media (min-width: 1200px) {
+            .simple-slider .hero-slider-img {
+                height: 480px;
+            }
+        }
+        @media (max-width: 991px) {
+            .simple-slider .hero-slider-img {
+                height: 340px;
+            }
+        }
+        @media (max-width: 767px) {
+            .simple-slider .hero-slider-img {
+                height: 240px;
+            }
+        }
+    </style>
       <!-- ========== ABOUT ========== -->
       <section class="about" style="margin-top: 50px; padding-top: 50px;">
         <div class="container">
