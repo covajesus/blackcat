@@ -68,7 +68,7 @@
         <link href="{{ asset('public/frontend/fonts/font-awesome.min.css') }}" rel="stylesheet">
         <link href="{{ asset('public/frontend/fonts/flaticon.css') }}" rel="stylesheet">
         <!-- ========== GOOGLE FONTS ========== -->
-        <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700%7CRoboto:100,300,400,400i,500,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700%7CRoboto:100,300,400,400i,500,700%7CPlayfair+Display:400,400i,600,600i" rel="stylesheet">
         <script>
             // Cargar reCAPTCHA de manera más segura
             function loadRecaptcha() {

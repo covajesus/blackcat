@@ -23,9 +23,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 720px;
-            padding: 36px 32px;
+            width: 92%;
+            max-width: 900px;
+            padding: 42px 36px;
             color: #fff;
             text-align: center;
             pointer-events: none;
@@ -35,69 +35,70 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.38);
+            background: rgba(0, 0, 0, 0.40);
             border-radius: 4px;
             z-index: -1;
             backdrop-filter: blur(2px);
         }
         .hero-banner-text .hero-eyebrow {
             display: block;
-            margin: 0 0 16px;
+            margin: 0 0 18px;
             color: #FF823A;
             font-family: 'Oswald', sans-serif;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 400;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             text-transform: uppercase;
         }
         .hero-banner-text h1 {
             margin: 0;
             color: #fff;
-            font-family: 'Oswald', sans-serif;
-            font-size: 46px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 72px;
             font-weight: 400;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            line-height: 1.2;
-            text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+            font-style: italic;
+            letter-spacing: 1px;
+            text-transform: none;
+            line-height: 1.15;
+            text-shadow: 0 3px 22px rgba(0,0,0,0.4);
         }
         .hero-banner-text .hero-divider {
             display: block;
-            width: 48px;
+            width: 56px;
             height: 1px;
-            margin: 20px auto;
-            background: rgba(255,255,255,0.7);
+            margin: 22px auto;
+            background: rgba(255,255,255,0.75);
         }
         .hero-banner-text p {
             margin: 0 auto;
-            max-width: 480px;
-            color: rgba(255,255,255,0.92);
-            font-family: 'Roboto', sans-serif;
-            font-size: 17px;
-            font-weight: 300;
-            letter-spacing: 0.8px;
-            line-height: 1.6;
-            text-shadow: 0 1px 10px rgba(0,0,0,0.35);
+            max-width: 560px;
+            color: rgba(255,255,255,0.95);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 22px;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.3px;
+            line-height: 1.55;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.35);
         }
         @media (max-width: 767px) {
             .hero-banner-text {
-                padding: 24px 18px;
-                width: 92%;
+                padding: 28px 18px;
+                width: 94%;
             }
             .hero-banner-text .hero-eyebrow {
-                font-size: 10px;
+                font-size: 11px;
                 letter-spacing: 3px;
                 margin-bottom: 12px;
             }
             .hero-banner-text h1 {
-                font-size: 26px;
-                letter-spacing: 2px;
+                font-size: 36px;
             }
             .hero-banner-text .hero-divider {
-                margin: 14px auto;
+                margin: 16px auto;
             }
             .hero-banner-text p {
-                font-size: 14px;
+                font-size: 16px;
             }
         }
     </style>
