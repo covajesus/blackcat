@@ -45,9 +45,9 @@
             margin: 0 0 18px;
             color: #FF823A;
             font-family: 'Oswald', sans-serif;
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 400;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             text-transform: uppercase;
         }
         .hero-banner-text h1 {
@@ -72,12 +72,12 @@
         .hero-banner-text p {
             margin: 0 auto;
             max-width: 560px;
-            color: rgba(255,255,255,0.95);
+            color: #d7d8d9;
             font-family: 'Roboto', sans-serif;
-            font-size: 22px;
+            font-size: 14px;
             font-weight: 300;
             font-style: normal;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.6px;
             line-height: 1.55;
             text-shadow: 0 2px 12px rgba(0,0,0,0.35);
         }
@@ -87,7 +87,7 @@
                 width: 94%;
             }
             .hero-banner-text .hero-eyebrow {
-                font-size: 11px;
+                font-size: 9px;
                 letter-spacing: 3px;
                 margin-bottom: 12px;
             }
@@ -98,7 +98,7 @@
                 margin: 16px auto;
             }
             .hero-banner-text p {
-                font-size: 16px;
+                font-size: 12px;
             }
         }
     </style>
