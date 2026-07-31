@@ -5,13 +5,33 @@
     <!-- Simple Slider -->
     <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0; cursor: pointer;" id="sliderContainer">
         <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out;" id="sliderWrapper">
-            <img src="{{ asset('public/frontend/images/slider/slider5.webp') }}" 
-                 alt="{{ __('messages.slider_hostal_alt') }}" 
+            {{-- Fachada Black Cat Hostal --}}
+            <img src="{{ asset('public/frontend/images/slider/old_slider1.png') }}"
+                 alt="{{ __('messages.slider_hostal_alt') }}"
                  loading="eager"
                  style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
-            
-            <img src="{{ asset('public/frontend/images/slider/slider6.webp') }}" 
-                 alt="{{ __('messages.slider_hostal_alt') }}" 
+
+            {{-- Patio con mural de Santiago --}}
+            <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}"
+                 alt="{{ __('messages.slider_culture_alt') }}"
+                 loading="lazy"
+                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+
+            {{-- Piscina y terraza --}}
+            <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}"
+                 alt="{{ __('messages.slider_hostal_alt') }}"
+                 loading="lazy"
+                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+
+            {{-- Habitación boutique --}}
+            <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}"
+                 alt="{{ __('messages.slider_rooms_alt') }}"
+                 loading="lazy"
+                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+
+            {{-- Lounge / espacios comunes --}}
+            <img src="{{ asset('public/frontend/images/restaurant/pic1.png') }}"
+                 alt="{{ __('messages.slider_hostal_alt') }}"
                  loading="lazy"
                  style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
         </div>
