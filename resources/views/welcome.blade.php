@@ -73,10 +73,10 @@
             margin: 0 auto;
             max-width: 560px;
             color: rgba(255,255,255,0.95);
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 22px;
-            font-weight: 400;
-            font-style: italic;
+            font-weight: 300;
+            font-style: normal;
             letter-spacing: 0.3px;
             line-height: 1.55;
             text-shadow: 0 2px 12px rgba(0,0,0,0.35);
