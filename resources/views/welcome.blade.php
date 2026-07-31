@@ -2,50 +2,61 @@
 
 @section('content')
 
-    <!-- Simple Slider -->
-    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0; cursor: pointer;" id="sliderContainer">
-        <div class="slider-wrapper" style="display: flex; transition: transform 0.5s ease-in-out;" id="sliderWrapper">
-            {{-- Fachada Black Cat Hostal --}}
-            <img src="{{ asset('public/frontend/images/slider/old_slider1.png') }}"
-                 alt="{{ __('messages.slider_hostal_alt') }}"
-                 loading="eager"
-                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+    <!-- Hero Banner -->
+    <div class="simple-slider" style="position: relative; width: 100%; overflow: hidden; margin: 0; padding: 0;" id="sliderContainer">
+        <img src="{{ asset('public/frontend/images/slider/old_slider1.png') }}"
+             alt="{{ __('messages.slider_hostal_alt') }}"
+             loading="eager"
+             style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
 
-            {{-- Patio con mural de Santiago --}}
-            <img src="{{ asset('public/frontend/images/slider/slider2.jpg') }}"
-                 alt="{{ __('messages.slider_culture_alt') }}"
-                 loading="lazy"
-                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
-
-            {{-- Piscina y terraza --}}
-            <img src="{{ asset('public/frontend/images/slider/slider1.jpg') }}"
-                 alt="{{ __('messages.slider_hostal_alt') }}"
-                 loading="lazy"
-                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
-
-            {{-- Habitación boutique --}}
-            <img src="{{ asset('public/frontend/images/slider/slider3.jpg') }}"
-                 alt="{{ __('messages.slider_rooms_alt') }}"
-                 loading="lazy"
-                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
-
-            {{-- Lounge / espacios comunes --}}
-            <img src="{{ asset('public/frontend/images/restaurant/pic1.png') }}"
-                 alt="{{ __('messages.slider_hostal_alt') }}"
-                 loading="lazy"
-                 style="width: 100%; height: auto; display: block; margin: 0; padding: 0; flex-shrink: 0;">
+        <div class="hero-banner-text">
+            <h1>{{ __('messages.slide1_title') }}</h1>
+            <p>{{ __('messages.slide1_subtitle') }}</p>
         </div>
-        
-        <!-- Navigation buttons -->
-        <button onclick="prevSlide()" 
-                style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
-            ❮
-        </button>
-        <button onclick="nextSlide()" 
-                style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 18px; border-radius: 5px;">
-            ❯
-        </button>
     </div>
+
+    <style>
+        .hero-banner-text {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 60px 40px 50px;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 55%, transparent 100%);
+            color: #fff;
+            text-align: left;
+            pointer-events: none;
+        }
+        .hero-banner-text h1 {
+            margin: 0 0 8px;
+            color: #fff;
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+        }
+        .hero-banner-text p {
+            margin: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+        }
+        @media (max-width: 767px) {
+            .hero-banner-text {
+                padding: 36px 20px 28px;
+            }
+            .hero-banner-text h1 {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+            .hero-banner-text p {
+                font-size: 15px;
+            }
+        }
+    </style>
       <!-- ========== ABOUT ========== -->
       <section class="about" style="margin-top: 50px; padding-top: 50px;">
         <div class="container">
