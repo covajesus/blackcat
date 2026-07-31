@@ -10,10 +10,10 @@
              style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
 
         <div class="hero-banner-text">
-            <span class="hero-eyebrow">{{ __('messages.boutique_hostal') }}</span>
-            <h1>Black Cat Hostal</h1>
+            <span class="hero-eyebrow">{{ __('messages.hero_eyebrow') }}</span>
+            <h1>{{ __('messages.hero_title') }}</h1>
             <span class="hero-divider"></span>
-            <p>{{ __('messages.slide1_subtitle') }}</p>
+            <p>{{ __('messages.hero_subtitle') }}</p>
         </div>
     </div>
 
@@ -24,8 +24,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 90%;
-            max-width: 760px;
-            padding: 28px 24px;
+            max-width: 720px;
+            padding: 36px 32px;
             color: #fff;
             text-align: center;
             pointer-events: none;
@@ -35,62 +35,63 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.42);
-            border-radius: 2px;
+            background: rgba(0, 0, 0, 0.38);
+            border-radius: 4px;
             z-index: -1;
+            backdrop-filter: blur(2px);
         }
         .hero-banner-text .hero-eyebrow {
             display: block;
-            margin: 0 0 14px;
-            color: #fff;
+            margin: 0 0 16px;
+            color: #FF823A;
             font-family: 'Oswald', sans-serif;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 400;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            opacity: 0.9;
         }
         .hero-banner-text h1 {
             margin: 0;
             color: #fff;
             font-family: 'Oswald', sans-serif;
-            font-size: 56px;
-            font-weight: 500;
-            letter-spacing: 6px;
+            font-size: 46px;
+            font-weight: 400;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            line-height: 1.15;
+            line-height: 1.2;
             text-shadow: 0 2px 18px rgba(0,0,0,0.35);
         }
         .hero-banner-text .hero-divider {
             display: block;
-            width: 54px;
+            width: 48px;
             height: 1px;
-            margin: 18px auto;
-            background: #FF823A;
+            margin: 20px auto;
+            background: rgba(255,255,255,0.7);
         }
         .hero-banner-text p {
-            margin: 0;
+            margin: 0 auto;
+            max-width: 480px;
             color: rgba(255,255,255,0.92);
             font-family: 'Roboto', sans-serif;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 300;
-            letter-spacing: 1px;
-            line-height: 1.5;
+            letter-spacing: 0.8px;
+            line-height: 1.6;
             text-shadow: 0 1px 10px rgba(0,0,0,0.35);
         }
         @media (max-width: 767px) {
             .hero-banner-text {
-                padding: 22px 16px;
+                padding: 24px 18px;
                 width: 92%;
             }
             .hero-banner-text .hero-eyebrow {
-                font-size: 11px;
+                font-size: 10px;
                 letter-spacing: 3px;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }
             .hero-banner-text h1 {
-                font-size: 30px;
-                letter-spacing: 3px;
+                font-size: 26px;
+                letter-spacing: 2px;
             }
             .hero-banner-text .hero-divider {
                 margin: 14px auto;

@@ -55,6 +55,9 @@ return [
     // Slider slides
     'slide1_title' => 'SIMPLY',
     'slide1_subtitle' => 'Live a unique experience',
+    'hero_eyebrow' => 'Santiago · Chile',
+    'hero_title' => 'Discover the capital',
+    'hero_subtitle' => 'Culture, history and urban charm in the heart of Barrio Brasil',
     'slide2_title' => 'URBAN HOSPITALITY',
     'slide2_subtitle' => 'Avant-garde and modernity',
     'slide3_title' => 'INSPIRED BY CULTURE',
